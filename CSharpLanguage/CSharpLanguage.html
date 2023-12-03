@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prepare yourself</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/features/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../custom/mycustomstyle.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom" style="transform: rotate(0);""><a class="stretched-link" href="../index.html"><a>Test Automation Engineer .NET Questions & Exercises
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+          </svg>
+        </h2>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question1">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                    What is Managed Code?
+                  </button>
+                </h2>
+                <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#question1">
+                  <div class="accordion-body">When the code is directly executed by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, memory allocation, and object disposal is managed by the Runtime.</div> 
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question2">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                    What is Unmanaged Code?
+                  </button>
+                </h2>
+                <div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2" data-bs-parent="#question2">
+                  <div class="accordion-body">The object creation, execution, and disposal of unmanaged code are directly managed by the programmers.
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question3">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                    What is Boxing/Unboxing?
+                  </button>
+                </h2>
+                <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#question3">
+                  <div class="accordion-body">The process of converting from a value type to a reference type is called boxing. Boxing is an implicit conversion.
+                    The process of converting from a reference type to a value type is called unboxing. 
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question4">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                    Struct vs. Class
+                  </button>
+                </h2>
+                <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#question4">
+                  <div class="accordion-body">
+                    <p>
+                      <ul class="list-group structdiff">
+                        <li class="list-group-item"><h5>Struct:</h5></li>
+                        <li class="list-group-item">1. Of value type, derives from System.Value type.</li>
+                        <li class="list-group-item">2. Doesn't support inheritance.</li>
+                        <li class="list-group-item">3. Doesn't have a memory overhead per new instance.</li>
+                        <li class="list-group-item">4. Passed by value.</li>
+                        <li class="list-group-item">5. Usually used for small amount of data.</li>
+                        <li class="list-group-item">6. Can't be abstract.</li>
+                        <li class="list-group-item">8. Allocations and de-allocations of value types are in general cheaper than allocations and de-allocations of reference types.</li>
+                        <li class="list-group-item">9. In structs, each variable contains its own copy of the data (except in the case of the ref and out parameter variables), and an operation on one variable does not affect another variable.</li>
+                        <li class="list-group-item">10. Can't contain a default constructor.</li>
+                        <li class="list-group-item">11. Can't contain a default constructor.</li>
+                        <li class="list-group-item">12. Can't contain a default constructor.</li>
+                      </ul>
+                    </p>
+                    <p>
+                      <ul class="list-group classdiff">
+                        <li class="list-group-item"><h5>Class:</h5></li>
+                        <li class="list-group-item">1. Of reference type, derives from System.Object type.</li>
+                        <li class="list-group-item">2. Supports inheritance.</li>
+                        <li class="list-group-item">3. Has a memory overhead per new instance.</li>
+                        <li class="list-group-item">4. Passed by reference.</li>
+                        <li class="list-group-item">5. Usually used for large amount of data.</li>
+                        <li class="list-group-item">6. Can be an abstract type.</li>
+                        <li class="list-group-item">8. Assignments of large reference types are cheaper than assignments of large value types.</li>
+                        <li class="list-group-item">9. In classes, two variables can contain the reference of the same object and any operation on one variable can affect another variable.</li>
+                      </ul>
+                    </p>
+                    <p>
+                      <ul class="list-group classdiff">
+                        <li class="list-group-item"><h5>Both classes and structs:</h5></li>
+                        <li class="list-group-item">1. Are compound data types typically used to contain a few variables that have some logical relationship.</li>
+                        <li class="list-group-item">2. Contain methods and events, static fields.</li>
+                        <li class="list-group-item">3. Support interfaces.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question5">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                    What is a record?
+                  </button>
+                </h2>
+                <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#question5">
+                  <div class="accordion-body">
+                    <p>C# 9 introduces records, a new reference type that you can create instead of classes or structs. C# 10 adds record structs so that you can define records as value types. Records are distinct from classes in that record types use value-based equality. Two variables of a record type are equal if the record type definitions are identical, and if for every field, the values in both records are equal.</p>
+                    <p><img src="classes_vs_records.png" class="img-fluid rounded float-left" style="width: 400px; height: 550px;" alt="Responsive image"></p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question6">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading6">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                    What is the difference between classes and interfaces?
+                  </button>
+                </h2>
+                <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#question6">
+                  <div class="accordion-body">
+                    <p>An interface is a contract: it specifies what members (methods and properties) a class implementing the interface must have. But interfaces will contain only the declaration of the members. It is only a contract, it has no implementations. Only very simple implementations by default for simple methods. A class can implement zero, one or multiple interfaces.</p>
+                    <p>An interface can not specify the access level for methods or properties like protected or private, and they are public by default. An abstract class can limit the access level for methods and properties. The only exception is an abstract method that can not be private.</p>
+                    <p>An interface can not have the declaration of constructors. If attempted, it treats them as different methods making the script implement both. An abstract class can have the declaration of constructors.</p>
+                    <p>The interface can not have standard fields. They have to be properties with a get and set. The abstract class can have standard fields and properties.</p>
+                    <p>When making changes to an interface, all inheriting scripts have to be changed to implement the changes or throw an error. When making changes to an abstract class, unless the added change was an abstract method, there is no need to change any other code since you can add the base implementation.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question7">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading7">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+                    Constant vs. Readonly
+                  </button>
+                </h2>
+                <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#question7">
+                  <div class="accordion-body">
+                    <p>For constant it's mandatory to assign a value to it. it's defined in compile-time. By default, a const is static, and we cannot change the value of a const variable throughout the entire program.</p>
+                    <p>Readonly is the keyword whose value we can change during runtime or assign it at run time but only through the non-static constructor.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question8">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading8">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+                    What is Inheritance and how do we use it in C#?
+                  </button>
+                </h2>
+                <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#question8">
+                  <div class="accordion-body">
+                    <p>Inheritance is a mechanism in object-oriented programming (OOP) that enables a class to derive properties and behavior from another class. The class that is being derived from is called the base class, and the class that is deriving from the base class is called the derived class. In C#, inheritance is implemented using the ":" symbol followed by the name of the base class.</p>
+                    <p>To use inheritance effectively in C#, you should follow these best practices:
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Use inheritance to model an "is-a" relationship: Inheritance should be used when the derived class "is a" type of the base class. For example, a Car "is a" Vehicle, so you can use inheritance to derive a Car class from a Vehicle class.</li>
+                        <li class="list-group-item">Avoid deep inheritance hierarchies: Deep inheritance hierarchies can make your code difficult to understand and maintain. You should try to keep the inheritance hierarchy as shallow as possible, ideally with no more than three levels of inheritance.</li>
+                        <li class="list-group-item">Favor composition over inheritance: In some cases, composition (using objects as member variables of a class) can be a better alternative to inheritance. This can help reduce the complexity of your code and make it easier to understand.</li>
+                        <li class="list-group-item">You should consider using composition over inheritance in C# in the following situations:</li>
+                        <li class="list-group-item">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">1. When you want to reuse behavior across multiple classes, but there is no "is-a" relationship: Inheritance is appropriate when you have a base class that defines behavior that is common to all derived classes. However, if you have behavior that is shared between classes that do not have an "is-a" relationship, composition may be a better choice. For example, if you have a ShoppingCart class and a Product class, you could use composition to give the ShoppingCart a list of Products, rather than creating a derived class for each type of shopping cart.</li>
+                            <li class="list-group-item">2. When you want to change behavior at runtime: With inheritance, the behavior of a derived class is determined at compile-time. If you need to change behavior at runtime, composition may be a better choice. For example, you could use composition to give a class a strategy object that can be changed at runtime to alter its behavior.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </p>  
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question9">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading9">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+                    What is a Uri?
+                  </button>
+                </h2>
+                <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#question9">
+                  <div class="accordion-body">
+                    <p>A Uri in C# is a class that represents a Uniform Resource Identifier (URI). A URI is a compact string of characters that identifies a resource on the internet or an intranet. URIs can be used to link to web pages, images, files, and other resources.
+                      In short, a Uri is a way to represent a web address in C#.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question10">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading10">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+                    asdfhajsdhfjahsdfjhsadfj?
+                  </button>
+                </h2>
+                <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-heading10" data-bs-parent="#question10">
+                  <div class="accordion-body">
+                    <p>A use case is a list of actions or event steps typically defining the interactions between a role/actor and a system to achieve a goal.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question11">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading11">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+                    What is a concurrent bag?
+                  </button>
+                </h2>
+                <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-heading11" data-bs-parent="#question11">
+                  <div class="accordion-body">
+                    <p>It's a thread-safe collection that is designed to hold an unordered collection of objects. Unlike some other concurrent collection types, a ConcurrentBag is optimized for scenarios where elements are frequently added and removed from multiple threads.</p>
+                    <p></p>
+                      <iframe onload="this.height=this.contentWindow.document.body.scrollHeight + 40;" frameborder=0 height=500 width=100% srcdoc="&lt;style&gt;.background{font-family:Consolas,LucidaConsole,monospace;background-color:#1E1E1E;overflow:scroll;}.method{color:#DCDCAA;}.class{color:#4EC9B0;}.keyword{color:#569cd6;}.numericLiteral{color:#b8d7a3;}.control{color:#C586C0;}.namespace{color:#dfdfdf;}.punctuation{color:#dfdfdf;}.operator{color:#dfdfdf;}.localName{color:#9CDCFE;}.parameter{color:#9CDCFE;}.code_highlight{background-color:#395929;}table{white-space:pre;}.line_no::before{content:attr(line_no);color:white;}.code_column{padding-left:5px;color:#dfdfdf;}&lt;/style&gt;
+                      &lt;pre class=&quot;background&quot;&gt;
+                      &lt;table&gt;
+                      &lt;tbody&gt;
+                      &lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;0&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; System;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;1&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; System.Collections.Concurrent;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;2&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; System.Threading.Tasks;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;3&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;4&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;Program&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;5&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;{&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;6&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static void&lt;/span&gt; &lt;span class=&quot;method&quot;&gt;Main&lt;/span&gt;()&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;7&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;    {&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;8&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        &lt;span class=&quot;class&quot;&gt;ConcurrentBag&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&quot;localName&quot;&gt;bag&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;ConcurrentBag&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;gt;();&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;9&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;10&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        &lt;span class=&quot;class&quot;&gt;Parallel&lt;/span&gt;.&lt;span class=&quot;method&quot;&gt;For&lt;/span&gt;(&lt;span class=&quot;numericLiteral&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;numericLiteral&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;parameter&quot;&gt;i&lt;/span&gt; =&amp;gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;11&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        {&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;12&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;            &lt;span class=&quot;localName&quot;&gt;bag&lt;/span&gt;.&lt;span class=&quot;method&quot;&gt;Add&lt;/span&gt;(&lt;span class=&quot;parameter&quot;&gt;i&lt;/span&gt;);&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;13&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        });&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;14&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;15&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        &lt;span class=&quot;control&quot;&gt;foreach&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;control&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;bag&lt;/span&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;16&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        {&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;17&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;            &lt;span class=&quot;class&quot;&gt;Console&lt;/span&gt;.&lt;span class=&quot;method&quot;&gt;WriteLine&lt;/span&gt;(&lt;span class=&quot;localName&quot;&gt;item&lt;/span&gt;);&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;18&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;        }&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;19&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;    }&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;line_no&quot; line_no=&quot;20&quot;&gt;&lt;/td&gt;&lt;td class=&quot;code_column&quot;&gt;}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                      &lt;/table&gt;&lt;/pre&gt;
+                      "></iframe>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question12">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading12">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-heading12" data-bs-parent="#question12">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question13">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading13">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse13" class="accordion-collapse collapse" aria-labelledby="flush-heading13" data-bs-parent="#question13">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question14">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading14">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse14" class="accordion-collapse collapse" aria-labelledby="flush-heading14" data-bs-parent="#question14">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question15">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading15">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse15" aria-expanded="false" aria-controls="flush-collapse15">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse15" class="accordion-collapse collapse" aria-labelledby="flush-heading15" data-bs-parent="#question15">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question16">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading16">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse16" aria-expanded="false" aria-controls="flush-collapse16">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse16" class="accordion-collapse collapse" aria-labelledby="flush-heading16" data-bs-parent="#question16">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question17">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading17">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapse17">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse17" class="accordion-collapse collapse" aria-labelledby="flush-heading17" data-bs-parent="#question17">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question18">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading18">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse18" aria-expanded="false" aria-controls="flush-collapse18">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse18" class="accordion-collapse collapse" aria-labelledby="flush-heading18" data-bs-parent="#question18">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question19">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading19">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse19" aria-expanded="false" aria-controls="flush-collapse19">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse19" class="accordion-collapse collapse" aria-labelledby="flush-heading19" data-bs-parent="#question19">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question20">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading20">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse20" aria-expanded="false" aria-controls="flush-collapse20">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse20" class="accordion-collapse collapse" aria-labelledby="flush-heading20" data-bs-parent="#question20">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question21">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading21">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapse21">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse21" class="accordion-collapse collapse" aria-labelledby="flush-heading21" data-bs-parent="#question21">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>  
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question22">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading22">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
+                    What is Gray Box Testing?
+                  </button>
+                </h2>
+                <div id="flush-collapse22" class="accordion-collapse collapse" aria-labelledby="flush-heading22" data-bs-parent="#question22">
+                  <div class="accordion-body">
+                    <p>This is another type of testing in which we look into the box which is being tested, It is done only to understand how it has been implemented. After that, we close the box and use the black box testing.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>  
+        </div>
+      </div>
+    </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prepare yourself</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/features/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../custom/mycustomstyle.css" rel="stylesheet">
+
+    <style>
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom" style="transform: rotate(0);""><a class="stretched-link" href="../index.html"><a>Test Automation Engineer .NET Questions & Exercises
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+          </svg>
+        </h2>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-creational-tab" data-bs-toggle="pill" data-bs-target="#pills-creational" type="button" role="tab" aria-controls="pills-creational" aria-selected="true">Creational</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-behavioral-tab" data-bs-toggle="pill" data-bs-target="#pills-behavioral" type="button" role="tab" aria-controls="pills-behavioral" aria-selected="false">Behavioral</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-structural-tab" data-bs-toggle="pill" data-bs-target="#pills-structural" type="button" role="tab" aria-controls="pills-structural" aria-selected="false">Structural</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-concurrency-tab" data-bs-toggle="pill" data-bs-target="#pills-concurrency" type="button" role="tab" aria-controls="pills-concurrency" aria-selected="false">Concurrency</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-creational" role="tabpanel" aria-labelledby="pills-creational-tab">
+                
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question1">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                          Singleton
+                        </button>
+                      </h2>
+                      <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#question1">
+                        <div class="accordion-body"><h5>Ensure a class has only one instance or limited number of instances.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Singleton</span>
+{
+  <span style="color: #0000ff">private</span> <span style="color: #0000ff">static</span> Singleton? instance;
+  
+  <span style="color: #0000ff">private</span> Singleton()
+  {
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> Singleton Instance
+  {
+      <span style="color: #0000ff">get</span> =&gt; instance ??= <span style="color: #0000ff">new</span> Singleton();
+  }
+}
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+  {
+      <span style="color: #008000">// Get the singleton instance </span>
+      Singleton s1 = Singleton.Instance;
+
+      <span style="color: #008000">// Anywhere else</span>
+      Singleton s2 = Singleton.Instance;
+
+      Console.WriteLine(s1 == s2); <span style="color: #008000">//True</span>
+  }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question2">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                          Prototype
+                        </button>
+                      </h2>
+                      <div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2" data-bs-parent="#question2">
+                        <div class="accordion-body"><h5>Create a new object from an existing object.</h5>
+                          
+                         <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">interface</span> IPrototype
+{
+  IPrototype Clone();
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcretePrototype</span> : IPrototype
+{
+  <span style="color: #0000ff">public</span> <span style="color: #2b91af">int</span> Id { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+  <span style="color: #008000">// The Clone method performs a shallow copy of the object.</span>
+  <span style="color: #0000ff">public</span> IPrototype? Clone() =&gt; MemberwiseClone() <span style="color: #0000ff">as</span> IPrototype;
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+  {
+      <span style="color: #008000">// Create an instance of the concrete prototype.</span>
+      ConcretePrototype original = <span style="color: #0000ff">new</span>() { Id = 1 };
+      <span style="color: #008000">// Clone the original prototype to create a new object.</span>
+      ConcretePrototype cloned = original.Clone() <span style="color: #0000ff">as</span> ConcretePrototype;
+      <span style="color: #008000">// Output the original and cloned objects.</span>
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Original: {original.Id}&quot;</span>); <span style="color: #008000">// Original: 1</span>
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Cloned: {cloned.Id}&quot;</span>); <span style="color: #008000">// Cloned: 1</span>
+      <span style="color: #008000">// Modify the cloned object and observe that the original remains unchanged.</span>
+      cloned.Id = 2;
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Original after modification: {original.Id}&quot;</span>); <span style="color: #008000">// Original after modification: 1</span>
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Cloned after modification: {cloned.Id}&quot;</span>); <span style="color: #008000">// Cloned after modification: 2</span>
+  }
+}
+</pre></div>
+
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question3">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                          Factory Method
+                        </button>
+                      </h2>
+                      <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#question3">
+                        <div class="accordion-body"><h5>Create an instance of several derived classes.</h5>
+                          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Product interface declares the operations that concrete products must implement.</span>
+<span style="color: #0000ff">interface</span> IProduct
+{
+    <span style="color: #0000ff">void</span> Display();
+}
+
+<span style="color: #008000">// ConcreteProductA and ConcreteProductB are concrete implementations of IProduct.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductA</span> : IProduct
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Display()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product A&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductB</span> : IProduct
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Display()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product B&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Creator is the abstract class that declares the factory method.</span>
+<span style="color: #008000">// The factory method returns an instance of a concrete product.</span>
+<span style="color: #0000ff">abstract</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Creator</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> IProduct FactoryMethod();
+
+    <span style="color: #008000">// The Creator may also contain some default implementation.</span>
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> AnOperation()
+    {
+        <span style="color: #008000">// Use the factory method to create a product.</span>
+        IProduct product = FactoryMethod();
+        product.Display();
+    }
+}
+
+<span style="color: #008000">// ConcreteCreatorA and ConcreteCreatorB are concrete implementations of Creator.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteCreatorA</span> : Creator
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> IProduct FactoryMethod()
+    {
+        <span style="color: #008000">// ConcreteCreatorA produces ConcreteProductA.</span>
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductA();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteCreatorB</span> : Creator
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> IProduct FactoryMethod()
+    {
+        <span style="color: #008000">// ConcreteCreatorB produces ConcreteProductB.</span>
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductB();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code can work with any concrete creator class.</span>
+        Creator creatorA = <span style="color: #0000ff">new</span> ConcreteCreatorA();
+        creatorA.AnOperation();
+
+        Creator creatorB = <span style="color: #0000ff">new</span> ConcreteCreatorB();
+        creatorB.AnOperation();
+
+        <span style="color: #008000">// Concrete Product A</span>
+        <span style="color: #008000">// Concrete Product B</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question4">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                          Builder
+                        </button>
+                      </h2>
+                      <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#question4">
+                        <div class="accordion-body"><h5>Separate object construction from its representation.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Product class represents the complex object that the builder constructs.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Product</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Part1 { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Part2 { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Display()
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Part1: {Part1}, Part2: {Part2}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Builder interface declares steps to build different parts of the product.</span>
+<span style="color: #0000ff">interface</span> IBuilder
+{
+    <span style="color: #0000ff">void</span> BuildPart1();
+    <span style="color: #0000ff">void</span> BuildPart2();
+    Product GetResult();
+}
+
+<span style="color: #008000">// ConcreteBuilder implements the builder interface and constructs the product.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteBuilder</span> : IBuilder
+{
+    <span style="color: #0000ff">private</span> Product product = <span style="color: #0000ff">new</span>();
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> BuildPart1()
+    {
+        product.Part1 = <span style="color: #a31515">&quot;Builder Part 1&quot;</span>;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> BuildPart2()
+    {
+        product.Part2 = <span style="color: #a31515">&quot;Builder Part 2&quot;</span>;
+    }
+
+    <span style="color: #0000ff">public</span> Product GetResult()
+    {
+        <span style="color: #0000ff">return</span> product;
+    }
+}
+
+<span style="color: #008000">// Director class constructs the product using a builder.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Director</span>
+{
+    <span style="color: #0000ff">private</span> IBuilder builder;
+
+    <span style="color: #0000ff">public</span> Director(IBuilder builder)
+    {
+        <span style="color: #0000ff">this</span>.builder = builder;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Construct()
+    {
+        builder.BuildPart1();
+        builder.BuildPart2();
+    }
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates a builder and a director.</span>
+        IBuilder builder = <span style="color: #0000ff">new</span> ConcreteBuilder();
+        Director director = <span style="color: #0000ff">new</span>(builder);
+
+        <span style="color: #008000">// Director constructs the product using the builder.</span>
+        director.Construct();
+
+        <span style="color: #008000">// Client retrieves the product from the builder.</span>
+        Product product = builder.GetResult();
+
+        <span style="color: #008000">// Display the product.</span>
+        product.Display(); <span style="color: #008000">// Part1: Builder Part 1, Part2: Builder Part 2</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question5">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                          Abstract Factory
+                        </button>
+                      </h2>
+                      <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#question5">
+                        <div class="accordion-body"><h5>Create an instance of several families of classes.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// AbstractProductA and AbstractProductB are abstract product interfaces.</span>
+<span style="color: #0000ff">interface</span> IAbstractProductA
+{
+    <span style="color: #0000ff">void</span> DisplayInfoA();
+}
+
+<span style="color: #0000ff">interface</span> IAbstractProductB
+{
+    <span style="color: #0000ff">void</span> DisplayInfoB();
+}
+
+<span style="color: #008000">// ConcreteProductA1, ConcreteProductA2, ConcreteProductB1, and ConcreteProductB2</span>
+<span style="color: #008000">// are concrete implementations of the abstract product interfaces.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductA1</span> : IAbstractProductA
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayInfoA()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product A1&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductA2</span> : IAbstractProductA
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayInfoA()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product A2&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductB1</span> : IAbstractProductB
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayInfoB()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product B1&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteProductB2</span> : IAbstractProductB
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayInfoB()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Concrete Product B2&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// AbstractFactory interface declares the creation methods for the abstract products.</span>
+<span style="color: #0000ff">interface</span> IAbstractFactory
+{
+    IAbstractProductA CreateProductA();
+    IAbstractProductB CreateProductB();
+}
+
+<span style="color: #008000">// ConcreteFactory1 and ConcreteFactory2 are concrete implementations of the abstract factory interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteFactory1</span> : IAbstractFactory
+{
+    <span style="color: #0000ff">public</span> IAbstractProductA CreateProductA()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductA1();
+    }
+
+    <span style="color: #0000ff">public</span> IAbstractProductB CreateProductB()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductB1();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteFactory2</span> : IAbstractFactory
+{
+    <span style="color: #0000ff">public</span> IAbstractProductA CreateProductA()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductA2();
+    }
+
+    <span style="color: #0000ff">public</span> IAbstractProductB CreateProductB()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteProductB2();
+    }
+}
+
+<span style="color: #008000">// Client code works with factories and products through the abstract interfaces.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Client</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> IAbstractProductA productA;
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> IAbstractProductB productB;
+
+    <span style="color: #0000ff">public</span> Client(IAbstractFactory factory)
+    {
+        productA = factory.CreateProductA();
+        productB = factory.CreateProductB();
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Run()
+    {
+        productA.DisplayInfoA();
+        productB.DisplayInfoB();
+    }
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code can work with any concrete factory and products.</span>
+        IAbstractFactory factory1 = <span style="color: #0000ff">new</span> ConcreteFactory1();
+        Client client1 = <span style="color: #0000ff">new</span>(factory1);
+        client1.Run();
+
+        IAbstractFactory factory2 = <span style="color: #0000ff">new</span> ConcreteFactory2();
+        Client client2 = <span style="color: #0000ff">new</span>(factory2);
+        client2.Run();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Concrete Product A1</span>
+<span style="color: #008000">         * Concrete Product B1</span>
+<span style="color: #008000">         * Concrete Product A2</span>
+<span style="color: #008000">         * Concrete Product B2</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="pills-behavioral" role="tabpanel" aria-labelledby="pills-behavioral-tab">
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question21">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading21">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapse21">
+                          Chain of Responsibility
+                        </button>
+                      </h2>
+                      <div id="flush-collapse21" class="accordion-collapse collapse" aria-labelledby="flush-heading21" data-bs-parent="#question21">
+                        <div class="accordion-body"><h5>A way of passing a request between a chain of objects.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Handler interface declares a method for handling requests and a reference to the next handler.</span>
+<span style="color: #0000ff">interface</span> IHandler
+{
+    <span style="color: #0000ff">void</span> HandleRequest(<span style="color: #2b91af">int</span> request);
+    <span style="color: #0000ff">void</span> SetNextHandler(IHandler nextHandler);
+}
+
+<span style="color: #008000">// ConcreteHandlerA and ConcreteHandlerB are concrete implementations of the handler interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteHandlerA</span> : IHandler
+{
+    <span style="color: #0000ff">private</span> IHandler nextHandler;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetNextHandler(IHandler nextHandler)
+    {
+        <span style="color: #0000ff">this</span>.nextHandler = nextHandler;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> HandleRequest(<span style="color: #2b91af">int</span> request)
+    {
+        <span style="color: #0000ff">if</span> (request &lt;= 10)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Handler A can handle the request {request}&quot;</span>);
+        }
+        <span style="color: #0000ff">else</span> if (nextHandler != <span style="color: #0000ff">null</span>)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Handler A cannot handle the request {request}. Passing to the next handler.&quot;</span>);
+            nextHandler.HandleRequest(request);
+        }
+        <span style="color: #0000ff">else</span>
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;No handler can process the request {request}&quot;</span>);
+        }
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteHandlerB</span> : IHandler
+{
+    <span style="color: #0000ff">private</span> IHandler nextHandler;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetNextHandler(IHandler nextHandler)
+    {
+        <span style="color: #0000ff">this</span>.nextHandler = nextHandler;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> HandleRequest(<span style="color: #2b91af">int</span> request)
+    {
+        <span style="color: #0000ff">if</span> (request &gt; 10 &amp;&amp; request &lt;= 20)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Handler B can handle the request {request}&quot;</span>);
+        }
+        <span style="color: #0000ff">else</span> if (nextHandler != <span style="color: #0000ff">null</span>)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Handler B cannot handle the request {request}. Passing to the next handler.&quot;</span>);
+            nextHandler.HandleRequest(request);
+        }
+        <span style="color: #0000ff">else</span>
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;No handler can process the request {request}&quot;</span>);
+        }
+    }
+}
+
+<span style="color: #008000">// Client code creates a chain of handlers and initiates the request.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Client</span>
+{
+    <span style="color: #0000ff">private</span> IHandler chain;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> BuildChain()
+    {
+        IHandler handlerA = <span style="color: #0000ff">new</span> ConcreteHandlerA();
+        IHandler handlerB = <span style="color: #0000ff">new</span> ConcreteHandlerB();
+
+        handlerA.SetNextHandler(handlerB);
+
+        chain = handlerA;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> MakeRequest(<span style="color: #2b91af">int</span> request)
+    {
+        chain.HandleRequest(request);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates a chain of handlers and initiates a request.</span>
+        Client client = <span style="color: #0000ff">new</span>();
+        client.BuildChain();
+
+        <span style="color: #008000">// Requests with different values to demonstrate the chain of responsibility.</span>
+        client.MakeRequest(5);
+        client.MakeRequest(15);
+        client.MakeRequest(25);
+
+        <span style="color: #008000">// Handler A cannot handle the request 15.Passing to the next handler.</span>
+        <span style="color: #008000">// Handler B can handle the request 15</span>
+        <span style="color: #008000">// Handler A cannot handle the request 25.Passing to the next handler.</span>
+        <span style="color: #008000">// No handler can process the request 25</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question22">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading22">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
+                          Command
+                        </button>
+                      </h2>
+                      <div id="flush-collapse22" class="accordion-collapse collapse" aria-labelledby="flush-heading22" data-bs-parent="#question22">
+                        <div class="accordion-body"><h5>Encapsulate a request as an object.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Command interface declares the Execute method.</span>
+<span style="color: #0000ff">interface</span> ICommand
+{
+    <span style="color: #0000ff">void</span> Execute();
+}
+
+<span style="color: #008000">// ConcreteCommand class implements the Command interface and binds an action to a receiver.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteCommand</span> : ICommand
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> Receiver receiver;
+
+    <span style="color: #0000ff">public</span> ConcreteCommand(Receiver receiver)
+    {
+        <span style="color: #0000ff">this</span>.receiver = receiver;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Execute()
+    {
+        receiver.Action();
+    }
+}
+
+<span style="color: #008000">// Receiver class knows how to perform the operation.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Receiver</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Action()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Receiver is performing the action.&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Invoker class asks the command to execute the request.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Invoker</span>
+{
+    <span style="color: #0000ff">private</span> ICommand command;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetCommand(ICommand command)
+    {
+        <span style="color: #0000ff">this</span>.command = command;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> ExecuteCommand()
+    {
+        command.Execute();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates instances of command, receiver, and invoker.</span>
+        Receiver receiver = <span style="color: #0000ff">new</span>();
+        ICommand command = <span style="color: #0000ff">new</span> ConcreteCommand(receiver);
+        Invoker invoker = <span style="color: #0000ff">new</span>();
+
+        <span style="color: #008000">// Set the command for the invoker.</span>
+        invoker.SetCommand(command);
+
+        <span style="color: #008000">// Execute the command through the invoker.</span>
+        invoker.ExecuteCommand();
+
+        <span style="color: #008000">// Receiver is performing the action.</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question23">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading23">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse23" aria-expanded="false" aria-controls="flush-collapse23">
+                          Interpreter
+                        </button>
+                      </h2>
+                      <div id="flush-collapse23" class="accordion-collapse collapse" aria-labelledby="flush-heading23" data-bs-parent="#question23">
+                        <div class="accordion-body"><h5>A way to include language elements in a program.</h5>
+                          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// AbstractExpression declares an Interpret method that concrete expressions must implement.</span>
+<span style="color: #0000ff">interface</span> IAbstractExpression
+{
+    <span style="color: #0000ff">void</span> Interpret(Context context);
+}
+
+<span style="color: #008000">// TerminalExpression is a concrete expression that interprets a terminal in the grammar.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">TerminalExpression</span> : IAbstractExpression
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">int</span> Number { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>; }
+
+    <span style="color: #0000ff">public</span> TerminalExpression(<span style="color: #2b91af">int</span> number)
+    {
+        Number = number;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Interpret(Context context)
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;TerminalExpression interprets: {Number}&quot;</span>);
+        context.Output += Number;
+    }
+}
+
+<span style="color: #008000">// NonTerminalExpression is a concrete expression that interprets non-terminals in the grammar.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">NonTerminalExpression</span> : IAbstractExpression
+{
+    <span style="color: #0000ff">private</span> IAbstractExpression expression1;
+    <span style="color: #0000ff">private</span> IAbstractExpression expression2;
+
+    <span style="color: #0000ff">public</span> NonTerminalExpression(IAbstractExpression expression1, IAbstractExpression expression2)
+    {
+        <span style="color: #0000ff">this</span>.expression1 = expression1;
+        <span style="color: #0000ff">this</span>.expression2 = expression2;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Interpret(Context context)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;NonTerminalExpression interprets based on context:&quot;</span>);
+        expression1.Interpret(context);
+        expression2.Interpret(context);
+    }
+}
+
+<span style="color: #008000">// Context contains information that&#39;s being interpreted.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Context</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">int</span> Output { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates an abstract syntax tree for the mathematical expression 5 + 10.</span>
+        Context context = <span style="color: #0000ff">new</span> Context();
+
+        IAbstractExpression number5 = <span style="color: #0000ff">new</span> TerminalExpression(5);
+        IAbstractExpression number10 = <span style="color: #0000ff">new</span> TerminalExpression(10);
+
+        IAbstractExpression expression = <span style="color: #0000ff">new</span> NonTerminalExpression(number5, number10);
+
+        <span style="color: #008000">// Interpret the expression.</span>
+        expression.Interpret(context);
+
+        <span style="color: #008000">// Display the result.</span>
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Result: {context.Output}&quot;</span>);
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * NonTerminalExpression interprets based on context:</span>
+<span style="color: #008000">         * TerminalExpression interprets: 5</span>
+<span style="color: #008000">         * TerminalExpression interprets: 10</span>
+<span style="color: #008000">         * Result: 15</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question24">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading24">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse24" aria-expanded="false" aria-controls="flush-collapse24">
+                          Iterator
+                        </button>
+                      </h2>
+                      <div id="flush-collapse24" class="accordion-collapse collapse" aria-labelledby="flush-heading24" data-bs-parent="#question24">
+                        <div class="accordion-body"><h5>Sequentially access the elements of an aggregate object.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Aggregate interface declares an Iterator method for creating an iterator.</span>
+<span style="color: #0000ff">interface</span> IAggregate
+{
+    IIterator CreateIterator();
+}
+
+<span style="color: #008000">// Iterator interface declares methods for traversing the collection.</span>
+<span style="color: #0000ff">interface</span> IIterator
+{
+    <span style="color: #2b91af">object</span> Current();
+    <span style="color: #2b91af">bool</span> MoveNext();
+    <span style="color: #0000ff">void</span> Reset();
+}
+
+<span style="color: #008000">// ConcreteAggregate is a concrete implementation of the Aggregate interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteAggregate</span> : IAggregate
+{
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">object</span>[] items = { <span style="color: #a31515">&quot;Item 1&quot;</span>, <span style="color: #a31515">&quot;Item 2&quot;</span>, <span style="color: #a31515">&quot;Item 3&quot;</span>, <span style="color: #a31515">&quot;Item 4&quot;</span>, <span style="color: #a31515">&quot;Item 5&quot;</span> };
+
+    <span style="color: #0000ff">public</span> IIterator CreateIterator()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> ConcreteIterator(<span style="color: #0000ff">this</span>);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">int</span> Count
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> items.Length; }
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">object</span> <span style="color: #0000ff">this</span>[<span style="color: #2b91af">int</span> index]
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> items[index]; }
+    }
+}
+
+<span style="color: #008000">// ConcreteIterator is a concrete implementation of the Iterator interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteIterator</span> : IIterator
+{
+    <span style="color: #0000ff">private</span> ConcreteAggregate aggregate;
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">int</span> currentIndex = 0;
+
+    <span style="color: #0000ff">public</span> ConcreteIterator(ConcreteAggregate aggregate)
+    {
+        <span style="color: #0000ff">this</span>.aggregate = aggregate;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">object</span> Current()
+    {
+        <span style="color: #0000ff">return</span> aggregate[currentIndex];
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">bool</span> MoveNext()
+    {
+        currentIndex++;
+        <span style="color: #0000ff">return</span> currentIndex &lt; aggregate.Count;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Reset()
+    {
+        currentIndex = 0;
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates an iterator and traverses the collection.</span>
+        ConcreteAggregate aggregate = <span style="color: #0000ff">new</span> ConcreteAggregate();
+        IIterator iterator = aggregate.CreateIterator();
+
+        <span style="color: #0000ff">while</span> (iterator.MoveNext())
+        {
+            <span style="color: #2b91af">object</span> currentItem = iterator.Current();
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Item: {currentItem}&quot;</span>);
+        }
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Item: Item 2</span>
+<span style="color: #008000">         * Item: Item 3</span>
+<span style="color: #008000">         * Item: Item 4</span>
+<span style="color: #008000">         * Item: Item 5</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question25">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading25">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse25" aria-expanded="false" aria-controls="flush-collapse25">
+                          Mediator
+                        </button>
+                      </h2>
+                      <div id="flush-collapse25" class="accordion-collapse collapse" aria-labelledby="flush-heading25" data-bs-parent="#question25">
+                        <div class="accordion-body"><h5>Define simplified communication between classes.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Collections.Generic;
+
+<span style="color: #008000">// Mediator interface declares methods for communication between colleagues.</span>
+<span style="color: #0000ff">interface</span> IMediator
+{
+    <span style="color: #0000ff">void</span> SendMessage(Colleague sender, <span style="color: #2b91af">string</span> message);
+}
+
+<span style="color: #008000">// Colleague abstract class represents objects that communicate through the mediator.</span>
+<span style="color: #0000ff">abstract</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Colleague</span>
+{
+    <span style="color: #0000ff">protected</span> IMediator mediator;
+
+    <span style="color: #0000ff">public</span> Colleague(IMediator mediator)
+    {
+        <span style="color: #0000ff">this</span>.mediator = mediator;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">void</span> Send(<span style="color: #2b91af">string</span> message);
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">void</span> Receive(<span style="color: #2b91af">string</span> message);
+}
+
+<span style="color: #008000">// ConcreteMediator is a concrete implementation of the Mediator interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteMediator</span> : IMediator
+{
+    <span style="color: #0000ff">private</span> List&lt;Colleague&gt; colleagues = <span style="color: #0000ff">new</span> List&lt;Colleague&gt;();
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> AddColleague(Colleague colleague)
+    {
+        colleagues.Add(colleague);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SendMessage(Colleague sender, <span style="color: #2b91af">string</span> message)
+    {
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> colleague <span style="color: #0000ff">in</span> colleagues)
+        {
+            <span style="color: #0000ff">if</span> (colleague != sender)
+            {
+                colleague.Receive(message);
+            }
+        }
+    }
+}
+
+<span style="color: #008000">// ConcreteColleagueA and ConcreteColleagueB are concrete implementations of the Colleague abstract class.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteColleagueA</span> : Colleague
+{
+    <span style="color: #0000ff">public</span> ConcreteColleagueA(IMediator mediator) : <span style="color: #0000ff">base</span>(mediator) { }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Send(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Colleague A sends message: &quot;</span> + message);
+        mediator.SendMessage(<span style="color: #0000ff">this</span>, message);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Receive(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Colleague A receives message: &quot;</span> + message);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteColleagueB</span> : Colleague
+{
+    <span style="color: #0000ff">public</span> ConcreteColleagueB(IMediator mediator) : <span style="color: #0000ff">base</span>(mediator) { }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Send(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Colleague B sends message: &quot;</span> + message);
+        mediator.SendMessage(<span style="color: #0000ff">this</span>, message);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Receive(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Colleague B receives message: &quot;</span> + message);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates a mediator and colleagues, then lets them communicate.</span>
+        ConcreteMediator mediator = <span style="color: #0000ff">new</span> ConcreteMediator();
+
+        ConcreteColleagueA colleagueA = <span style="color: #0000ff">new</span> ConcreteColleagueA(mediator);
+        ConcreteColleagueB colleagueB = <span style="color: #0000ff">new</span> ConcreteColleagueB(mediator);
+
+        mediator.AddColleague(colleagueA);
+        mediator.AddColleague(colleagueB);
+
+        colleagueA.Send(<span style="color: #a31515">&quot;Hello from Colleague A!&quot;</span>);
+        colleagueB.Send(<span style="color: #a31515">&quot;Hi from Colleague B!&quot;</span>);
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Colleague A sends message: Hello from Colleague A!</span>
+<span style="color: #008000">         * Colleague B receives message: Hello from Colleague A!</span>
+<span style="color: #008000">         * Colleague B sends message: Hi from Colleague B!</span>
+<span style="color: #008000">         * Colleague A receives message: Hi from Colleague B!</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question26">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading26">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse26" aria-expanded="false" aria-controls="flush-collapse26">
+                          Memento
+                        </button>
+                      </h2>
+                      <div id="flush-collapse26" class="accordion-collapse collapse" aria-labelledby="flush-heading26" data-bs-parent="#question26">
+                        <div class="accordion-body"><h5>Capture and restore an object's state.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Memento class represents the state to be saved.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Memento</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> State { <span style="color: #0000ff">get</span>; }
+
+    <span style="color: #0000ff">public</span> Memento(<span style="color: #2b91af">string</span> state)
+    {
+        State = state;
+    }
+}
+
+<span style="color: #008000">// Originator class is the object whose state needs to be saved.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Originator</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">string</span> state;
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> State
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> state; }
+        <span style="color: #0000ff">set</span>
+        {
+            state = <span style="color: #0000ff">value</span>;
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;State set to: {state}&quot;</span>);
+        }
+    }
+
+    <span style="color: #008000">// Creates a memento containing the current state.</span>
+    <span style="color: #0000ff">public</span> Memento CreateMemento()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> Memento(state);
+    }
+
+    <span style="color: #008000">// Restores the state from a memento.</span>
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> RestoreMemento(Memento memento)
+    {
+        state = memento.State;
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;State restored to: {state}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Caretaker class is responsible for keeping the memento.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Caretaker</span>
+{
+    <span style="color: #0000ff">public</span> Memento Memento { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates an originator, sets its state, creates and saves a memento.</span>
+        Originator originator = <span style="color: #0000ff">new</span> Originator();
+        originator.State = <span style="color: #a31515">&quot;State1&quot;</span>;
+
+        Caretaker caretaker = <span style="color: #0000ff">new</span> Caretaker();
+        caretaker.Memento = originator.CreateMemento();
+
+        <span style="color: #008000">// Client code changes the state and then restores it from the saved memento.</span>
+        originator.State = <span style="color: #a31515">&quot;State2&quot;</span>;
+        originator.RestoreMemento(caretaker.Memento);
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * State set to: State1</span>
+<span style="color: #008000">         * State set to: State2</span>
+<span style="color: #008000">         * State restored to: State1</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question27">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading27">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse27" aria-expanded="false" aria-controls="flush-collapse27">
+                          Observer
+                        </button>
+                      </h2>
+                      <div id="flush-collapse27" class="accordion-collapse collapse" aria-labelledby="flush-heading27" data-bs-parent="#question27">
+                        <div class="accordion-body"><h5>A way of notifying change to a number of classes.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Collections.Generic;
+
+<span style="color: #008000">// Subject interface declares methods for adding, removing, and notifying observers.</span>
+<span style="color: #0000ff">interface</span> ISubject
+{
+    <span style="color: #0000ff">void</span> AddObserver(IObserver observer);
+    <span style="color: #0000ff">void</span> RemoveObserver(IObserver observer);
+    <span style="color: #0000ff">void</span> NotifyObservers();
+}
+
+<span style="color: #008000">// ConcreteSubject class is the subject that maintains a list of observers.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteSubject</span> : ISubject
+{
+    <span style="color: #0000ff">private</span> List&lt;IObserver&gt; observers = <span style="color: #0000ff">new</span> List&lt;IObserver&gt;();
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">string</span> state;
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> State
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> state; }
+        <span style="color: #0000ff">set</span>
+        {
+            state = <span style="color: #0000ff">value</span>;
+            NotifyObservers();
+        }
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> AddObserver(IObserver observer)
+    {
+        observers.Add(observer);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> RemoveObserver(IObserver observer)
+    {
+        observers.Remove(observer);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> NotifyObservers()
+    {
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> observer <span style="color: #0000ff">in</span> observers)
+        {
+            observer.Update(State);
+        }
+    }
+}
+
+<span style="color: #008000">// Observer interface declares an Update method to receive updates from the subject.</span>
+<span style="color: #0000ff">interface</span> IObserver
+{
+    <span style="color: #0000ff">void</span> Update(<span style="color: #2b91af">string</span> state);
+}
+
+<span style="color: #008000">// ConcreteObserver class is a concrete implementation of the Observer interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteObserver</span> : IObserver
+{
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">string</span> name;
+
+    <span style="color: #0000ff">public</span> ConcreteObserver(<span style="color: #2b91af">string</span> name)
+    {
+        <span style="color: #0000ff">this</span>.name = name;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Update(<span style="color: #2b91af">string</span> state)
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{name} received update. New state: {state}&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">/// Client code creates a subject, observers, and establishes the relationships.</span>
+        ConcreteSubject subject = <span style="color: #0000ff">new</span> ConcreteSubject();
+
+        ConcreteObserver observer1 = <span style="color: #0000ff">new</span> ConcreteObserver(<span style="color: #a31515">&quot;Observer 1&quot;</span>);
+        ConcreteObserver observer2 = <span style="color: #0000ff">new</span> ConcreteObserver(<span style="color: #a31515">&quot;Observer 2&quot;</span>);
+
+        subject.AddObserver(observer1);
+        subject.AddObserver(observer2);
+
+        <span style="color: #008000">// Client code triggers a state change in the subject, and observers are notified.</span>
+        subject.State = <span style="color: #a31515">&quot;New State&quot;</span>;
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Observer 1 received update. New state: New State</span>
+<span style="color: #008000">         * Observer 2 received update. New state: New State</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question28">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading28">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse28" aria-expanded="false" aria-controls="flush-collapse28">
+                          State
+                        </button>
+                      </h2>
+                      <div id="flush-collapse28" class="accordion-collapse collapse" aria-labelledby="flush-heading28" data-bs-parent="#question28">
+                        <div class="accordion-body"><h5>Alter an object's behavior when its state changes.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Context class is the class that has a state and delegates state-specific behavior to the current state object.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Context</span>
+{
+    <span style="color: #0000ff">private</span> IState state;
+
+    <span style="color: #0000ff">public</span> Context()
+    {
+        <span style="color: #008000">// Set the initial state.</span>
+        state = <span style="color: #0000ff">new</span> ConcreteStateA();
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetState(IState newState)
+    {
+        state = newState;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Request()
+    {
+        state.Handle(<span style="color: #0000ff">this</span>);
+    }
+}
+
+<span style="color: #008000">// State interface declares a method for handling the context.</span>
+<span style="color: #0000ff">interface</span> IState
+{
+    <span style="color: #0000ff">void</span> Handle(Context context);
+}
+
+<span style="color: #008000">// ConcreteStateA and ConcreteStateB are concrete implementations of the State interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteStateA</span> : IState
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Handle(Context context)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Handling request in State A.&quot;</span>);
+        <span style="color: #008000">// Change the state to B.</span>
+        context.SetState(<span style="color: #0000ff">new</span> ConcreteStateB());
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteStateB</span> : IState
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Handle(Context context)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Handling request in State B.&quot;</span>);
+        <span style="color: #008000">// Change the state back to A.</span>
+        context.SetState(<span style="color: #0000ff">new</span> ConcreteStateA());
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates a context and changes its state, triggering different behavior.</span>
+        Context context = <span style="color: #0000ff">new</span>();
+
+        context.Request();
+        context.Request();
+        context.Request();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Handling request in State A.</span>
+<span style="color: #008000">         * Handling request in State B</span>
+<span style="color: #008000">         * Handling request in State A.</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question29">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading29">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse29" aria-expanded="false" aria-controls="flush-collapse29">
+                          Strategy
+                        </button>
+                      </h2>
+                      <div id="flush-collapse29" class="accordion-collapse collapse" aria-labelledby="flush-heading29" data-bs-parent="#question29">
+                        <div class="accordion-body"><h5>Encapsulate algorithms.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Strategy interface declares a method for an algorithm.</span>
+<span style="color: #0000ff">interface</span> IStrategy
+{
+    <span style="color: #0000ff">void</span> Execute();
+}
+
+<span style="color: #008000">// ConcreteStrategyA and ConcreteStrategyB are concrete implementations of the Strategy interface.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteStrategyA</span> : IStrategy
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Execute()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Executing ConcreteStrategyA&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteStrategyB</span> : IStrategy
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Execute()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Executing ConcreteStrategyB&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Context class contains a reference to the current strategy and provides a method to change the strategy.</span>
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Context</span>
+{
+    <span style="color: #0000ff">private</span> IStrategy strategy;
+
+    <span style="color: #0000ff">public</span> Context(IStrategy initialStrategy)
+    {
+        strategy = initialStrategy;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetStrategy(IStrategy newStrategy)
+    {
+        strategy = newStrategy;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> ExecuteStrategy()
+    {
+        strategy.Execute();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Client code creates a context and uses different strategies at runtime.</span>
+        Context context = <span style="color: #0000ff">new</span>(<span style="color: #0000ff">new</span> ConcreteStrategyA());
+
+        context.ExecuteStrategy();
+
+        <span style="color: #008000">// Change the strategy at runtime.</span>
+        context.SetStrategy(<span style="color: #0000ff">new</span> ConcreteStrategyB());
+        context.ExecuteStrategy();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Executing ConcreteStrategyA</span>
+<span style="color: #008000">         * Executing ConcreteStrategyB</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="pills-structural" role="tabpanel" aria-labelledby="pills-structural-tab">
+                
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question31">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading31">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapse31">
+                          Adapter
+                        </button>
+                      </h2>
+                      <div id="flush-collapse31" class="accordion-collapse collapse" aria-labelledby="flush-heading31" data-bs-parent="#question31">
+                        <div class="accordion-body"><h5>Match interfaces of different classes.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Existing class with an incompatible interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">OldSystem</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DoSomethingOld()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Doing something the old way...&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// New interface we want to use</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> INewSystem
+{
+    <span style="color: #0000ff">void</span> DoSomethingNew();
+}
+
+<span style="color: #008000">// Adapter class that makes OldSystem compatible with INewSystem</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Adapter</span> : INewSystem
+{
+    <span style="color: #0000ff">private</span> OldSystem oldSystem;
+
+    <span style="color: #0000ff">public</span> Adapter(OldSystem oldSystem)
+    {
+        <span style="color: #0000ff">this</span>.oldSystem = oldSystem;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DoSomethingNew()
+    {
+        <span style="color: #008000">// Use the old system&#39;s method in the new interface</span>
+        oldSystem.DoSomethingOld();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Using the old system</span>
+        OldSystem oldSystem = <span style="color: #0000ff">new</span>();
+        oldSystem.DoSomethingOld();
+
+        <span style="color: #008000">// Using the adapter to make it compatible with the new system</span>
+        INewSystem adapter = <span style="color: #0000ff">new</span> Adapter(oldSystem);
+        adapter.DoSomethingNew();
+
+        <span style="color: #008000">// Doing something the old way...</span>
+        <span style="color: #008000">// Doing something the old way...</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question32">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading32">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse32" aria-expanded="false" aria-controls="flush-collapse32">
+                          Bridge
+                        </button>
+                      </h2>
+                      <div id="flush-collapse32" class="accordion-collapse collapse" aria-labelledby="flush-heading32" data-bs-parent="#question32">
+                        <div class="accordion-body"><h5>Separates an object's interface from its implementation.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Implementor interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IMessageProvider
+{
+    <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message);
+}
+
+<span style="color: #008000">// Concrete Implementor 1</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">EmailProvider</span> : IMessageProvider
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Sending email: {message}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Concrete Implementor 2</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">SMSProvider</span> : IMessageProvider
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message)
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Sending SMS: {message}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Abstraction class</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">MessageSender</span>
+{
+    <span style="color: #0000ff">protected</span> IMessageProvider messageProvider;
+
+    <span style="color: #0000ff">protected</span> MessageSender(IMessageProvider messageProvider)
+    {
+        <span style="color: #0000ff">this</span>.messageProvider = messageProvider;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message);
+}
+
+<span style="color: #008000">// Refined Abstraction 1</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">EmailSender</span> : MessageSender
+{
+    <span style="color: #0000ff">public</span> EmailSender(IMessageProvider messageProvider) : <span style="color: #0000ff">base</span>(messageProvider) { }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message)
+    {
+        Console.Write(<span style="color: #a31515">&quot;Sending email: &quot;</span>);
+        messageProvider.SendMessage(message);
+    }
+}
+
+<span style="color: #008000">// Refined Abstraction 2</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">SMSSender</span> : MessageSender
+{
+    <span style="color: #0000ff">public</span> SMSSender(IMessageProvider messageProvider) : <span style="color: #0000ff">base</span>(messageProvider) { }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> SendMessage(<span style="color: #2b91af">string</span> message)
+    {
+        Console.Write(<span style="color: #a31515">&quot;Sending SMS: &quot;</span>);
+        messageProvider.SendMessage(message);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Using the EmailSender with an EmailProvider</span>
+        MessageSender emailSender = <span style="color: #0000ff">new</span> EmailSender(<span style="color: #0000ff">new</span> EmailProvider());
+        emailSender.SendMessage(<span style="color: #a31515">&quot;Hello, this is an email message.&quot;</span>);
+
+        <span style="color: #008000">// Using the SMSSender with an SMSProvider</span>
+        MessageSender smsSender = <span style="color: #0000ff">new</span> SMSSender(<span style="color: #0000ff">new</span> SMSProvider());
+        smsSender.SendMessage(<span style="color: #a31515">&quot;Hello, this is an SMS message.&quot;</span>);
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Sending email: Sending email: Hello, this is an email message.</span>
+<span style="color: #008000">         * Sending SMS: Sending SMS: Hello, this is an SMS message.</span>
+<span style="color: #008000">        */</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question33">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading33">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse33" aria-expanded="false" aria-controls="flush-collapse33">
+                          Composite
+                        </button>
+                      </h2>
+                      <div id="flush-collapse33" class="accordion-collapse collapse" aria-labelledby="flush-heading33" data-bs-parent="#question33">
+                        <div class="accordion-body"><h5>A tree structure of simple and composite objects.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Component interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IEmployee
+{
+    <span style="color: #0000ff">void</span> DisplayDetails();
+}
+
+<span style="color: #008000">// Leaf</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">IndividualContributor</span> : IEmployee
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> <span style="color: #2b91af">string</span> name;
+
+    <span style="color: #0000ff">public</span> IndividualContributor(<span style="color: #2b91af">string</span> name)
+    {
+        <span style="color: #0000ff">this</span>.name = name;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayDetails()
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Individual Contributor: {name}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Composite</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Manager</span> : IEmployee
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> <span style="color: #2b91af">string</span> name;
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> List&lt;IEmployee&gt; subordinates = <span style="color: #0000ff">new</span> List&lt;IEmployee&gt;();
+
+    <span style="color: #0000ff">public</span> Manager(<span style="color: #2b91af">string</span> name)
+    {
+        <span style="color: #0000ff">this</span>.name = name;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> AddSubordinate(IEmployee subordinate)
+    {
+        subordinates.Add(subordinate);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayDetails()
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Manager: {name}&quot;</span>);
+
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> subordinate <span style="color: #0000ff">in</span> subordinates)
+        {
+            subordinate.DisplayDetails();
+        }
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Creating leaf nodes</span>
+        IEmployee developer1 = <span style="color: #0000ff">new</span> IndividualContributor(<span style="color: #a31515">&quot;Alice&quot;</span>);
+        IEmployee developer2 = <span style="color: #0000ff">new</span> IndividualContributor(<span style="color: #a31515">&quot;Bob&quot;</span>);
+
+        <span style="color: #008000">// Creating composite node (Manager) and adding leaf nodes (IndividualContributors)</span>
+        Manager teamLead = <span style="color: #0000ff">new</span> Manager(<span style="color: #a31515">&quot;Adam&quot;</span>);
+        teamLead.AddSubordinate(developer1);
+        teamLead.AddSubordinate(developer2);
+
+        <span style="color: #008000">// Creating another leaf node</span>
+        IEmployee manager1 = <span style="color: #0000ff">new</span> Manager(<span style="color: #a31515">&quot;Brad&quot;</span>);
+
+        <span style="color: #008000">// Adding the manager to the composite node (TeamLead)</span>
+        teamLead.AddSubordinate(manager1);
+
+        <span style="color: #008000">// Displaying the details, which internally displays details of all subordinates</span>
+        teamLead.DisplayDetails();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Individual Contributor: Alice</span>
+<span style="color: #008000">         * Individual Contributor: Bob</span>
+<span style="color: #008000">         * Manager: Manager1</span>
+<span style="color: #008000">        */</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question34">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading34">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse34" aria-expanded="false" aria-controls="flush-collapse34">
+                          Decorator
+                        </button>
+                      </h2>
+                      <div id="flush-collapse34" class="accordion-collapse collapse" aria-labelledby="flush-heading34" data-bs-parent="#question34">
+                        <div class="accordion-body"><h5>Add responsibilities to objects dynamically.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Component interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> ICoffee
+{
+    <span style="color: #2b91af">string</span> GetDescription();
+    <span style="color: #2b91af">double</span> GetCost();
+}
+
+<span style="color: #008000">// Concrete component</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">SimpleCoffee</span> : ICoffee
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> GetDescription()
+    {
+        <span style="color: #0000ff">return</span> <span style="color: #a31515">&quot;Simple Coffee&quot;</span>;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">double</span> GetCost()
+    {
+        <span style="color: #0000ff">return</span> 2.0;
+    }
+}
+
+<span style="color: #008000">// Decorator interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> ICoffeeDecorator : ICoffee
+{
+}
+
+<span style="color: #008000">// Concrete decorator</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">MilkDecorator</span> : ICoffeeDecorator
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> ICoffee coffee;
+
+    <span style="color: #0000ff">public</span> MilkDecorator(ICoffee coffee)
+    {
+        <span style="color: #0000ff">this</span>.coffee = coffee;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> GetDescription()
+    {
+        <span style="color: #0000ff">return</span> <span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{coffee.GetDescription()}, Milk&quot;</span>;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">double</span> GetCost()
+    {
+        <span style="color: #0000ff">return</span> coffee.GetCost() + 0.5;
+    }
+}
+
+<span style="color: #008000">// Another concrete decorator</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">SugarDecorator</span> : ICoffeeDecorator
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> ICoffee coffee;
+
+    <span style="color: #0000ff">public</span> SugarDecorator(ICoffee coffee)
+    {
+        <span style="color: #0000ff">this</span>.coffee = coffee;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> GetDescription()
+    {
+        <span style="color: #0000ff">return</span> <span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{coffee.GetDescription()}, Sugar&quot;</span>;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">double</span> GetCost()
+    {
+        <span style="color: #0000ff">return</span> coffee.GetCost() + 0.2;
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Create a simple coffee</span>
+        ICoffee simpleCoffee = <span style="color: #0000ff">new</span> SimpleCoffee();
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Cost: {simpleCoffee.GetCost()}, Description: {simpleCoffee.GetDescription()}&quot;</span>);
+
+        <span style="color: #008000">// Decorate it with Milk</span>
+        ICoffee milkCoffee = <span style="color: #0000ff">new</span> MilkDecorator(simpleCoffee);
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Cost: {milkCoffee.GetCost()}, Description: {milkCoffee.GetDescription()}&quot;</span>);
+
+        <span style="color: #008000">// Decorate it with Sugar</span>
+        ICoffee sugarMilkCoffee = <span style="color: #0000ff">new</span> SugarDecorator(milkCoffee);
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Cost: {sugarMilkCoffee.GetCost()}, Description: {sugarMilkCoffee.GetDescription()}&quot;</span>);
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Cost: 2, Description: Simple Coffee</span>
+<span style="color: #008000">         * Cost: 2.5, Description: Simple Coffee, Milk</span>
+<span style="color: #008000">         * Cost: 2.7, Description: Simple Coffee, Milk, Sugar</span>
+<span style="color: #008000">        */</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question35">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading35">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
+                          Facade
+                        </button>
+                      </h2>
+                      <div id="flush-collapse35" class="accordion-collapse collapse" aria-labelledby="flush-heading35" data-bs-parent="#question35">
+                        <div class="accordion-body"><h5>Provide a simplified interface to a complex subsystem.</h5>
+                          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Subsystem class 1</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Subsystem1</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Operation1()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Subsystem1: Operation1&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Subsystem class 2</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Subsystem2</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Operation2()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Subsystem2: Operation2&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Subsystem class 3</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Subsystem3</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Operation3()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Subsystem3: Operation3&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Facade</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Facade</span>
+{
+    <span style="color: #0000ff">private</span> Subsystem1 subsystem1;
+    <span style="color: #0000ff">private</span> Subsystem2 subsystem2;
+    <span style="color: #0000ff">private</span> Subsystem3 subsystem3;
+
+    <span style="color: #0000ff">public</span> Facade()
+    {
+        subsystem1 = <span style="color: #0000ff">new</span> Subsystem1();
+        subsystem2 = <span style="color: #0000ff">new</span> Subsystem2();
+        subsystem3 = <span style="color: #0000ff">new</span> Subsystem3();
+    }
+
+    <span style="color: #008000">// Facade methods that simplify the interaction with the subsystem</span>
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DoSomething()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Facade: Doing something...&quot;</span>);
+        subsystem1.Operation1();
+        subsystem2.Operation2();
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DoAnotherThing()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Facade: Doing another thing...&quot;</span>);
+        subsystem2.Operation2();
+        subsystem3.Operation3();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        Facade facade = <span style="color: #0000ff">new</span>();
+
+        <span style="color: #008000">// Using the Facade to simplify interactions with the subsystem</span>
+        facade.DoSomething();
+        facade.DoAnotherThing();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Facade: Doing something...</span>
+<span style="color: #008000">         * Subsystem1: Operation1</span>
+<span style="color: #008000">         * Subsystem2: Operation2</span>
+<span style="color: #008000">         * Facade: Doing another thing...</span>
+<span style="color: #008000">         * Subsystem2: Operation2</span>
+<span style="color: #008000">         * Subsystem3: Operation3</span>
+<span style="color: #008000">        */</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question36">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading36">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse36" aria-expanded="false" aria-controls="flush-collapse36">
+                          Flyweight
+                        </button>
+                      </h2>
+                      <div id="flush-collapse36" class="accordion-collapse collapse" aria-labelledby="flush-heading36" data-bs-parent="#question36">
+                        <div class="accordion-body"><h5>Minimize object creation by sharing.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Flyweight interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IFlyweight
+{
+    <span style="color: #0000ff">void</span> Operation();
+}
+
+<span style="color: #008000">// Concrete Flyweight</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ConcreteFlyweight</span> : IFlyweight
+{
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">string</span> intrinsicState; <span style="color: #008000">// Intrinsic state shared among flyweight objects</span>
+
+    <span style="color: #0000ff">public</span> ConcreteFlyweight(<span style="color: #2b91af">string</span> intrinsicState)
+    {
+        <span style="color: #0000ff">this</span>.intrinsicState = intrinsicState;
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Operation()
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;ConcreteFlyweight: Operation with intrinsic state {intrinsicState}&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Flyweight Factory</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">FlyweightFactory</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> Dictionary&lt;<span style="color: #2b91af">string</span>, IFlyweight&gt; flyweights = <span style="color: #0000ff">new</span>();
+
+    <span style="color: #0000ff">public</span> IFlyweight GetFlyweight(<span style="color: #2b91af">string</span> key)
+    {
+        <span style="color: #0000ff">if</span> (!flyweights.ContainsKey(key))
+        {
+            flyweights[key] = <span style="color: #0000ff">new</span> ConcreteFlyweight(key);
+        }
+
+        <span style="color: #0000ff">return</span> flyweights[key];
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        FlyweightFactory factory = <span style="color: #0000ff">new</span>();
+
+        IFlyweight flyweight1 = factory.GetFlyweight(<span style="color: #a31515">&quot;A&quot;</span>);
+        IFlyweight flyweight2 = factory.GetFlyweight(<span style="color: #a31515">&quot;B&quot;</span>);
+        IFlyweight flyweight3 = factory.GetFlyweight(<span style="color: #a31515">&quot;A&quot;</span>);
+
+        <span style="color: #008000">// The intrinsic state is shared among flyweights with the same key</span>
+        flyweight1.Operation(); <span style="color: #008000">// ConcreteFlyweight: Operation with intrinsic state A</span>
+        flyweight2.Operation(); <span style="color: #008000">// ConcreteFlyweight: Operation with intrinsic state B</span>
+        flyweight3.Operation(); <span style="color: #008000">// ConcreteFlyweight: Operation with intrinsic state A</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question37">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading37">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse37" aria-expanded="false" aria-controls="flush-collapse37">
+                          Private Class Data
+                        </button>
+                      </h2>
+                      <div id="flush-collapse37" class="accordion-collapse collapse" aria-labelledby="flush-heading37" data-bs-parent="#question37">
+                        <div class="accordion-body"><h5>Encapsulate a class's data.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Private data class</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">PersonData</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">string</span> name;
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">int</span> age;
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Name
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> name; }
+        <span style="color: #0000ff">set</span> { name = <span style="color: #0000ff">value</span>; }
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">int</span> Age
+    {
+        <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> age; }
+        <span style="color: #0000ff">set</span> { age = <span style="color: #0000ff">value</span>; }
+    }
+}
+
+<span style="color: #008000">// Public class using Private Class Data</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Person</span>
+{
+    <span style="color: #0000ff">private</span> PersonData data;
+
+    <span style="color: #0000ff">public</span> Person(<span style="color: #2b91af">string</span> name, <span style="color: #2b91af">int</span> age)
+    {
+        data = <span style="color: #0000ff">new</span> PersonData
+        {
+            Name = name,
+            Age = age
+        };
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Display()
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Name: {data.Name}, Age: {data.Age}&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        Person person = <span style="color: #0000ff">new</span>(<span style="color: #a31515">&quot;John&quot;</span>, 30);
+        person.Display();
+
+        <span style="color: #008000">// Name: John, Age: 30</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question38">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading38">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse38" aria-expanded="false" aria-controls="flush-collapse38">
+                          Proxy
+                        </button>
+                      </h2>
+                      <div id="flush-collapse38" class="accordion-collapse collapse" aria-labelledby="flush-heading38" data-bs-parent="#question38">
+                        <div class="accordion-body"><h5>Encapsulate access to an object.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Subject interface</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> ISubject
+{
+    <span style="color: #0000ff">void</span> Request();
+}
+
+<span style="color: #008000">// Real subject</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">RealSubject</span> : ISubject
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Request()
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;RealSubject: Handling request.&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Proxy</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Proxy</span> : ISubject
+{
+    <span style="color: #0000ff">private</span> RealSubject realSubject;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Request()
+    {
+        <span style="color: #008000">// Create the real subject on demand</span>
+        realSubject ??= <span style="color: #0000ff">new</span> RealSubject();
+
+        <span style="color: #008000">// Proxy controls access to the real object</span>
+        Console.WriteLine(<span style="color: #a31515">&quot;Proxy: Checking access before handling request.&quot;</span>);
+        realSubject.Request();
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #008000">// Using the real subject directly</span>
+        Console.WriteLine(<span style="color: #a31515">&quot;Using the RealSubject directly:&quot;</span>);
+        ISubject realSubject = <span style="color: #0000ff">new</span> RealSubject();
+        realSubject.Request();
+
+        Console.WriteLine();
+
+        <span style="color: #008000">// Using the proxy to control access</span>
+        Console.WriteLine(<span style="color: #a31515">&quot;Using the Proxy to control access:&quot;</span>);
+        ISubject proxy = <span style="color: #0000ff">new</span> Proxy();
+        proxy.Request();
+
+        <span style="color: #008000">// Using the RealSubject directly:</span>
+        <span style="color: #008000">// RealSubject: Handling request.</span>
+
+        <span style="color: #008000">// Using the Proxy to control access:</span>
+        <span style="color: #008000">// Proxy: Checking access before handling request.</span>
+        <span style="color: #008000">// RealSubject: Handling request.</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="pills-concurrency" role="tabpanel" aria-labelledby="pills-concurrency-tab">
+                
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question41">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading41">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse41" aria-expanded="false" aria-controls="flush-collapse41">
+                          Active Object
+                        </button>
+                      </h2>
+                      <div id="flush-collapse41" class="accordion-collapse collapse" aria-labelledby="flush-heading41" data-bs-parent="#question41">
+                        <div class="accordion-body"><h5>It's for achieving concurrency, allowing objects to perform actions concurrently while encapsulating the details of how the concurrency is managed. It's often used in scenarios where multiple threads need to interact with an object.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System;
+<span style="color: #0000ff">using</span> System.Collections.Concurrent;
+<span style="color: #0000ff">using</span> System.Threading.Tasks;
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ActiveObject</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> BlockingCollection&lt;Func&lt;Task&gt;&gt; methodQueue = <span style="color: #0000ff">new</span>();
+    <span style="color: #0000ff">private</span> Task workerTask;
+
+    <span style="color: #0000ff">public</span> ActiveObject()
+    {
+        workerTask = Task.Run(Run);
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">async</span> Task&lt;<span style="color: #2b91af">int</span>&gt; Add(<span style="color: #2b91af">int</span> a, <span style="color: #2b91af">int</span> b)
+    {
+        <span style="color: #2b91af">var</span> taskCompletionSource = <span style="color: #0000ff">new</span> TaskCompletionSource&lt;<span style="color: #2b91af">int</span>&gt;();
+
+        methodQueue.Add(<span style="color: #0000ff">async</span> () =&gt;
+        {
+            <span style="color: #2b91af">int</span> result = a + b;
+            taskCompletionSource.SetResult(result);
+        });
+
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">await</span> taskCompletionSource.Task;
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">async</span> Task Run()
+    {
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> method <span style="color: #0000ff">in</span> methodQueue.GetConsumingEnumerable())
+        {
+            <span style="color: #0000ff">await</span> method.Invoke().ConfigureAwait(<span style="color: #0000ff">false</span>);
+        }
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Stop()
+    {
+        methodQueue.CompleteAdding();
+        workerTask.Wait(); <span style="color: #008000">// Wait for the worker task to complete</span>
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">async</span> Task Main()
+    {
+        ActiveObject activeObject = <span style="color: #0000ff">new</span>();
+
+        Console.WriteLine(<span style="color: #a31515">&quot;Adding 3 + 5&quot;</span>);
+        <span style="color: #2b91af">int</span> result = <span style="color: #0000ff">await</span> activeObject.Add(3, 5);
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Result: {result}&quot;</span>);
+
+        Console.WriteLine(<span style="color: #a31515">&quot;Adding 10 + 20&quot;</span>);
+        <span style="color: #2b91af">int</span> result2 = <span style="color: #0000ff">await</span> activeObject.Add(10, 20);
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Result: {result2}&quot;</span>);
+
+        <span style="color: #008000">// Stop the active object</span>
+        activeObject.Stop();
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Adding 3 + 5</span>
+<span style="color: #008000">         * Result: 8</span>
+<span style="color: #008000">         * Adding 10 + 20</span>
+<span style="color: #008000">         * Result: 30</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question42">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading42">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse42" aria-expanded="false" aria-controls="flush-collapse42">
+                          Double-Checked Locking
+                        </button>
+                      </h2>
+                      <div id="flush-collapse42" class="accordion-collapse collapse" aria-labelledby="flush-heading42" data-bs-parent="#question42">
+                        <div class="accordion-body"><h5>A synchronization technique.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Singleton</span>
+{
+  <span style="color: #0000ff">private</span> <span style="color: #0000ff">static</span> Singleton instance;
+  <span style="color: #0000ff">private</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">readonly</span> <span style="color: #2b91af">object</span> lockObject = <span style="color: #0000ff">new</span> <span style="color: #2b91af">object</span>();
+
+  <span style="color: #0000ff">private</span> Singleton() { }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> Singleton Instance
+  {
+      <span style="color: #0000ff">get</span>
+      {
+          <span style="color: #008000">// First check without locking (for performance)</span>
+          <span style="color: #0000ff">if</span> (instance == <span style="color: #0000ff">null</span>)
+          {
+              <span style="color: #0000ff">lock</span> (lockObject)
+              {
+                  <span style="color: #008000">// Second check with locking</span>
+                  <span style="color: #0000ff">if</span> (instance == <span style="color: #0000ff">null</span>)
+                  {
+                      Console.WriteLine(<span style="color: #a31515">&quot;Creating Singleton Instance&quot;</span>);
+                      instance = <span style="color: #0000ff">new</span> Singleton();
+                  }
+              }
+          }
+
+          <span style="color: #0000ff">return</span> instance;
+      }
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> PrintMessage()
+  {
+      Console.WriteLine(<span style="color: #a31515">&quot;Singleton Instance is printing a message.&quot;</span>);
+  }
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+  {
+      <span style="color: #008000">// Using the Singleton instance</span>
+      Singleton singleton1 = Singleton.Instance;
+      Singleton singleton2 = Singleton.Instance;
+
+      <span style="color: #008000">// Both references point to the same instance</span>
+      Console.WriteLine(singleton1 == singleton2); <span style="color: #008000">// Output: True</span>
+
+      <span style="color: #008000">// Using the Singleton instance to print a message</span>
+      singleton1.PrintMessage();
+
+      <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Creating Singleton Instance</span>
+<span style="color: #008000">         * True</span>
+<span style="color: #008000">         * Singleton Instance is printing a message.</span>
+<span style="color: #008000">         */</span>
+  }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question43">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading43">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse43" aria-expanded="false" aria-controls="flush-collapse43">
+                          Producer-Consumer
+                        </button>
+                      </h2>
+                      <div id="flush-collapse43" class="accordion-collapse collapse" aria-labelledby="flush-heading43" data-bs-parent="#question43">
+                        <div class="accordion-body"><h5>The Producer-Consumer pattern is a classic concurrency pattern where there are two types of threads: producers and consumers. Producers generate data, and consumers consume that data. The pattern is used to safely transfer data from the producer to the consumer, and it often involves a shared data structure like a queue.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">namespace</span> TestCodeRightHere;
+
+<span style="color: #0000ff">using</span> System.Collections.Concurrent;
+<span style="color: #0000ff">using</span> System.Threading;
+<span style="color: #0000ff">using</span> System.Threading.Tasks;
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ProducerConsumer</span>
+{
+    <span style="color: #0000ff">private</span> BlockingCollection&lt;<span style="color: #2b91af">int</span>&gt; buffer = <span style="color: #0000ff">new</span>(boundedCapacity: 5);
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Start()
+    {
+        <span style="color: #008000">// Start producer and consumer tasks</span>
+        Task.Run(Producer);
+        Task.Run(Consumer);
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> Producer()
+    {
+        <span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> i = 0; i &lt; 10; i++)
+        {
+            Thread.Sleep(100); <span style="color: #008000">// Simulate some work</span>
+            <span style="color: #2b91af">int</span> data = i + 1;
+            buffer.Add(data);
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Produced: {data}, Buffer Size: {buffer.Count}&quot;</span>);
+        }
+
+        buffer.CompleteAdding(); <span style="color: #008000">// Indicate that no more items will be added</span>
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> Consumer()
+    {
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> data <span style="color: #0000ff">in</span> buffer.GetConsumingEnumerable())
+        {
+            Thread.Sleep(200); <span style="color: #008000">// Simulate some work</span>
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Consumed: {data}, Buffer Size: {buffer.Count}&quot;</span>);
+        }
+    }
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        ProducerConsumer producerConsumer = <span style="color: #0000ff">new</span> ProducerConsumer();
+        producerConsumer.Start();
+
+        Console.ReadLine(); <span style="color: #008000">// Allow time for producer and consumer tasks to finish</span>
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * Produced: 1, Buffer Size: 0</span>
+<span style="color: #008000">         * Produced: 2, Buffer Size: 1</span>
+<span style="color: #008000">         * Consumed: 1, Buffer Size: 1</span>
+<span style="color: #008000">         * Produced: 3, Buffer Size: 1</span>
+<span style="color: #008000">         * Produced: 4, Buffer Size: 2</span>
+<span style="color: #008000">         * Consumed: 2, Buffer Size: 2</span>
+<span style="color: #008000">         * Produced: 5, Buffer Size: 2</span>
+<span style="color: #008000">         * Produced: 6, Buffer Size: 3</span>
+<span style="color: #008000">         * Consumed: 3, Buffer Size: 3</span>
+<span style="color: #008000">         * Produced: 7, Buffer Size: 3</span>
+<span style="color: #008000">         * Produced: 8, Buffer Size: 4</span>
+<span style="color: #008000">         * Consumed: 4, Buffer Size: 4</span>
+<span style="color: #008000">         * Produced: 9, Buffer Size: 4</span>
+<span style="color: #008000">         * Produced: 10, Buffer Size: 5</span>
+<span style="color: #008000">         * Consumed: 5, Buffer Size: 5</span>
+<span style="color: #008000">         * Consumed: 6, Buffer Size: 4</span>
+<span style="color: #008000">         * Consumed: 7, Buffer Size: 3</span>
+<span style="color: #008000">         * Consumed: 8, Buffer Size: 2</span>
+<span style="color: #008000">         * Consumed: 9, Buffer Size: 1</span>
+<span style="color: #008000">         * Consumed: 10, Buffer Size: 0</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question44">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading44">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse44" aria-expanded="false" aria-controls="flush-collapse44">
+                          Reader-Writer Lock
+                        </button>
+                      </h2>
+                      <div id="flush-collapse44" class="accordion-collapse collapse" aria-labelledby="flush-heading44" data-bs-parent="#question44">
+                        <div class="accordion-body"><h5>For controlling access to shared data.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Threading;
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ReaderWriterLockExample</span>
+{
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">readonly</span> ReaderWriterLockSlim rwLock = <span style="color: #0000ff">new</span>();
+    <span style="color: #0000ff">private</span> <span style="color: #2b91af">int</span> sharedResource = 0;
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Start()
+    {
+        <span style="color: #008000">// Start multiple reader and writer tasks</span>
+        <span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> i = 0; i &lt; 3; i++)
+        {
+            Task.Run(Reader);
+            Task.Run(Writer);
+        }
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> Reader()
+    {
+        <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+        {
+            rwLock.EnterReadLock();
+            <span style="color: #0000ff">try</span>
+            {
+                Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Reading shared resource: {sharedResource}&quot;</span>);
+                Thread.Sleep(200); <span style="color: #008000">// Simulate some reading work</span>
+            }
+            <span style="color: #0000ff">finally</span>
+            {
+                rwLock.ExitReadLock();
+            }
+
+            Thread.Sleep(100); <span style="color: #008000">// Introduce delay for better visibility</span>
+        }
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> Writer()
+    {
+        <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+        {
+            rwLock.EnterWriteLock();
+            <span style="color: #0000ff">try</span>
+            {
+                <span style="color: #2b91af">int</span> newValue = <span style="color: #0000ff">new</span> Random().Next(1, 100);
+                sharedResource = newValue;
+                Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Writing to shared resource: {newValue}&quot;</span>);
+                Thread.Sleep(500); <span style="color: #008000">// Simulate some writing work</span>
+            }
+            <span style="color: #0000ff">finally</span>
+            {
+                rwLock.ExitWriteLock();
+            }
+
+            Thread.Sleep(500); <span style="color: #008000">// Introduce delay for better visibility</span>
+        }
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        ReaderWriterLockExample example = <span style="color: #0000ff">new</span>();
+        example.Start();
+
+        Console.ReadLine(); <span style="color: #008000">// Allow time for reader and writer tasks to continue running</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question45">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading45">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse45" aria-expanded="false" aria-controls="flush-collapse45">
+                          Thread-Specific Storage
+                        </button>
+                      </h2>
+                      <div id="flush-collapse45" class="accordion-collapse collapse" aria-labelledby="flush-heading45" data-bs-parent="#question45">
+                        <div class="accordion-body"><h5>The Thread-Specific Storage (TSS) pattern is a design pattern that allows data to be associated with a specific thread. It's useful in scenarios where you want to maintain separate state or context for each thread. In C#, the ThreadLocal<T> class can be used to implement the Thread-Specific Storage pattern.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Threading;
+<span style="color: #0000ff">using</span> System.Threading.Tasks;
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ThreadSpecificStorageExample</span>
+{
+    <span style="color: #008000">// ThreadLocal instance to store thread-specific data</span>
+    <span style="color: #0000ff">private</span> ThreadLocal&lt;<span style="color: #2b91af">int</span>&gt; threadLocalData = <span style="color: #0000ff">new</span>(() =&gt; Thread.CurrentThread.ManagedThreadId);
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Start()
+    {
+        <span style="color: #008000">// Start multiple tasks accessing thread-local data</span>
+        <span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> i = 0; i &lt; 5; i++)
+        {
+            Task.Run(() =&gt; AccessThreadLocalData());
+        }
+    }
+
+    <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> AccessThreadLocalData()
+    {
+        <span style="color: #008000">// Accessing thread-local data within a task</span>
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Thread ID: {Thread.CurrentThread.ManagedThreadId}, ThreadLocal Data: {threadLocalData.Value}&quot;</span>);
+
+        <span style="color: #008000">// Simulate some work</span>
+        Thread.Sleep(200);
+
+        <span style="color: #008000">// ThreadLocal data is independent for each thread</span>
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Thread ID: {Thread.CurrentThread.ManagedThreadId}, Updated ThreadLocal Data: {threadLocalData.Value}&quot;</span>);
+    }
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        ThreadSpecificStorageExample example = <span style="color: #0000ff">new</span>();
+        example.Start();
+
+        Console.ReadLine(); <span style="color: #008000">// Allow time for tasks to continue running</span>
+
+        <span style="color: #008000">/*</span>
+<span style="color: #008000">         * </span>
+<span style="color: #008000">         * Thread ID: 8, ThreadLocal Data: 8</span>
+<span style="color: #008000">         * Thread ID: 4, ThreadLocal Data: 4</span>
+<span style="color: #008000">         * Thread ID: 7, ThreadLocal Data: 7</span>
+<span style="color: #008000">         * Thread ID: 9, ThreadLocal Data: 9</span>
+<span style="color: #008000">         * Thread ID: 4, Updated ThreadLocal Data: 4</span>
+<span style="color: #008000">         * Thread ID: 7, Updated ThreadLocal Data: 7</span>
+<span style="color: #008000">         * Thread ID: 9, Updated ThreadLocal Data: 9</span>
+<span style="color: #008000">         * Thread ID: 8, Updated ThreadLocal Data: 8</span>
+<span style="color: #008000">         * Thread ID: 6, Updated ThreadLocal Data: 6</span>
+<span style="color: #008000">         */</span>
+    }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question46">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading46">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse46" aria-expanded="false" aria-controls="flush-collapse46">
+                          Write Once
+                        </button>
+                      </h2>
+                      <div id="flush-collapse46" class="accordion-collapse collapse" aria-labelledby="flush-heading46" data-bs-parent="#question46">
+                        <div class="accordion-body"><h5>An object that can be written to only once.</h5>
+                          <div style="background: #ffffff; overflow:auto;width:auto;padding:.3em .9em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">WriteOnce</span>&lt;T&gt;
+{
+  <span style="color: #0000ff">private</span> T <span style="color: #0000ff">value</span>;
+  <span style="color: #0000ff">private</span> <span style="color: #2b91af">bool</span> isSet = <span style="color: #0000ff">false</span>;
+
+  <span style="color: #0000ff">public</span> T Value
+  {
+      <span style="color: #0000ff">get</span>
+      {
+          <span style="color: #0000ff">if</span> (!isSet)
+          {
+              <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> InvalidOperationException(<span style="color: #a31515">&quot;Value has not been set.&quot;</span>);
+          }
+          <span style="color: #0000ff">return</span> <span style="color: #0000ff">value</span>;
+      }
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SetValue(T newValue)
+  {
+      <span style="color: #0000ff">if</span> (isSet)
+      {
+          <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> InvalidOperationException(<span style="color: #a31515">&quot;Value can only be set once.&quot;</span>);
+      }
+
+      <span style="color: #0000ff">value</span> = newValue;
+      isSet = <span style="color: #0000ff">true</span>;
+  }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+  {
+      <span style="color: #008000">// Example usage of WriteOnce pattern</span>
+      WriteOnce&lt;<span style="color: #2b91af">int</span>&gt; writeOnceInt = <span style="color: #0000ff">new</span>();
+      writeOnceInt.SetValue(42);
+
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;The value is: {writeOnceInt.Value}&quot;</span>);
+
+      <span style="color: #008000">// Uncommenting the line below would result in an exception</span>
+      <span style="color: #008000">//writeOnceInt.SetValue(99);</span>
+
+      <span style="color: #008000">//The value is: 42</span>
+  }
+}
+</pre></div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
