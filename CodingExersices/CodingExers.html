@@ -89,7 +89,23 @@
                   </button>
                 </h2>
                 <div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2" data-bs-parent="#question2">
-                  <div class="accordion-body">The object creation, execution, and disposal of unmanaged code are directly managed by the programmers.
+                  <div class="accordion-body">
+                    <div class="csharpCodeExercise">
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">static</span> <span style="color: #2b91af">int</span> CountBs(<span style="color: #2b91af">string</span> someString) =&gt; someString.Count(_ =&gt; _.Equals(<span style="color: #a31515">&#39;B&#39;</span>));
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+  {
+      <span style="color: #2b91af">string</span> verficationStr = <span style="color: #a31515">&quot;This is B the verificationB BstringBB B sdf asdfBasdf&quot;</span>; <span style="color: #008000">// 7</span>
+
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;How many &#39;B&#39; chars: {CountBs(verficationStr)}&quot;</span>);
+
+      <span style="color: #008000">// How many &#39;B&#39; chars: 7</span>
+  }
+}
+</pre></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -106,8 +122,51 @@
                   </button>
                 </h2>
                 <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#question3">
-                  <div class="accordion-body">The object creation, execution, and disposal of unmanaged code are directly managed by the programmers.
+                  <div class="accordion-body"><div class="csharpCodeExercise">
+                    <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">static</span> <span style="color: #2b91af">object</span> SecondBiggestNumberIfAny(<span style="color: #2b91af">string</span> someString)
+  {
+      <span style="color: #2b91af">var</span> matchCollection = Regex.Matches(someString, <span style="color: #a31515">&quot;\\d+&quot;</span>);
+
+      <span style="color: #0000ff">if</span> (matchCollection.Any())
+      {
+          <span style="color: #2b91af">var</span> integers = matchCollection.Select(_ =&gt; <span style="color: #2b91af">int</span>.Parse(_.Value));
+
+          <span style="color: #2b91af">var</span> theFirstAssignment = integers.FirstOrDefault();
+          <span style="color: #2b91af">var</span> theSecondMaxValue = 0;
+
+          <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> integer <span style="color: #0000ff">in</span> integers)
+          {
+              <span style="color: #0000ff">if</span> (theFirstAssignment &lt; integer)
+              {
+                  theSecondMaxValue = theFirstAssignment;
+                  theFirstAssignment = integer;
+              }
+          }
+
+          <span style="color: #0000ff">return</span> theSecondMaxValue;
+      }
+
+      <span style="color: #0000ff">return</span> <span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;No digits in the string \&quot;{someString}\&quot;&quot;</span>;
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+  {
+      <span style="color: #2b91af">string</span> verficationStr = <span style="color: #a31515">&quot;This is B the verificationB BstringBB B sdf asdfBasdf&quot;</span>;
+      <span style="color: #2b91af">string</span> verficationStr2 = <span style="color: #a31515">&quot;This 14 17 98 22 104 789 1092 3 3 4 23 659 is B1 the verificationB 3Bstrin2gBB B sdf asdfB5as66df kaskdhu56askdjkasjd23askdj2asdjk asjd asd ks88lk&quot;</span>;
+
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;The second biggest number: {SecondBiggestNumberIfAny(verficationStr)}&quot;</span>);
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;The second biggest number: {SecondBiggestNumberIfAny(verficationStr2)}&quot;</span>);
+
+      <span style="color: #008000">// The second biggest number: No digits in the string &quot;This is B the verificationB BstringBB B sdf asdfBasdf&quot;</span>
+      <span style="color: #008000">// The second biggest number: 789</span>
+  }
+}
+</pre></div>
+
                   </div>
+                </div>
                 </div>
               </div>
             </div> 
