@@ -34,7 +34,46 @@
                   </button>
                 </h2>
                 <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#question1">
-                  <div class="accordion-body">When the code is directly executed by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, memory allocation, and object disposal is managed by the Runtime.</div> 
+                  <div class="accordion-body">
+                    <div class="csharpCodeExercise">
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+  {
+      List&lt;<span style="color: #2b91af">string</span>&gt; listOfNamesWithDuplicates = <span style="color: #0000ff">new</span>()
+      {
+          <span style="color: #a31515">&quot;Alice&quot;</span>, <span style="color: #a31515">&quot;Bob&quot;</span>, <span style="color: #a31515">&quot;Charlie&quot;</span>,
+          <span style="color: #a31515">&quot;David&quot;</span>, <span style="color: #a31515">&quot;Emma&quot;</span>, <span style="color: #a31515">&quot;Frank&quot;</span>,
+          <span style="color: #a31515">&quot;Grace&quot;</span>, <span style="color: #a31515">&quot;Henry&quot;</span>, <span style="color: #a31515">&quot;Irene&quot;</span>,
+          <span style="color: #a31515">&quot;Jack&quot;</span>, <span style="color: #a31515">&quot;Kate&quot;</span>, <span style="color: #a31515">&quot;Leo&quot;</span>,
+          <span style="color: #a31515">&quot;Mary&quot;</span>, <span style="color: #a31515">&quot;Noah&quot;</span>, <span style="color: #a31515">&quot;Olivia&quot;</span>,
+          <span style="color: #a31515">&quot;Peter&quot;</span>, <span style="color: #a31515">&quot;Quinn&quot;</span>, <span style="color: #a31515">&quot;Rachel&quot;</span>,
+          <span style="color: #a31515">&quot;Sam&quot;</span>, <span style="color: #a31515">&quot;Sarah&quot;</span>, <span style="color: #a31515">&quot;Tom&quot;</span>,
+          <span style="color: #a31515">&quot;Alice&quot;</span>, <span style="color: #a31515">&quot;Frank&quot;</span>, <span style="color: #a31515">&quot;Irene&quot;</span>,
+          <span style="color: #a31515">&quot;David&quot;</span>, <span style="color: #a31515">&quot;Grace&quot;</span>, <span style="color: #a31515">&quot;Jack&quot;</span>,
+          <span style="color: #a31515">&quot;Mary&quot;</span>, <span style="color: #a31515">&quot;Noah&quot;</span>, <span style="color: #a31515">&quot;Noah&quot;</span>, <span style="color: #a31515">&quot;Jack&quot;</span>
+      };
+
+      List&lt;<span style="color: #2b91af">string</span>&gt; onlyUniqueNames = <span style="color: #0000ff">new</span>();
+
+      <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> name <span style="color: #0000ff">in</span> listOfNamesWithDuplicates)
+      {
+          <span style="color: #0000ff">if</span> (!onlyUniqueNames.Contains(name))
+          {
+              onlyUniqueNames.Add(name);
+          }
+      }
+
+      Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Only unique names: {string.Join(&quot;</span>, <span style="color: #a31515">&quot;, onlyUniqueNames)}&quot;</span>);
+
+      <span style="color: #008000">// Only unique names: Alice, Bob, Charlie, David, Emma, Frank, Grace,</span>
+      <span style="color: #008000">// Henry, Irene, Jack, Kate, Leo, Mary, Noah, Olivia, Peter, Quinn, Rachel, Sam, Sarah, Tom</span>
+  }
+}
+</pre></div>
+                    
+                    </div>
+                  </div> 
                 </div>
               </div>
             </div> 
