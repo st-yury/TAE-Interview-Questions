@@ -211,45 +211,983 @@
                 </h2>
                 <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#question5">
                   <div class="accordion-body">
-                    <iframe onload="this.height=this.contentWindow.document.body.scrollHeight + 40;" frameborder=0 height=500 width=100% srcdoc="&lt;style&gt;.background{font-family:monaco,Consolas,LucidaConsole,monospace;background-color:#1E1E1E;overflow:scroll;color:#dfdfdf;}.method{color:#DCDCAA;}.class{color:#4EC9B0;}.keyword{color:#569cd6;}.string{color:#ce9178;}.control{color:#C586C0;}.comment{color:#6A9955;}.namespace{color:#dfdfdf;}.identifier{color:#dfdfdf;}.punctuation{color:#dfdfdf;}.operator{color:#dfdfdf;}.localName{color:#9CDCFE;}.parameter{color:#9CDCFE;}&lt;/style&gt;
-&lt;pre class=&quot;background&quot;&gt;
-&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; System.Net.Http;
-
-&lt;span class=&quot;keyword&quot;&gt;public class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;Program&lt;/span&gt;
+                    <div class="csharpCodeExercise">
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
 {
-    &lt;span class=&quot;keyword&quot;&gt;public static void&lt;/span&gt; &lt;span class=&quot;method&quot;&gt;Main&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt;[] &lt;span class=&quot;parameter&quot;&gt;args&lt;/span&gt;)
-    {
-        &lt;span class=&quot;comment&quot;&gt;// Create an instance of the HttpClient class.&lt;/span&gt;
-        &lt;span class=&quot;class&quot;&gt;HttpClient&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;client&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;HttpClient&lt;/span&gt;();
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">async</span> Task Main()
+  {
+      <span style="color: #0000ff">await</span> MakeRequest();
+  }
 
-        &lt;span class=&quot;comment&quot;&gt;// Make an HTTP GET request to the specified URL.&lt;/span&gt;
-        &lt;span class=&quot;class&quot;&gt;HttpResponseMessage&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;response&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;client&lt;/span&gt;.&lt;span class=&quot;method&quot;&gt;GetAsync&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;quot;https://example.com/api/products&amp;quot;&lt;/span&gt;);
+  <span style="color: #0000ff">static</span> <span style="color: #0000ff">async</span> Task MakeRequest()
+  {
+      <span style="color: #008000">// Create an instance of HttpClient</span>
+      <span style="color: #0000ff">using</span> HttpClient client = <span style="color: #0000ff">new</span>();
 
-        &lt;span class=&quot;comment&quot;&gt;// Check the status code of the response.&lt;/span&gt;
-        &lt;span class=&quot;control&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;localName&quot;&gt;response&lt;/span&gt;.StatusCode == &lt;span class=&quot;class&quot;&gt;HttpStatusCode&lt;/span&gt;.OK)
-        {
-            &lt;span class=&quot;comment&quot;&gt;// The request was successful.&lt;/span&gt;
-            &lt;span class=&quot;comment&quot;&gt;// Read the response body.&lt;/span&gt;
-            &lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;responseBody&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;localName&quot;&gt;response&lt;/span&gt;.Content.&lt;span class=&quot;method&quot;&gt;ReadAsStringAsync&lt;/span&gt;();
+      <span style="color: #008000">// Specify the URL you want to make a request to</span>
+      <span style="color: #2b91af">string</span> url = <span style="color: #a31515">&quot;https://google.com&quot;</span>;
 
-            &lt;span class=&quot;comment&quot;&gt;// Do something with the response body.&lt;/span&gt;
-        }
-        &lt;span class=&quot;control&quot;&gt;else&lt;/span&gt;
-        {
-            &lt;span class=&quot;comment&quot;&gt;// The request failed.&lt;/span&gt;
-            &lt;span class=&quot;comment&quot;&gt;// Handle the error.&lt;/span&gt;
-        }
-    }
-}&lt;/pre&gt;
-"></iframe>
+      <span style="color: #008000">// Make a GET request and get the response</span>
+      HttpResponseMessage response = <span style="color: #0000ff">await</span> client.GetAsync(url);
+
+      <span style="color: #008000">// Check if the request was successful (status code 200-299)</span>
+      <span style="color: #0000ff">if</span> (response.IsSuccessStatusCode)
+      {
+          <span style="color: #008000">// Read the content of the response</span>
+          <span style="color: #2b91af">string</span> content = <span style="color: #0000ff">await</span> response.Content.ReadAsStringAsync();
+          Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Response Content: {content}&quot;</span>);
+      }
+      <span style="color: #0000ff">else</span>
+      {
+          Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Error: {response.StatusCode} - {response.ReasonPhrase}&quot;</span>);
+      }
+  }
+}
+</pre></div>
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div> 
           </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question6">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading6">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                    6. What is the OSI model and why is it important in networking?
+                  </button>
+                </h2>
+                <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#question6">
+                  <div class="accordion-body">
+                    <p>The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. These layers, from the physical transmission of bits to the user interface, help in understanding, designing, and troubleshooting network communication.</p>
+                    <p>
+                      <ul class="list-group osi-levels">
+                        <li class="list-group-item"><b>1. Physical Layer (Ethernet cables, fiber-optic cables, and connectors):</b> Deals with the physical connection between devices, including cables, connectors, and hardware.</li>
+                        <li class="list-group-item"><b>2. Data Link Layer (Network Interface Cards (NICs), MAC addresses, switches, and bridges):</b> Responsible for creating a reliable link between two directly connected nodes, addressing, and error detection.</li>
+                        <li class="list-group-item"><b>3. Network Layer (Routers, IP addresses, and routing protocols (e.g., OSPF, BGP)):</b> Manages the routing and forwarding of data packets between different networks, handling logical addressing.</li>
+                        <li class="list-group-item"><b>4. Transport Layer (Transmission Control Protocol (TCP) and User Datagram Protocol (UDP)):</b> Ensures end-to-end communication by managing flow control, error correction, and data segmentation.</li>
+                        <li class="list-group-item"><b>4. Session Layer (NetBIOS (Network Basic Input/Output System)):</b> Establishes, maintains, and terminates communication sessions, coordinating data exchange between applications.</li>
+                        <li class="list-group-item"><b>4. Presentation Layer (Encryption protocols (e.g., SSL/TLS), ASCII, JPEG, GIF):</b> Handles data format translation, ensuring compatibility between different systems by dealing with encryption, compression, and encoding.</li>
+                        <li class="list-group-item"><b>4. Application Layer (HTTP, FTP, SMTP, and other application-level protocols):</b> Provides network services directly to end-users, supporting application-level functionalities and user interfaces.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question7">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading7">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+                    7. Explain the difference between TCP and UDP protocols.
+                  </button>
+                </h2>
+                <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#question7">
+                  <div class="accordion-body">
+                    <p><b>TCP:</b></p>
+                    <p>
+                      <ul class="list-group tcp-pros">
+                        <li class="list-group-item"><b>1. Connection-Oriented:</b> Establishes a connection before data exchange.</li>
+                        <li class="list-group-item"><b>2. Reliable and Ordered:</b> Ensures data integrity, sequencing, and error recovery.</li>
+                        <li class="list-group-item"><b>3. Flow Control:</b> Adjusts data transmission rate based on receiver's capacity.</li>
+                        <li class="list-group-item"><b>4. Acknowledgments:</b> Requires acknowledgment of received data.</li>
+                        <li class="list-group-item"><b>5. Usage Scenario:</b> Best suited for applications where data integrity and completeness are critical, such as file transfer, email, and web browsing.</li>
+                      </ul>
+                    </p>
+                    <p><b>UDP:</b></p>
+                    <p>
+                      <ul class="list-group udp-pros">
+                        <li class="list-group-item"><b>1. Connectionless:</b> No connection setup before data transfer.</li>
+                        <li class="list-group-item"><b>2. Unreliable and Unordered:</b> Does not guarantee data delivery or order.</li>
+                        <li class="list-group-item"><b>3. No Flow Control:</b> Data sent without adjusting to receiver's capacity.</li>
+                        <li class="list-group-item"><b>4. No Acknowledgments:</b> Does not require acknowledgment of received data.</li>
+                        <li class="list-group-item"><b>5. Usage Scenario:</b> Suitable for real-time applications, streaming, online gaming, and scenarios where low latency is more important than guaranteed delivery.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question8">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading8">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+                    8. What is an IP address? Can you differentiate between IPv4 and IPv6?
+                  </button>
+                </h2>
+                <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#question8">
+                  <div class="accordion-body">
+                    <p>An IP (Internet Protocol) address is a numerical label assigned to each device participating in a computer network that uses the Internet Protocol for communication.</p>
+                    <p>It serves two principal functions: host or network interface identification and location addressing.</p>
+                    <p>IPv4:</p>
+                    <p>
+                      <ul class="list-group ip-address-ipv4">
+                        <li class="list-group-item">32 bits.</li>
+                        <li class="list-group-item">Consists of four sets of numbers separated by dots (e.g., 192.168.0.1).</li>
+                        <li class="list-group-item">Limited due to the 32-bit address space, leading to IPv4 address exhaustion.</li>
+                      </ul>
+                    </p>
+                    <p>IPv6:</p>
+                    <p>
+                      <ul class="list-group ip-address-ipv6">
+                        <li class="list-group-item">128 bits.</li>
+                        <li class="list-group-item">Consists of eight groups of hexadecimal digits separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).</li>
+                        <li class="list-group-item">Vastly increased address space, designed to overcome IPv4 limitations.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question9">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading9">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+                    9. Describe the purpose of DNS and how it works.
+                  </button>
+                </h2>
+                <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#question9">
+                  <div class="accordion-body">
+                    <p>The Domain Name System (DNS) translates human-readable domain names (like www.example.com) into IP addresses that machines use to locate each other on a network.</p>
+                    <p>How it works:</p>
+                    <p>
+                      <ul class="list-group rest">
+                        <li class="list-group-item"><b>1. Domain Resolution Request:</b> A user enters a domain name in a web browser.</li>
+                        <li class="list-group-item"><b>2. DNS Query:</b> The system queries a DNS server to resolve the domain to an IP address.</li>
+                        <li class="list-group-item"><b>3. Recursive DNS Server:</b> If the local DNS server doesn't have the information, it queries higher-level DNS servers recursively until it finds the authoritative DNS server for the domain.</li>
+                        <li class="list-group-item"><b>4. Authoritative DNS Server:</b> Provides the IP address associated with the requested domain.</li>
+                        <li class="list-group-item"><b>5. Caching:</b> The resolved IP address is often cached at different levels, speeding up future requests.</li>
+                        <li class="list-group-item"><b>6. Communication:</b> The user's device can now communicate directly with the IP address associated with the entered domain, establishing the desired connection.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question10">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading10">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+                    10. What is DHCP and how does it function in a network?
+                  </button>
+                </h2>
+                <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-heading10" data-bs-parent="#question10">
+                  <div class="accordion-body">
+                    <p>DHCP (Dynamic Host Configuration Protocol):</p>
+                    <p>DHCP automatically assigns IP addresses and network configuration information to devices within a network, facilitating efficient and automated network setup.</p>
+                    <p>When a device joins a network, it sends a DHCP request. A DHCP server responds with an IP address and other configuration details, ensuring seamless connectivity without manual configuration.
+                      A device broadcasts a DHCP discover message to identify available DHCP servers on the network.
+                      DHCP servers respond with DHCP offer messages, providing IP addresses and configuration details.
+                      The device selects an offer and sends a DHCP request to the chosen server.
+                      The chosen DHCP server acknowledges the request, assigning the device the offered IP address and relevant network settings.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question11">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading11">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+                    11. Explain the concept of subnetting and why it is used in networking.
+                  </button>
+                </h2>
+                <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-heading11" data-bs-parent="#question11">
+                  <div class="accordion-body">
+                    <p>Subnetting is the practice of dividing a larger network into smaller, more manageable sub-networks or subnets.</p>
+                    <p>Enhances network efficiency, security, and management by logically grouping devices with similar IP addresses, reducing broadcast domains, and providing better control over network traffic.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question12">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading12">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+                    12. Define NAT and its role in networking.
+                  </button>
+                </h2>
+                <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-heading12" data-bs-parent="#question12">
+                  <div class="accordion-body">
+                    <p>NAT (Network Address Translation) is a technique that allows multiple devices on a local network to share a single public IP address for internet connectivity.</p>
+                    <p>NAT enhances address space utilization, provides a layer of security by hiding internal IP addresses, and enables multiple devices within a private network to access the internet using a single public IP address.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question13">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading13">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+                    13. What is a router and how does it differ from a switch?
+                  </button>
+                </h2>
+                <div id="flush-collapse13" class="accordion-collapse collapse" aria-labelledby="flush-heading13" data-bs-parent="#question13">
+                  <div class="accordion-body">
+                    <p>A router is a networking device that connects different networks and directs data between them based on IP addresses. Routes data between networks, determines the best path for data transmission, and provides network layer (Layer 3) functionality.</p>
+                    <p>A switch is a networking device that connects devices within the same local network, directing data based on MAC addresses. Switches operate at the data link layer (Layer 2) and facilitate communication between devices on the same network, improving local network efficiency.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question14">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading14">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+                    14. What is the purpose of a firewall in a network and how does it enhance security?
+                  </button>
+                </h2>
+                <div id="flush-collapse14" class="accordion-collapse collapse" aria-labelledby="flush-heading14" data-bs-parent="#question14">
+                  <div class="accordion-body">
+                    <p>A firewall create a barrier between internal private networks and external public networks like the internet. It filters and controls incoming and outgoing network traffic using a defined set of security rules. This allows protecting internal resources from unauthorized access as well unfiltered internet connections. Firewalls block cyber attacks, intrusion attempts, service exploits while allowing legit encrypted connections through VPN tunnels and secure protocols. By providing a checkpoint, firewalls are a critical building block in securing private enterprise and home networks.</p>
+                    <p>Firewalls maintain logs of network activity, enabling administrators to monitor traffic, detect suspicious patterns, and investigate security incidents.</p>
+                    <p>Firewalls regulate and control the incoming and outgoing network traffic based on predetermined security rules.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question15">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading15">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse15" aria-expanded="false" aria-controls="flush-collapse15">
+                    15. What is ARP and how does it work?
+                  </button>
+                </h2>
+                <div id="flush-collapse15" class="accordion-collapse collapse" aria-labelledby="flush-heading15" data-bs-parent="#question15">
+                  <div class="accordion-body">
+                    <p>ARP (Address Resolution Protocol) is a protocol used to map a known IP address to a MAC (Media Access Control) address in a local network.</p>
+                    <p>When a device wants to communicate with another device on the same network, it sends an ARP request to discover the MAC address associated with a known IP address. The device with the matching IP address responds with its MAC address, allowing the sender to create an ARP table entry for future communication.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question16">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading16">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse16" aria-expanded="false" aria-controls="flush-collapse16">
+                    16. Explain the concept of VLANs.
+                  </button>
+                </h2>
+                <div id="flush-collapse16" class="accordion-collapse collapse" aria-labelledby="flush-heading16" data-bs-parent="#question16">
+                  <div class="accordion-body">
+                    <p>Virtual Local Area Networks are a method of logically segmenting a physical network into multiple virtual networks, allowing devices to be grouped together as if they are on the same network, regardless of their physical location.</p>
+                    <p>They are created by configuring network switches rather than physical rearrangements.</p>
+                    <p>VLANs help control traffic, enhance security, reduce congestion, and simplify network management by compartmentalizing devices into logical groups even if they are not physically close within the network. Different VLANs cannot directly communicate without special routing configurations. This provides traffic isolation and containment that allows large networks to be partitioned efficiently. In summary, VLANs enable logically defined groups that have the same properties as traditional physical LANs within the same basic physical infrastructure.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question17">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading17">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapse17">
+                    17. What is the role of a proxy server in networking?
+                  </button>
+                </h2>
+                <div id="flush-collapse17" class="accordion-collapse collapse" aria-labelledby="flush-heading17" data-bs-parent="#question17">
+                  <div class="accordion-body">
+                    <p>A proxy server acts as an intermediary between client devices and the internet, forwarding requests and responses on behalf of the clients.</p>
+                    <p>Proxies provide benefits such as:</p>
+                    <p>
+                      <ul class="list-group proxy">
+                        <li class="list-group-item">Anonymizing client traffic.</li>
+                        <li class="list-group-item">Blocking unwanted content.</li>
+                        <li class="list-group-item">Providing an additional security layer for internal networks.</li>
+                        <li class="list-group-item">Logging and monitoring requests.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question18">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading18">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse18" aria-expanded="false" aria-controls="flush-collapse18">
+                    18. Describe the process of a three-way handshake in TCP.
+                  </button>
+                </h2>
+                <div id="flush-collapse18" class="accordion-collapse collapse" aria-labelledby="flush-heading18" data-bs-parent="#question18">
+                  <div class="accordion-body">
+                    <p>
+                      <ul class="list-group tcphandshake">
+                        <li class="list-group-item"><b>SYN (Synchronize):</b> The initiating device sends a TCP packet with the SYN flag set to the server, indicating the desire to establish a connection.</li>
+                        <li class="list-group-item"><b>SYN-ACK (Synchronize-Acknowledge):</b> The server responds with a TCP packet containing both the SYN and ACK flags set, acknowledging the receipt of the SYN packet and expressing its willingness to establish a connection.</li>
+                        <li class="list-group-item"><b>ACK (Acknowledge):</b> The initiating device sends a final TCP packet with the ACK flag set, confirming the acknowledgment from the server. The connection is now established, and data can be exchanged between the devices.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question19">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading19">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse19" aria-expanded="false" aria-controls="flush-collapse19">
+                    19. What is ICMP and how is it used in networking?
+                  </button>
+                </h2>
+                <div id="flush-collapse19" class="accordion-collapse collapse" aria-labelledby="flush-heading19" data-bs-parent="#question19">
+                  <div class="accordion-body">
+                    <p>ICMP (Internet Control Message Protocol) is a network layer protocol used for sending error messages, diagnostics, and operational information about network conditions.</p>
+                    <p>ICMP works by sending control messages between network devices to communicate information about the status of the network.</p>
+                    <p>Echo request, echo reply. A device sends an ICMP Echo Request message to another device. This message includes a unique identifier and a sequence number. If the destination device is reachable and operational, it responds with an ICMP Echo Reply. This reply includes the same identifier and sequence number as the request. </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question20">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading20">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse20" aria-expanded="false" aria-controls="flush-collapse20">
+                    20. Explain the terms latency and bandwidth in the context of networking.
+                  </button>
+                </h2>
+                <div id="flush-collapse20" class="accordion-collapse collapse" aria-labelledby="flush-heading20" data-bs-parent="#question20">
+                  <div class="accordion-body">
+                    <p>
+                      Latency refers to the time it takes for data to travel across the network from one node to another. It is a measurement of delay. High latency networks have more delay resulting in slower responses.
+                      Bandwidth represents the maximum capacity for data transfer in a network, measured as the amount of data that can flow through per second. It relates to the speed of transmission. Higher bandwidth enables high data rates and quicker transfer speeds.
+                      In summary, latency is the delay between network points, while bandwidth is the quantity of data that can be sent overall in the network over time. Optimizing both is essential for fast, reliable data transfers.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question21">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading21">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapse21">
+                    21. What is a MAC address, and how is it different from an IP address?
+                  </button>
+                </h2>
+                <div id="flush-collapse21" class="accordion-collapse collapse" aria-labelledby="flush-heading21" data-bs-parent="#question21">
+                  <div class="accordion-body">
+                    <p>A MAC (Media Access Control) address uniquely identifies each network interface controller or NIC in a machine. It is a 12-digit hexadecimal number assigned permanently by the manufacturer. MAC addresses operate at Layer 2 of networks.</p>
+                    <p>An IP (Internet Protocol) address identifes hosts in a network at Layer 3. They are 32-bit logical addresses assigned temporarily for network layer routing.</p>
+                    <p>MAC addresses are permanent hardware IDs while IP addresses are temporary software-based logical identifiers.</p>
+                    <p>MAC addresses operate at Data Link Layer while IP operates at the Network Layer.</p>
+                    <p>MAC is used for physical interface identification while IP identifies hosts.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question22">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading22">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
+                    22. How does a CDN work and what benefits does it offer?
+                  </button>
+                </h2>
+                <div id="flush-collapse22" class="accordion-collapse collapse" aria-labelledby="flush-heading22" data-bs-parent="#question22">
+                  <div class="accordion-body">
+                    <p>Content Delivery Network is a network of distributed servers that deliver content to users based on geographic locations. Popular content is cached on local edge servers to provide low latency and fast delivery to nearby users.</p>
+                    <p>Main CDN benefits:</p>
+                    <p>
+                      <ul class="cdn-benefits">
+                        <li class="">Faster content delivery and better user experience by distributing on edge locations.</li>
+                        <li class="">Absorb heavy traffic and high loads instead of the origin servers.</li>
+                        <li class="">Improve security against common attacks through anycast networks.</li>
+                        <li class="">Lower bandwidth costs instead of central servers handling all traffic.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question23">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading23">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse23" aria-expanded="false" aria-controls="flush-collapse23">
+                    23. Describe the differences between symmetric and asymmetric encryption.
+                  </button>
+                </h2>
+                <div id="flush-collapse23" class="accordion-collapse collapse" aria-labelledby="flush-heading23" data-bs-parent="#question23">
+                  <div class="accordion-body">
+                    <p><b>Symmetric Encryption:</b></p>
+                    <p>
+                      <ul class="list-group symmetric-encryption">
+                        <li class="list-group-item"><b>Single Key:</b> Symmetric encryption uses a single shared key for both encryption and decryption. The same key is used by both the sender and the recipient.</li>
+                        <li class="list-group-item"><b>Speed:</b> It is generally faster than asymmetric encryption because of its simplicity and direct use of a single key.</li>
+                        <li class="list-group-item"><b>Challenges:</b> The primary challenge is key distribution — securely sharing the key between communicating parties can be vulnerable to interception.</li>
+                      </ul>
+                    </p>
+                    <p><b>Asymmetric Encryption:</b></p>
+                    <p>
+                      <ul class="list-group asymmetric-encryption">
+                        <li class="list-group-item"><b>Key Pairs:</b> Asymmetric encryption uses a pair of keys: a public key and a private key. The public key is shared openly, while the private key is kept secret.</li>
+                        <li class="list-group-item"><b>Encryption and Decryption:</b> Data encrypted with the public key can only be decrypted with the corresponding private key and vice versa. This ensures that even if the public key is known, the private key remains secret.</li>
+                        <li class="list-group-item"><b>Key Distribution:</b> Asymmetric encryption helps address the key distribution challenge seen in symmetric encryption, as the private key never needs to be shared.</li>
+                        <li class="list-group-item"><b>Complexity:</b> Asymmetric encryption is computationally more intensive than symmetric encryption.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question24">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading24">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse24" aria-expanded="false" aria-controls="flush-collapse24">
+                    24. What is QoS?
+                  </button>
+                </h2>
+                <div id="flush-collapse24" class="accordion-collapse collapse" aria-labelledby="flush-heading24" data-bs-parent="#question24">
+                  <div class="accordion-body">
+                    <p>QoS (Quality of Service) refers to techniques for guaranteeing performance in networks by prioritizing certain types of traffic. It manages congestion through classifiers that categorize traffic and apply policies giving precedence to time-sensitive or business-critical applications. Methods like traffic shaping, prioritization, and resource reservation allow mission critical network traffic to take priority, especially during bandwidth congestion. QoS aims to provide consistent and reliable data delivery for key services by dedicating bandwidth relative to an organization's needs.</p>
+                    <p>QoS improves performance by setting rules for which applications get priority access to network bandwidth to meet performance needs.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question25">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading25">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse25" aria-expanded="false" aria-controls="flush-collapse25">
+                    25. What is a network topology?
+                  </button>
+                </h2>
+                <div id="flush-collapse25" class="accordion-collapse collapse" aria-labelledby="flush-heading25" data-bs-parent="#question25">
+                  <div class="accordion-body">
+                    <p>A network topology refers to the physical and logical layout of a network - it defines how devices connect and communicate with each other.</p>
+                    <p>The topology affects transmission speed, latency, throughput and determines reliability if links fail. Factors like cost, capacity, extendability and ease of troubleshooting determine which works best. Understanding topologies allows optimizing network performance and efficiency.</p>
+                    <p>Some common topologies are:</p>
+                    <p>
+                      <ul class="list-group rest">
+                        <li class="list-group-item"><b>Bus:</b> All devices connect to a common backbone in a single line.</li>
+                        <li class="list-group-item"><b>Star:</b> Devices connect to a central hub or switch.</li>
+                        <li class="list-group-item"><b>Ring:</b> Nodes connect to each other in a circular loop.</li>
+                        <li class="list-group-item"><b>Mesh:</b> Nodes connect directly to as many other nodes as possible.</li>
+                      </ul>
+                    </p>
+                    <p>The star topology is the most popular and commonly used network topology among regular internet users.</p>
+                    <p>In a star topology, all devices and nodes in the network connect to a central device like a router, hub, or switch that functions as a central node facilitating communication. This central device acts as an intermediate for data transmission between the networked devices.</p>
+                    <p>Simple to install and wire. No disruptions when adding/removing devices.</p>
+                    <p>Centralized control is easy to manage and troubleshoot issues.</p>
+                    <p>Fault isolation - other nodes not affected if one node fails.</p>
+                    <p>Works well in small to mid-size networks.</p>
+                    <p>Broadband router is an affordable central device option.</p>
+                    <img src="NetworkTopologies.svg" alt="Network topologies">
+                    <img src="Star_Topology.png" alt="Star network topology">
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question26">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading26">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse26" aria-expanded="false" aria-controls="flush-collapse26">
+                    26. What is Transport Layer Security (TLS) and what purpose does it serve?
+                  </button>
+                </h2>
+                <div id="flush-collapse26" class="accordion-collapse collapse" aria-labelledby="flush-heading26" data-bs-parent="#question26">
+                  <div class="accordion-body">
+                    <p>Transport Layer Security (TLS) is a cryptographic protocol that provides communications security over a computer network. It is the successor to the older Secure Sockets Layer (SSL) protocol and is widely used to protect sensitive data, such as login credentials, credit card numbers, and personal information, from being intercepted by unauthorized parties.</p>
+                    <p>
+                      <ul class="list-group rest">
+                        <li class="list-group-item"><b>1. Handshake Initiation:</b> The TLS handshake begins when a client (e.g., a web browser) initiates a connection to a server that supports TLS. The client indicates its intent to establish a secure connection.</li>
+                        <li class="list-group-item"><b>2. Server Response:</b> The server responds by presenting its digital certificate to the client. The certificate includes the server's public key and is signed by a trusted certificate authority (CA). The client checks the certificate's validity.</li>
+                        <li class="list-group-item"><b>3. Key Exchange:</b> The client generates a pre-master secret and encrypts it with the server's public key from the presented certificate. This encrypted pre-master secret is sent back to the server.</li>
+                        <li class="list-group-item"><b>4. Decryption and Key Derivation:</b> The server decrypts the pre-master secret using its private key. Both the client and server independently generate a session key from the pre-master secret. This session key will be used for symmetric encryption during the session.</li>
+                        <li class="list-group-item"><b>5. Authentication and Key Exchange:</b> The client and server exchange a series of messages to authenticate each other and agree on the algorithms and parameters for the secure session. This includes verifying the digital signatures on exchanged messages.</li>
+                        <li class="list-group-item"><b>6. Secure Data Exchange:</b> Once the handshake is complete, the client and server begin exchanging data using the agreed-upon encryption algorithms and keys. This ensures the confidentiality and integrity of the transmitted data.</li>
+                        <li class="list-group-item"><b>7. Session Termination:</b> At the end of the session, both parties may agree to terminate the connection, or they can negotiate to reuse the existing session keys for subsequent communications.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question27">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading27">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse27" aria-expanded="false" aria-controls="flush-collapse27">
+                    27. Write a method that pings a server 20 times and returns the average round-trip time. Use the Ping class.
+                  </button>
+                </h2>
+                <div id="flush-collapse27" class="accordion-collapse collapse" aria-labelledby="flush-heading27" data-bs-parent="#question27">
+                  <div class="accordion-body">
+                    <div class="csharpCodeExercise">
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net.NetworkInformation;
+
+<span style="color: #0000ff">namespace</span> TestCodeRightHere;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        <span style="color: #2b91af">string</span> serverAddress = <span style="color: #a31515">&quot;google.com&quot;</span>;
+
+        <span style="color: #2b91af">long</span> roundTripTimeAccumulator = 0;
+        <span style="color: #2b91af">int</span> numberOfPings = 20;
+        <span style="color: #2b91af">int</span> numberOfUnsuccess = 0;
+
+        <span style="color: #0000ff">using</span> Ping sender = <span style="color: #0000ff">new</span>();
+
+        <span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> i = 0; i &lt;= numberOfPings; i++)
+        {
+            PingReply serverReply = sender.Send(serverAddress);
+
+            <span style="color: #2b91af">var</span> roundtripTimePerRequest = serverReply.RoundtripTime;
+
+            <span style="color: #0000ff">if</span> (roundtripTimePerRequest == 0)
+            {
+                numberOfUnsuccess++;
+
+                Console.WriteLine(<span style="color: #a31515">&quot;Timeout.&quot;</span>);
+            }
+            <span style="color: #0000ff">else</span>
+            {
+                roundTripTimeAccumulator += roundtripTimePerRequest;
+
+                Console.WriteLine(roundtripTimePerRequest);
+            }
+        }
+
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Average : {roundTripTimeAccumulator / (numberOfPings - numberOfUnsuccess)}&quot;</span>);
+    }
+}
+</pre></div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question28">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading28">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse28" aria-expanded="false" aria-controls="flush-collapse4">
+                    28. Create a function that resolves a domain name to IP address using DNS class methods.
+                  </button>
+                </h2>
+                <div id="flush-collapse28" class="accordion-collapse collapse" aria-labelledby="flush-heading28" data-bs-parent="#question28">
+                  <div class="accordion-body">
+                    <div class="csharpCodeExercise">
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net;
+
+<span style="color: #0000ff">namespace</span> TestCodeRightHere;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">async</span> <span style="color: #0000ff">static</span> Task Main()
+    {
+        List&lt;<span style="color: #2b91af">string</span>&gt; domains = <span style="color: #0000ff">new</span>()
+        {
+            <span style="color: #a31515">&quot;google.com&quot;</span>,
+            <span style="color: #a31515">&quot;onliner.by&quot;</span>,
+            <span style="color: #a31515">&quot;youtube.com&quot;</span>,
+            <span style="color: #a31515">&quot;Wikipedia.org&quot;</span>
+        };
+
+        <span style="color: #0000ff">foreach</span> (<span style="color: #2b91af">var</span> domain <span style="color: #0000ff">in</span> domains)
+        {
+            <span style="color: #2b91af">var</span> IPs = <span style="color: #0000ff">await</span> Resolve(domain);
+
+            <span style="color: #0000ff">if</span> (IPs != <span style="color: #0000ff">null</span>)
+            {
+                Console.WriteLine(domain);
+
+                IPs.ToList().ForEach(Console.WriteLine);
+            }
+
+            Console.WriteLine(<span style="color: #0000ff">new</span> <span style="color: #2b91af">string</span>(<span style="color: #a31515">&#39;-&#39;</span>, 40));
+        }
+    }
+
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">async</span> Task&lt;IPAddress[]&gt; Resolve(<span style="color: #2b91af">string</span> domain)
+    {
+        <span style="color: #2b91af">var</span> hostEntry = <span style="color: #0000ff">await</span> Dns.GetHostEntryAsync(domain);
+
+        <span style="color: #0000ff">if</span> (hostEntry.AddressList.Length &gt; 0)
+        {
+            <span style="color: #0000ff">return</span> hostEntry.AddressList;
+        }
+
+        <span style="color: #0000ff">return</span> <span style="color: #0000ff">null</span>;
+    }
+}
+</pre></div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question29">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading29">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse29" aria-expanded="false" aria-controls="flush-collapse29">
+                    29. Create a TCP echo client and a simple server that receives messages from the client.
+                  </button>
+                </h2>
+                <div id="flush-collapse29" class="accordion-collapse collapse" aria-labelledby="flush-heading29" data-bs-parent="#question29">
+                  <div class="accordion-body">
+                    <p>
+                      <b>TCP server: </b>
+                      <div class="csharpCodeExercise">
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net;
+<span style="color: #0000ff">using</span> System.Net.Sockets;
+<span style="color: #0000ff">using</span> System.Text;
+
+<span style="color: #0000ff">namespace</span> DeleteLater;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #2b91af">int</span> serverPort = 54321;
+
+        TcpListener tcpListener = <span style="color: #0000ff">new</span>(IPAddress.Any, serverPort);
+
+        tcpListener.Start();
+
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Server listening on port {serverPort} :&quot;</span>);
+
+        <span style="color: #0000ff">try</span>
+        {
+            <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+            {
+                <span style="color: #2b91af">var</span> tcpClient = tcpListener.AcceptTcpClient();
+
+                Task.Factory.StartNew(() =&gt; HandleClient(tcpClient));
+            }
+        }
+        <span style="color: #0000ff">catch</span> (Exception ex)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Error: {ex.Message}&quot;</span>);
+        }
+        <span style="color: #0000ff">finally</span>
+        {
+            tcpListener.Stop();
+        }
+    }
+
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> HandleClient(TcpClient tcpClient)
+    {
+        <span style="color: #0000ff">try</span>
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Client connected: {tcpClient.Client.RemoteEndPoint}&quot;</span>);
+
+            NetworkStream networkStream = tcpClient.GetStream();
+
+            <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+            {
+                <span style="color: #008000">// Receive messages from the client</span>
+                <span style="color: #2b91af">byte</span>[] buffer = <span style="color: #0000ff">new</span> <span style="color: #2b91af">byte</span>[1024];
+                <span style="color: #2b91af">int</span> bytesRead = networkStream.Read(buffer, 0, buffer.Length);
+
+                <span style="color: #0000ff">if</span> (bytesRead == 0)
+                {
+                    <span style="color: #008000">// Connection closed by the client</span>
+                    <span style="color: #0000ff">break</span>;
+                }
+
+                <span style="color: #2b91af">string</span> receivedMessage = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Received from {tcpClient.Client.RemoteEndPoint}: {receivedMessage}&quot;</span>);
+            }
+        }
+        <span style="color: #0000ff">catch</span> (Exception ex)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Error handling client: {ex.Message}&quot;</span>);
+        }
+        <span style="color: #0000ff">finally</span>
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Client disconnected: {tcpClient.Client.RemoteEndPoint}&quot;</span>);
+
+            tcpClient.Close();
+        }
+    }
+}
+</pre></div>
+<img style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" width="704" height="227" src="tcp_server_output.png" alt="TCP Server">
+                      </div>
+                    </p>
+                    <p>
+                      <b>TCP client: </b>
+                      <div class="csharpCodeExercise">
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net.Sockets;
+<span style="color: #0000ff">using</span> System.Text;
+
+<span style="color: #0000ff">namespace</span> TestCodeRightHere;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">async</span> <span style="color: #0000ff">static</span> Task Main()
+    {
+        <span style="color: #2b91af">string</span> serverIP = <span style="color: #a31515">&quot;127.0.0.1&quot;</span>;
+        <span style="color: #2b91af">int</span> serverPort = 54321;
+
+        TcpClient tcpClient = <span style="color: #0000ff">new</span>();
+
+        <span style="color: #0000ff">try</span>
+        {
+            tcpClient.Connect(serverIP, serverPort);
+
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Connected to {serverIP}:{serverPort}&quot;</span>);
+
+            <span style="color: #008000">// Send messages to the server</span>
+            <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+            {
+                Console.Write(<span style="color: #a31515">&quot;Enter a message (or &#39;exit&#39; to quit): &quot;</span>);
+
+                <span style="color: #2b91af">string</span> message = Console.ReadLine();
+
+                <span style="color: #0000ff">if</span> (message.ToLower() == <span style="color: #a31515">&quot;exit&quot;</span>)
+                    <span style="color: #0000ff">break</span>;
+
+                SendMessage(tcpClient, message);
+            }
+        }
+        <span style="color: #0000ff">catch</span> (Exception ex)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Error: {ex.Message}&quot;</span>);
+        }
+        <span style="color: #0000ff">finally</span>
+        {
+            tcpClient.Close();
+        }
+    }
+
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> SendMessage(TcpClient tcpClient, <span style="color: #2b91af">string</span> message)
+    {
+        <span style="color: #0000ff">try</span>
+        {
+            <span style="color: #008000">// Send a message to the server</span>
+            NetworkStream networkStream = tcpClient.GetStream();
+            <span style="color: #2b91af">byte</span>[] messageBytes = Encoding.ASCII.GetBytes(message);
+            networkStream.Write(messageBytes, 0, messageBytes.Length);
+        }
+        <span style="color: #0000ff">catch</span> (Exception ex)
+        {
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Error sending message: {ex.Message}&quot;</span>);
+        }
+    }
+}
+</pre></div>
+<img style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" width="597" height="222" src="tcp_client_output.png" alt="TCP Client">
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question30">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading30">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse30" aria-expanded="false" aria-controls="flush-collapse30">
+                    30. Create a simple UDP client.
+                  </button>
+                </h2>
+                <div id="flush-collapse30" class="accordion-collapse collapse" aria-labelledby="flush-heading30" data-bs-parent="#question30">
+                  <div class="accordion-body">
+                    <p>
+                      <b>UPD server:</b>
+                      <div class="csharpCodeExercise">
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net;
+<span style="color: #0000ff">using</span> System.Net.Sockets;
+<span style="color: #0000ff">using</span> System.Text;
+
+<span style="color: #0000ff">namespace</span> DeleteLater;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+    {
+        <span style="color: #2b91af">int</span> portToListenOn = 4321;
+
+        <span style="color: #0000ff">using</span> var udpSocket = <span style="color: #0000ff">new</span> UdpClient(portToListenOn);
+
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Listening for UDP packets on port {portToListenOn}:&quot;</span>);
+
+        <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+        {
+            IPEndPoint remoteEndPoint = <span style="color: #0000ff">new</span>(IPAddress.Any, portToListenOn);
+
+            <span style="color: #2b91af">byte</span>[] data = udpSocket.Receive(<span style="color: #0000ff">ref</span> remoteEndPoint);
+
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Received UDP packet from {remoteEndPoint}.&quot;</span>);
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Data: {BitConverter.ToString(data)}&quot;</span>);
+
+            <span style="color: #2b91af">string</span> receivedMessage = Encoding.ASCII.GetString(data);
+
+            Console.WriteLine(receivedMessage);
+
+            Console.WriteLine(<span style="color: #0000ff">new</span> <span style="color: #2b91af">string</span>(<span style="color: #a31515">&#39;-&#39;</span>, 40));
+        }
+    }
+}
+</pre></div>
+<img style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" width="500" height="250" src="udp_server_output.png" alt="UDP Server">
+                      </div>
+                    </p>
+                    <p>
+                      <b>UDP client:</b>
+                      <div class="csharpCodeExercise">
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">using</span> System.Net;
+<span style="color: #0000ff">using</span> System.Net.Sockets;
+<span style="color: #0000ff">using</span> System.Text;
+
+<span style="color: #0000ff">namespace</span> TestCodeRightHere;
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">async</span> <span style="color: #0000ff">static</span> Task Main()
+    {
+        <span style="color: #2b91af">string</span> serverIP = <span style="color: #a31515">&quot;127.0.0.1&quot;</span>;
+        <span style="color: #2b91af">int</span> serverPort = 4321;
+
+        <span style="color: #0000ff">using</span> var udpClient = <span style="color: #0000ff">new</span> UdpClient();        
+
+        IPEndPoint serverEndpoint = <span style="color: #0000ff">new</span>(IPAddress.Parse(serverIP), serverPort);
+
+        <span style="color: #0000ff">while</span> (<span style="color: #0000ff">true</span>)
+        {
+            Console.Write(<span style="color: #a31515">&quot;Enter a message (or &#39;exit&#39; to quit): &quot;</span>);
+
+            <span style="color: #2b91af">string</span> messageToSend = Console.ReadLine();
+
+            <span style="color: #0000ff">if</span> (messageToSend.ToLower() == <span style="color: #a31515">&quot;exit&quot;</span>)
+                <span style="color: #0000ff">break</span>;
+
+            <span style="color: #2b91af">byte</span>[] data = Encoding.ASCII.GetBytes(messageToSend);
+
+            udpClient.Send(data, data.Length, serverEndpoint);
+
+            Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;Sent data to {serverIP}:{serverPort}&quot;</span>);
+        }
+    }
+}
+</pre></div>
+<img style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" width="500" height="250" src="udp_client_output.png" alt="UDP Client">
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question31">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading31">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapse31">
+                    31. What is SMTP?
+                  </button>
+                </h2>
+                <div id="flush-collapse31" class="accordion-collapse collapse" aria-labelledby="flush-heading31" data-bs-parent="#question31">
+                  <div class="accordion-body">
+                    <p>SMTP stands for Simple Mail Transfer Protocol, and it is a protocol used for sending emails over the Internet. SMTP is a text-based protocol that works in a client-server model. It defines how email clients send messages to an email server for delivery.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
         </div>
       </div>  
-
+      <div style="padding: 50px;">
+      </div>
     </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
