@@ -7,6 +7,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/features/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../custom/mycustomstyle.css" rel="stylesheet">
 
     <style>
     </style>
@@ -19,6 +20,714 @@
             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
           </svg>
         </h2>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-solid-tab" data-bs-toggle="pill" data-bs-target="#pills-solid" type="button" role="tab" aria-controls="pills-solid" aria-selected="true">S.O.L.I.D.</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-dry-tab" data-bs-toggle="pill" data-bs-target="#pills-dry" type="button" role="tab" aria-controls="pills-dry" aria-selected="false">DRY</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-kiss-tab" data-bs-toggle="pill" data-bs-target="#pills-kiss" type="button" role="tab" aria-controls="pills-kiss" aria-selected="false">KISS</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-grasp-tab" data-bs-toggle="pill" data-bs-target="#pills-grasp" type="button" role="tab" aria-controls="pills-grasp" aria-selected="false">GRASP</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-yagni-tab" data-bs-toggle="pill" data-bs-target="#pills-yagni" type="button" role="tab" aria-controls="pills-yagni" aria-selected="false">YAGNI</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-solid" role="tabpanel" aria-labelledby="pills-solid-tab">
+                
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question1">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                          Single Responsibility Principle (SRP):
+                        </button>
+                      </h2>
+                      <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#question1">
+                        <div class="accordion-body">
+                          <p><h5>1) A class should have only one reason to change.</h5></p>
+                          <p><h5>2) It should have only one responsibility or job.</h5></p>
+                          <p><h5>3) This principle promotes the idea that a class should be focused on doing one thing well.</h5></p><br>
+                          <h5>Before SPR:</h5>
+                          <div class="csharpCodeExercise">
+                            <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Class violating SRP by handling both employee data and formatting</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Employee</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Name { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">decimal</span> Salary { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+
+    <span style="color: #008000">// Violating SRP by handling two responsibilities</span>
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Save()
+    {
+        <span style="color: #008000">// Saving employee data to a database</span>
+        Console.WriteLine(<span style="color: #a31515">&quot;Saving employee data to the database&quot;</span>);
+    }
+
+    <span style="color: #008000">// Violating SRP by handling two responsibilities</span>
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> FormatAsJSON()
+    {
+        <span style="color: #008000">// Formatting employee data as JSON</span>
+        Console.WriteLine(<span style="color: #a31515">&quot;Formatting employee data as JSON&quot;</span>);
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        Employee employee = <span style="color: #0000ff">new</span> Employee { Name = <span style="color: #a31515">&quot;John Doe&quot;</span>, Salary = 50000 };
+
+        <span style="color: #008000">// Saving and formatting are coupled in a single class</span>
+        employee.Save();
+        employee.FormatAsJSON();
+    }
+}
+</pre></div>
+
+                          </div>
+                          <br>
+                          <h5>After SPR:</h5>
+                          <div class="csharpCodeExercise">
+                            <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Class adhering to SRP by separating employee data and formatting responsibilities</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Employee</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Name { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">decimal</span> Salary { <span style="color: #0000ff">get</span>; <span style="color: #0000ff">set</span>; }
+}
+
+<span style="color: #008000">// Class responsible for saving employee data to the database</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">EmployeeRepository</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Save(Employee employee)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Saving employee data to the database&quot;</span>);
+    }
+}
+
+<span style="color: #008000">// Class responsible for formatting employee data as JSON</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">JsonFormatter</span>
+{
+    <span style="color: #0000ff">public</span> <span style="color: #2b91af">string</span> Format(Employee employee)
+    {
+        Console.WriteLine(<span style="color: #a31515">&quot;Formatting employee data as JSON&quot;</span>);
+        <span style="color: #008000">// Actual JSON formatting logic would go here</span>
+        <span style="color: #0000ff">return</span> <span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{{\&quot;Name\&quot;:\&quot;{employee.Name}\&quot;,\&quot;Salary\&quot;:{employee.Salary}}}&quot;</span>;
+    }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+{
+    <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main()
+    {
+        Employee employee = <span style="color: #0000ff">new</span> Employee { Name = <span style="color: #a31515">&quot;John Doe&quot;</span>, Salary = 50000 };
+
+        <span style="color: #008000">// Saving and formatting are now separated into different classes</span>
+        EmployeeRepository repository = <span style="color: #0000ff">new</span> EmployeeRepository();
+        repository.Save(employee);
+
+        JsonFormatter formatter = <span style="color: #0000ff">new</span> JsonFormatter();
+        <span style="color: #2b91af">string</span> json = formatter.Format(employee);
+    }
+}
+</pre></div>
+                            
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question2">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                          Open/Closed Principle (OCP):
+                        </button>
+                      </h2>
+                      <div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2" data-bs-parent="#question2">
+                        <div class="accordion-body">
+                          <p><h5>1) Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.</h5></p>
+                          <p><h5>2) This means that you should be able to add new functionality without altering existing code.</h5></p>
+                          <p><h5>3) Achieved through the use of abstract classes, interfaces, and design patterns.</h5></p>
+                          <h5>Before OCP:</h5>
+                          <div class="csharpCodeExercise">
+                            <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// The Logger class directly writes to the console</span>
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ConsoleLogger</span> {
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Log(<span style="color: #2b91af">string</span> message) {
+      Console.WriteLine(message); 
+  }
+}
+
+<span style="color: #008000">// Usage</span>
+<span style="color: #2b91af">var</span> logger = <span style="color: #0000ff">new</span> ConsoleLogger();
+logger.Log(<span style="color: #a31515">&quot;Hello World!&quot;</span>);
+</pre></div>
+
+                          </div>
+                          <p>The ConsoleLogger class is not closed for modification. To add logging to a file, we would have to modify the class.
+                            </p>
+                          <h5>After OCP:</h5>
+                          <p>The Logger abstract class can be extended through inheritance.</p>
+                          <div class="csharpCodeExercise">
+                            <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">LoggerBase</span> {
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">abstract</span> <span style="color: #0000ff">void</span> Log(<span style="color: #2b91af">string</span> message);  
+  }
+  
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">ConsoleLogger</span> : LoggerBase {
+      <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Log(<span style="color: #2b91af">string</span> message) {
+          Console.WriteLine(message);
+      } 
+  }
+  
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">FileLogger</span> : LoggerBase {
+      <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> Log(<span style="color: #2b91af">string</span> message) {
+          <span style="color: #008000">// Write message to a file</span>
+      }
+  } 
+  
+  <span style="color: #008000">// Usage</span>
+  LoggerBase logger = <span style="color: #0000ff">new</span> ConsoleLogger(); 
+  logger.Log(<span style="color: #a31515">&quot;Hello World!&quot;</span>);
+  </pre></div>
+                          </div>
+                          <p>The LoggerBase class is closed for modification but open for extension. We can create new loggers by inheriting from the LoggerBase without changing it. This follows OCP.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question3">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                          Liskov Substitution Principle (LSP):
+                        </button>
+                      </h2>
+                      <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#question3">
+                        <div class="accordion-body">
+                          <p><h5>Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.</h5></p>
+                          <p>
+                            <h5>Before LSP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Bird</span>
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Fly() { }
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Duck</span> : Bird { }
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Ostrich</span> : Bird { }
+</pre></div>
+
+                            </div>
+                          </p>
+                          <p>
+                            <h5>After LSP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Bird</span>
+{
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">FlyingBirds</span> : Bird
+{
+    <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Fly() { }
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Duck</span> : FlyingBirds
+{
+
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Ostrich</span> : Bird
+{
+
+}
+</pre></div>
+                            </div>
+                          </p>
+                          <p>Ostrich is a bird, but it can't fly, Ostrich class is a subtype of class Bird, but it shouldn't be able to use the fly method, that means we are breaking the LSP principle.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question4">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                          Interface Segregation Principle (ISP):
+                        </button>
+                      </h2>
+                      <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#question4">
+                        <div class="accordion-body">
+                          <p><h5>ISP splits interfaces to better model required functionality per type.</h5></p>
+                          <p>
+                            <h5>Before ISP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IWorker
+{
+  <span style="color: #0000ff">void</span> Work();
+  <span style="color: #0000ff">void</span> Eat();
+  <span style="color: #0000ff">void</span> Sleep();
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Human</span> : IWorker
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Work()
+  {
+      <span style="color: #008000">// Work</span>
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Eat()
+  {
+      <span style="color: #008000">// Eat food </span>
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Sleep()
+  {
+      <span style="color: #008000">// sleep </span>
+  }
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Robot</span> : IWorker
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Work()
+  {
+      <span style="color: #008000">// Do work</span>
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Eat()
+  {
+      <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> NotSupportedException(<span style="color: #a31515">&quot;Robot does not eat!&quot;</span>);
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Sleep()
+  {
+      <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> NotSupportedException(<span style="color: #a31515">&quot;Robot does not sleep!&quot;</span>);
+  }
+}
+</pre></div>
+
+                            </div>
+                          </p>
+                          <p>
+                            <h5>After ISP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IWorkable
+{
+  <span style="color: #0000ff">void</span> Work();
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IFeedable
+{
+  <span style="color: #0000ff">void</span> Eat();
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> ISleepable
+{
+  <span style="color: #0000ff">void</span> Sleep();
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Human</span> : IWorkable, IFeedable, ISleepable
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Eat()
+  {
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Sleep()
+  {
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Work()
+  {
+  }
+}
+
+<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> <span style="color: #2b91af">Robot</span> : IWorkable
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Work()
+  {
+  }
+}
+</pre></div>
+
+                            </div>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="col-md-10">
+                  <div class="accordion accordion-flush" id="question5">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                          Dependency Inversion Principle (DIP):
+                        </button>
+                      </h2>
+                      <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#question5">
+                        <div class="accordion-body">
+                          <p>
+                            It suggests that high-level modules or classes should not depend on low-level modules but both should depend on abstractions. 
+                            Additionally, abstractions should not depend on details; details should depend on abstractions. 
+                            In simpler terms, DIP promotes the use of interfaces or abstract classes to decouple high-level and low-level components, allowing for flexibility and easier maintenance in software systems.
+                          </p>
+                          <p>
+                            <h5>Before DIP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">class</span> <span style="color: #2b91af">MailService</span>
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SendMail(<span style="color: #2b91af">string</span> message)
+  {
+      <span style="color: #008000">// Logic to send mail</span>
+  }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">UserService</span>
+{
+
+  <span style="color: #0000ff">private</span> MailService mailService = <span style="color: #0000ff">new</span> MailService();
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> NotifyUser(User user)
+  {
+      <span style="color: #2b91af">string</span> msg = <span style="color: #a31515">&quot;Notification&quot;</span>;
+      mailService.SendMail(msg);
+  }
+}
+</pre></div>
+                            </div>
+                          </p>
+                          <p>
+                            <h5>After DIP:</h5>
+                            <div class="csharpCodeExercise">
+                              <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">interface</span> IMailService
+{
+  <span style="color: #0000ff">void</span> SendMail(<span style="color: #2b91af">string</span> message);
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">MailService</span> : IMailService
+{
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SendMail(<span style="color: #2b91af">string</span> message)
+  {
+      <span style="color: #008000">// Logic to send mail</span>
+  }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">UserService</span>
+{
+  <span style="color: #0000ff">private</span> IMailService mailService;
+
+  <span style="color: #008000">// Inject dependency </span>
+  <span style="color: #0000ff">public</span> UserService(IMailService mailService)
+  {
+      <span style="color: #0000ff">this</span>.mailService = mailService;
+  }
+
+  <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> NotifyUser(User user)
+  {
+      <span style="color: #2b91af">string</span> msg = <span style="color: #a31515">&quot;Notification&quot;</span>;
+      mailService.SendMail(msg);
+  }
+}
+</pre></div>
+                            </div>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="pills-dry" role="tabpanel" aria-labelledby="pills-dry-tab">
+                <p><h6>The Don't Repeat Yourself principle aims to reduce duplication in code and improve maintainability and extendability.</h6></p>
+                <p><h6>Every piece of logical knowledge in a system should have one single representation.</h6></p>
+                <p><h6>Duplication of logic should be eliminated by abstracting it into reusable functions, classes, modules, etc.</h6></p>
+                <p><h6>Copying and pasting the same code structures or literals introduces unnecessary duplication.</h6></p>
+                <p><h6>Duplication leads to more places to change code when requirements change risking inconsistencies.</h6></p>
+                <p><h5>For example, hard-coding the same string literal like "User" in multiple places violates DRY. Instead it should be defined once as a constant "userStr" and reused.</h5></p>
+              </div>
+              <div class="tab-pane fade" id="pills-kiss" role="tabpanel" aria-labelledby="pills-kiss-tab">
+                <p><h6>The Keep It Simple, Stupid principle states that systems work best when they are kept simple rather than made complicated.</h6></p>
+                <p><h6>Simplicity should be a key goal in design and unnecessary complexity should be avoided.</h6></p>
+                <p><h6>Code should be kept clear, small and easy to understand.</h6></p>
+                <p><h6>Less code generally means less points of failure and fewer bugs.</h6></p>
+                <p><h6>Over-engineered solutions with too many extra features or moving parts should be avoided.</h6></p>
+                <p><h6>Code reuse and sharing logic avoids duplication and complexity.</h6></p>
+                <p><h6>Extra functionality, abstractions or architecture should only be added when justified by a real needed complexity.</h6></p>
+              </div>
+              <div class="tab-pane fade" id="pills-grasp" role="tabpanel" aria-labelledby="pills-grasp-tab">
+                <p><h6>GRASP is a collection of several key design principles in object-oriented development that deal with assigning responsibilities to classes and objects.</h6></p>
+                <p><h6>Applying these principles leads to flexible, reusable, and maintainable object-oriented code by properly assigning logical responsibilities among various classes and interfaces in the system.</h6></p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question3">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading3">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                            <h6><b>Information Expert:</b> Assign responsibility to the class with most information required to fulfill it.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#question3">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question4">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading4">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                            <h6><b>Creator:</b> Assign class creating an object responsibility for its lifecycle.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#question4">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question5">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading5">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                            <h6><b>Controller:</b> Assign responsibility to class controlling system scenario.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#question5">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question6">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading6">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                            <h6><b>High Cohesion:</b> Functionality in a class should be strongly related and focused.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#question6">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question7">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading7">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+                            <h6><b>Low Coupling:</b> Dependencies between classes should be minimized.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#question7">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question8">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading8">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+                            <h6><b>Polymorphism:</b> Use subclassing to avoid conditional logic related to type.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#question8">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question9">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading9">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+                            <h6><b>Pure Fabrication:</b> Introduce artificial classes to aid cohesive design when needed.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#question9">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question10">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading10">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+                            <h6><b>Indirection:</b> Assign intermediate classes to mediate between high and low level classes.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-heading10" data-bs-parent="#question10">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+                <p>
+                  <div class="col-md-10">
+                    <div class="accordion accordion-flush" id="question11">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading11">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+                            <h6><b>Protected Variations:</b> Reduce effect of volatility in classes by wrapping in abstraction.</h6>
+                          </button>
+                        </h2>
+                        <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-heading11" data-bs-parent="#question11">
+                          <div class="accordion-body">
+                            <p>
+                              <h6>Before:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                            <p>
+                              <h6>After:</h6>
+                              <div class="csharpCodeExercise">
+                              </div>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </p>
+              </div>
+              <div class="tab-pane fade" id="pills-yagni" role="tabpanel" aria-labelledby="pills-yagni-tab">
+                <p><h6>"You Ain't Gonna Need It". It is a principle of software development that encourages developers to only add features to their code when they are actually needed by the users. This is in contrast to the traditional approach of overengineering code with features that might be needed in the future.</h6></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-end">
       </div>
     </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
