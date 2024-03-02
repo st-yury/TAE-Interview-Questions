@@ -176,12 +176,13 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading8">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
-                    8. What is Boundary Value Analysis?
+                    8. The difference between Smoke and Regression testing?
                   </button>
                 </h2>
                 <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#question8">
                   <div class="accordion-body">
-                    <p>Boundary value analysis, BVA, tests the behavior of a program at the boundaries. When checking a range of values, after selecting the set of data that lie in the valid partitions, next is to check how the program behaves at the boundary values of the valid partitions. Boundary value analysis is most common when checking a range of numbers.</p>
+                    <p><b>Smoke:</b> Typically, smoke testing is conducted whenever a new build or version of the software is deployed. It helps ensure that the basic functionalities are working before further testing is carried out.</p>
+                    <p><b>Regression:</b> Regression testing should ideally be performed after every significant code change, feature addition, or bug fix. It ensures that the software remains stable and that existing functionalities are not affected by recent modifications.</p>
                   </div>
                 </div>
               </div>
@@ -823,18 +824,128 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading42">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse42" aria-expanded="false" aria-controls="flush-collapse42">
-                    42. What is the concept of equivalence partitioning?
+                    42. What are test design techniques?
                   </button>
                 </h2>
                 <div id="flush-collapse42" class="accordion-collapse collapse" aria-labelledby="flush-heading42" data-bs-parent="#question42">
                   <div class="accordion-body">
-                    <p>Equivalence partitioning is a testing technique that involves dividing the input domain of a system into groups or partitions that are expected to behave similarly. The primary goal is to reduce redundant testing by selecting representative test cases from each partition. This technique is based on the assumption that if one test case within a partition exposes a defect, the other cases in the same partition are likely to do the same.</p>                  </div>
+                    <p><b>1) Pairwise testing</b> is a test design technique used to achieve a high level of coverage with fewer test cases. It aims to test combinations of input parameters or variables in a way that each possible pair of values is covered at least once. This helps in detecting defects that might occur due to interactions between different input parameters.</p>
+                    <p>Let's consider a scenario where a software application requires testing for various input parameters, such as:</br>
+                    </br>Operating System: Windows, macOS, Linux
+                    </br>Browser: Chrome, Firefox, Safari
+                    </br>Screen Resolution: 1024x768, 1280x1024, 1920x1080
+                    </br>Internet Connection: Dial-up, DSL, Fiber</p>
+                    <p>Without using pairwise testing, one might have to create a large number of test cases to cover all possible combinations of these parameters. For instance, testing every possible combination would result in 
+                      3 * 3 * 3 * 3 = 81 test cases.</p>
+                    <p>However, with pairwise testing, the tool or tester would focus on ensuring that each possible pair of values for these parameters is covered at least once.</p>
+                    <p>
+                    Windows, Chrome, 1024x768, Dial-up
+                    </br>Windows, Firefox, 1280x1024, DSL
+                    </br>macOS, Safari, 1920x1080, Fiber
+                    </br>Linux, Chrome, 1024x768, DSL
+                    </br>Windows, Safari, 1280x1024, Dial-up
+                    </br>macOS, Chrome, 1920x1080, Dial-up
+                    </br>Linux, Firefox, 1024x768, Fiber
+                    </br>Windows, Firefox, 1920x1080, DSL
+                    </br>macOS, Safari, 1024x768, DSL
+                    </br>Linux, Chrome, 1280x1024, Dial-up
+                    </p>
+                    <p>With only 10 test cases, pairwise testing covers all possible pairs of values for the input parameters. This is significantly fewer than the 81 test cases required for exhaustive testing.</p>
+                    <p><b>2) Error guessing</b> is a test design technique where testers use their experience, intuition, and knowledge of the system to predict and identify potential errors or defects. This technique relies on the tester's ability to think like a user and anticipate where problems might occur in the software.</p>
+                    <p>Let's say you're testing a web application that allows users to create accounts and upload profile pictures. Based on your experience and understanding of similar systems, you might anticipate potential errors or weak spots such as:</p>
+                    <p>1. Uploading an unusually large image file might crash the system due to memory constraints.
+                    </br>2. Entering special characters in the username field might cause unexpected behavior or errors.
+                    </br>3. Attempting to access the application simultaneously from multiple devices might lead to synchronization issues.
+                    </br>4. Entering invalid email formats during registration might not trigger proper error messages.</p>
+                    <p>While error guessing is subjective and relies heavily on the tester's expertise, it can be an effective complement to structured testing techniques by uncovering issues that might otherwise go unnoticed.</p>
+                    <p><b>3) State transition</b> is a black-box testing technique used to test systems where the behavior of the system changes based on its state. This technique is particularly useful for testing systems with finite states, such as user interfaces, embedded systems, and software with specific workflow states.</p>
+                    <p>
+                      1. Logged Out: Initial state when the user is not logged in. 
+                      </br>2. Logged In: State after successful user authentication.
+                      </br>3. Error: State when there's an authentication error.
+                    </p>
+                    <p>
+                      Test Scenario 1: Transition from Logged Out to Logged In (Enter valid credentials and submit the login form.)
+                      </br>Test Scenario 2: Transition from Logged Out to Error (Enter invalid credentials and submit the login form.)
+                      </br>Test Scenario 3: Transition from Error to Logged In (Provide valid credentials after seeing the error message and submit the login form again.)
+                      </br>Test Scenario 4: Transition from Logged In to Logged Out (Trigger the logout action, either by clicking a logout button or navigating to the logout page.)
+                      </br>Test Scenario 5: Handling of Session Timeouts (Wait until the session expires due to inactivity.
+                      Verify that the system transitions the user from the Logged In state to the Logged Out state after the session timeout.)
+                      </br>Test Scenario 6: Concurrent Session Handling (Simulate a scenario where the same user logs in from multiple devices or browsers.
+                      Ensure that actions performed in one session do not affect the state of another session.
+                      Verify that the system handles concurrent sessions gracefully without causing unexpected state transitions.)
+                    </p>
+                    <p><b>4) Decision table</b> is a technique used to test the combinations of inputs and their corresponding outputs based on defined rules.</p>
+                    <p>
+                      We have a web UI form for user registration. The form has the following fields:</br>
+                      1. Username (must be between 3 and 20 characters.)
+                    </br>2. Email (must be a valid email format.)
+                    </br>3. Password (must be at least 8 characters long.)
+                    </br>4. Confirm Password (Password must match the Password field.)</br>
+                    Based on these rules, we can create a decision table to cover different combinations of inputs and expected outputs.</br>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Test Case</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Password</th>
+                          <th scope="col">Confirm Password</th>
+                          <th scope="col">Expected Output</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">TC1</th>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Registration Success</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">TC2</th>
+                          <td>Invalid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Registration Failure (Username too short)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">TC3</th>
+                          <td>Valid</td>
+                          <td>Invalid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Registration Failure (Invalid Email format)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">TC4</th>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Invalid</td>
+                          <td>Valid</td>
+                          <td>Registration Failure (Password too short)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">TC5</th>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Valid</td>
+                          <td>Invalid</td>
+                          <td>Registration Failure (Password and Confirm Password mismatch)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </p>
+                    <p><b>5) Boundary value analysis</b> is applied to explore errors at the boundary of the input domain. Ex. Input is valid between 50 to 100. Boundary values are 49, 50, 51 and 99, 100, 101.</p>
+                    <p><b>6) Equivalence partitioning</b> is a testing technique that involves dividing the input domain of a system into groups or partitions that are expected to behave similarly. The primary goal is to reduce redundant testing by selecting representative test cases from each partition. This technique is based on the assumption that if one test case within a partition exposes a defect, the other cases in the same partition are likely to do the same. Ex. input is valid from 5 to 10. There are 3 groups: to 5, from 5 to 10, from 10. So you validate 2 (invalid), 7 (valid), 12 (invalid). </p></div>
                   </div>
               </div>
             </div> 
           </div>
           <div class="col-md-2">
-          </div>  
+          </div>
           <div class="col-md-10">
             <div class="accordion accordion-flush" id="question43">
               <div class="accordion-item">
@@ -866,6 +977,93 @@
                 </div>
               </div> 
             </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question44">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading44">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse44" aria-expanded="false" aria-controls="flush-collapse44">
+                    44. What is a bug and what parts it comprises?
+                  </button>
+                </h2>
+                <div id="flush-collapse44" class="accordion-collapse collapse" aria-labelledby="flush-heading44" data-bs-parent="#question44">
+                  <div class="accordion-body">
+                    <p>A bug is a flaw or defect in software that causes it to behave unexpectedly or incorrectly.</p>
+                    <p><b>Symptom:</b> This is the observable behavior or manifestation of the bug. It's what users or testers notice as an issue.</p>
+                    <p><b>Cause:</b> The cause of the bug is the underlying reason why the software behaves incorrectly. It could be due to programming errors, logical mistakes, incorrect assumptions, or unexpected interactions between different parts of the software.</p>
+                    <p><b>Impact:</b> The impact of a bug refers to the consequences it has on the system or users. This could range from minor inconveniences to critical failures, depending on the nature of the bug and the context in which the software is used.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question45">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading45">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse45" aria-expanded="false" aria-controls="flush-collapse45">
+                    45. Explain the Testing Pyramid.
+                  </button>
+                </h2>
+                <div id="flush-collapse45" class="accordion-collapse collapse" aria-labelledby="flush-heading45" data-bs-parent="#question45">
+                  <div class="accordion-body">
+                    <p>
+                      <div class="container">
+                        <img src="TestingPyramid.png" alt="Testing pyramid" class="img-fluid">
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question46">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading46">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse46" aria-expanded="false" aria-controls="flush-collapse46">
+                    46. Explain F.I.R.S.T. principles.
+                  </button>
+                </h2>
+                <div id="flush-collapse46" class="accordion-collapse collapse" aria-labelledby="flush-heading46" data-bs-parent="#question46">
+                  <div class="accordion-body">
+                    <p><b>Fast:</b> Tests should run quickly to provide immediate feedback, encouraging frequent execution and rapid iteration during development.</p>
+                    <p><b>Isolated/Independent:</b> Each test should be self-contained and not dependent on the state or execution of other tests, ensuring that failures are localized and do not impact the entire test suite.</p>
+                    <p><b>Repeatable:</b> Tests should produce consistent results regardless of external factors such as environment setup or data dependencies, enabling reliable and reproducible testing.</p>
+                    <p><b>Self-Validating:</b> Tests should have a clear pass or fail outcome, with built-in assertions or expectations that automatically verify expected behavior, providing unambiguous feedback on the system's correctness.</p>
+                    <p><b>Timely:</b> Tests should be written promptly, ideally alongside the implementation code, to prevent the accumulation of technical debt and ensure the codebase remains testable and maintainable, facilitating early defect detection and continuous integration practices.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question47">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading47">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse47" aria-expanded="false" aria-controls="flush-collapse47">
+                    47. Explain 3 A's principle.
+                  </button>
+                </h2>
+                <div id="flush-collapse47" class="accordion-collapse collapse" aria-labelledby="flush-heading47" data-bs-parent="#question47">
+                  <div class="accordion-body">
+                    <p><b>Arrange:</b> Setting up the necessary preconditions and state required for the test.</p>
+                    <p><b>Act:</b> Executing the specific actions or operations that you want to test.</p>
+                    <p><b>Assert:</b> Verifying that the outcome of the actions matches the expected behavior.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2">
           </div>
         </div>
       </div>

@@ -240,13 +240,13 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading10">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
-                    10. What is a Uri?
+                    10. IEnumerable vs. IQueryable?
                   </button>
                 </h2>
                 <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-heading10" data-bs-parent="#question10">
                   <div class="accordion-body">
-                    <p>A Uri in C# is a class that represents a Uniform Resource Identifier (URI). A URI is a compact string of characters that identifies a resource on the internet or an intranet. URIs can be used to link to web pages, images, files, and other resources.
-                      In short, a Uri is a way to represent a web address in C#.</p>
+                    <p><b>IEnumerable:</b> When you perform LINQ operations on an IEnumerable, such as a List or an array, the entire dataset is loaded into memory first. This means that if you use IEnumerable to query a database, all records matching the query will be loaded into memory before any filtering or projection is performed.</p>
+                    <p><b>IQueryable:</b> IQueryable supports deferred execution, meaning that the query is not executed until it is enumerated or iterated over. This allows the query to be translated into the appropriate query language (e.g., SQL for databases) and executed on the server side, minimizing the amount of data transferred over the network.</p>
                   </div>
                 </div>
               </div>
@@ -398,7 +398,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading17">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapse17">
-                    17. What is the difference between Positive and Negative testing?
+                    17. Enumerate the main principles of OOP and what is it for?
                   </button>
                 </h2>
                 <div id="flush-collapse17" class="accordion-collapse collapse" aria-labelledby="flush-heading17" data-bs-parent="#question17">
@@ -416,7 +416,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading18">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse18" aria-expanded="false" aria-controls="flush-collapse18">
-                    18. What is Smoke Testing?
+                    18. What access modifiers do you know and what does each of them mean?
                   </button>
                 </h2>
                 <div id="flush-collapse18" class="accordion-collapse collapse" aria-labelledby="flush-heading18" data-bs-parent="#question18">
@@ -433,7 +433,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading19">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse19" aria-expanded="false" aria-controls="flush-collapse19">
-                    19. What is Usability Testing?
+                    19. What is a multilayered architecture?
                   </button>
                 </h2>
                 <div id="flush-collapse19" class="accordion-collapse collapse" aria-labelledby="flush-heading19" data-bs-parent="#question19">
@@ -450,7 +450,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading20">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse20" aria-expanded="false" aria-controls="flush-collapse20">
-                    20. What is the importance of Test Coverage?
+                    20. What is MVC pattern and what does it comprise?
                   </button>
                 </h2>
                 <div id="flush-collapse20" class="accordion-collapse collapse" aria-labelledby="flush-heading20" data-bs-parent="#question20">
@@ -470,7 +470,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading21">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapse21">
-                    21. How do you determine Test Case Coverage?
+                    21. What is Clean Architecture?
                   </button>
                 </h2>
                 <div id="flush-collapse21" class="accordion-collapse collapse" aria-labelledby="flush-heading21" data-bs-parent="#question21">
@@ -488,7 +488,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading22">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
-                    22. How do you ensure Test Case Quality?
+                    22. Have you ever used AOP or FP?
                   </button>
                 </h2>
                 <div id="flush-collapse22" class="accordion-collapse collapse" aria-labelledby="flush-heading22" data-bs-parent="#question22">
@@ -511,7 +511,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading23">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse23" aria-expanded="false" aria-controls="flush-collapse23">
-                    23. What is the purpose of a Test Checklist?
+                    23. Keywords try, catch, finally - what are they used for? What is the order of several exceptions more abstract exceptoin and more concrete
                   </button>
                 </h2>
                 <div id="flush-collapse23" class="accordion-collapse collapse" aria-labelledby="flush-heading23" data-bs-parent="#question23">
@@ -528,7 +528,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading24">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse24" aria-expanded="false" aria-controls="flush-collapse24">
-                    24. What is the importance of User Acceptance Testing?
+                  24. Is it possible to add an interation ability to some class that does not support iteration in the first place, using foreach?
                   </button>
                 </h2>
                 <div id="flush-collapse24" class="accordion-collapse collapse" aria-labelledby="flush-heading24" data-bs-parent="#question24">
@@ -541,12 +541,13 @@
             </div> 
           </div>
           <div class="col-md-2">
-          </div>  <div class="col-md-10">
+          </div>  
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question25">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading25">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse25" aria-expanded="false" aria-controls="flush-collapse25">
-                    25. What is Traceability Matrix?
+                    25. What is the main difference between languages C++ and C#?
                   </button>
                 </h2>
                 <div id="flush-collapse25" class="accordion-collapse collapse" aria-labelledby="flush-heading25" data-bs-parent="#question25">
@@ -558,12 +559,13 @@
             </div> 
           </div>
           <div class="col-md-2">
-          </div>  <div class="col-md-10">
+          </div>  
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question26">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading26">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse26" aria-expanded="false" aria-controls="flush-collapse26">
-                    26. What is the purpose of Data-Driven Testing?
+                    26. String vs. StringBuilder. Why do you need to use the StringBuilder?
                   </button>
                 </h2>
                 <div id="flush-collapse26" class="accordion-collapse collapse" aria-labelledby="flush-heading26" data-bs-parent="#question26">
@@ -580,7 +582,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading27">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse27" aria-expanded="false" aria-controls="flush-collapse27">
-                    27. What is the Testing Lifecycle?
+                    27. What data structures exist in C#?
                   </button>
                 </h2>
                 <div id="flush-collapse27" class="accordion-collapse collapse" aria-labelledby="flush-heading27" data-bs-parent="#question27">
@@ -603,7 +605,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading28">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse28" aria-expanded="false" aria-controls="flush-collapse28">
-                    28. What is the difference between Functional and Non-Functional testing?
+                    28. Differences between Array, List, LinkedList?
                   </button>
                 </h2>
                 <div id="flush-collapse28" class="accordion-collapse collapse" aria-labelledby="flush-heading28" data-bs-parent="#question28">
@@ -622,7 +624,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading29">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse29" aria-expanded="false" aria-controls="flush-collapse29">
-                    29. What is Stress Testing?
+                    29. Covariance and contravariance. Tell about these concepts.
                   </button>
                 </h2>
                 <div id="flush-collapse29" class="accordion-collapse collapse" aria-labelledby="flush-heading29" data-bs-parent="#question29">
@@ -639,7 +641,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading30">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse30" aria-expanded="false" aria-controls="flush-collapse30">
-                    30. What is Security Testing?
+                    30. Partial methods, partial classses?
                   </button>
                 </h2>
                 <div id="flush-collapse30" class="accordion-collapse collapse" aria-labelledby="flush-heading30" data-bs-parent="#question30">
@@ -656,7 +658,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading31">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapse31">
-                    31. What is End-to-End Testing?
+                    31. The word volatile.
                   </button>
                 </h2>
                 <div id="flush-collapse31" class="accordion-collapse collapse" aria-labelledby="flush-heading31" data-bs-parent="#question31">
@@ -673,7 +675,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading32">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse32" aria-expanded="false" aria-controls="flush-collapse32">
-                    32. What is the difference between Severity and Priority?
+                    32.A table of virtual override and new and nothing A B C D E F
                   </button>
                 </h2>
                 <div id="flush-collapse32" class="accordion-collapse collapse" aria-labelledby="flush-heading32" data-bs-parent="#question32">
@@ -693,7 +695,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading33">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse33" aria-expanded="false" aria-controls="flush-collapse33">
-                    33. What is Ad-Hoc Testing?
+                    33. All classes in .NET are derived from a what single class? Do value types and structs inherit the class?
                   </button>
                 </h2>
                 <div id="flush-collapse33" class="accordion-collapse collapse" aria-labelledby="flush-heading33" data-bs-parent="#question33">
@@ -710,7 +712,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading34">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse34" aria-expanded="false" aria-controls="flush-collapse34">
-                    34. What is Integration Testing?
+                    34. Bit flags. tell about them.
                   </button>
                 </h2>
                 <div id="flush-collapse34" class="accordion-collapse collapse" aria-labelledby="flush-heading34" data-bs-parent="#question34">
@@ -727,7 +729,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading35">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
-                    35. What is the difference between Static and Dynamic testing?
+                    35. What is Lazy?
                   </button>
                 </h2>
                 <div id="flush-collapse35" class="accordion-collapse collapse" aria-labelledby="flush-heading35" data-bs-parent="#question35">
@@ -747,7 +749,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading36">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse36" aria-expanded="false" aria-controls="flush-collapse36">
-                    36. What is Test-Driven Development (TDD)?
+                    36. What exceptions will not be hanled by finally keyword?
                   </button>
                 </h2>
                 <div id="flush-collapse36" class="accordion-collapse collapse" aria-labelledby="flush-heading36" data-bs-parent="#question36">
@@ -764,7 +766,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading37">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse37" aria-expanded="false" aria-controls="flush-collapse37">
-                    37. What is Behavior-Driven Development (BDD)?
+                    37. What is yield and what does it do? Give an example.
                   </button>
                 </h2>
                 <div id="flush-collapse37" class="accordion-collapse collapse" aria-labelledby="flush-heading37" data-bs-parent="#question37">
@@ -781,7 +783,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading38">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse38" aria-expanded="false" aria-controls="flush-collapse38">
-                    38. What is the difference between Sanity Testing and Retesting?
+                    38. Calling a virtual method or a property inside a constructor. What's going to happen?
                   </button>
                 </h2>
                 <div id="flush-collapse38" class="accordion-collapse collapse" aria-labelledby="flush-heading38" data-bs-parent="#question38">
@@ -801,7 +803,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading39">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse39" aria-expanded="false" aria-controls="flush-collapse39">
-                    39. What is the difference between Load Testing and Stress Testing?
+                    39. What is Assembly Manifest?
                   </button>
                 </h2>
                 <div id="flush-collapse39" class="accordion-collapse collapse" aria-labelledby="flush-heading39" data-bs-parent="#question39">
