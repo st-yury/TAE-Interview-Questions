@@ -1459,8 +1459,7 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question44">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading44">
@@ -1489,18 +1488,91 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question45">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading45">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse45" aria-expanded="false" aria-controls="flush-collapse45">
-                    45. QuestionPlaholder is here?
+                    45. What methods does REST have?
                   </button>
                 </h2>
                 <div id="flush-collapse45" class="accordion-collapse collapse" aria-labelledby="flush-heading45" data-bs-parent="#question45">
                   <div class="accordion-body">
-                    <p></p>
+                    <p><semi-b>REST</semi-b> does not dictate specific methods, but it leverages <semi-b>HTTP</semi-b> methods to perform various operations on resources. The main <semi-b>HTTP</semi-b> methods used in RESTful APIs:</p>
+                    <p>
+                      <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>GET</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Retrieves a representation of a resource without modifying it.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>Yes</semi-b>, multiple identical requests will produce the same result.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>Yes</semi-b>, it does not modify the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>POST</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Creates a new resource.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>No</semi-b>, multiple identical requests will create multiple resources.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>No</semi-b>, it may have side effects.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>PUT</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Updates an existing resource or creates a new resource if it doesn't exist.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>Yes</semi-b>, multiple identical requests will result in the same state.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>No</semi-b>, it modifies the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>DELETE</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Removes a resource.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>Yes</semi-b>, multiple identical requests will result in the same state (resource removal).</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>No</semi-b>, it modifies the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>PATCH</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Partially updates a resource with new data.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>No</semi-b>, multiple identical requests may result in different states if the patching is based on the current state of the resource.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>No</semi-b>, it modifies the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>OPTIONS</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Returns the HTTP methods supported by the server for a specified URL.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>Yes</semi-b>, multiple identical requests will produce the same result.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>Yes</semi-b>, it does not modify the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                          <div class="ms-2 me-auto">
+                            <div><b>HEAD</b></div>
+                            <ul class="list-group">
+                              <li class="list-group-item">1. Retrieves the headers that would be returned if the HEAD request's URL was instead requested with the GET method.</li>
+                              <li class="list-group-item">2. <b>Idempotent:</b> <semi-b>Yes</semi-b>, multiple identical requests will produce the same result.</li>
+                              <li class="list-group-item">3. <b>Safe:</b> <semi-b>Yes</semi-b>, it does not modify the resource.</li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1508,18 +1580,93 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question46">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading46">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse46" aria-expanded="false" aria-controls="flush-collapse46">
-                    46. QuestionPlaholder is here?
+                    46. What is WSDL?
                   </button>
                 </h2>
                 <div id="flush-collapse46" class="accordion-collapse collapse" aria-labelledby="flush-heading46" data-bs-parent="#question46">
                   <div class="accordion-body">
-                    <p></p>
+                    <p><b>WSDL</b> stands for Web Services Description Language. It's an <b>XML</b>-based language used to describe the functionalities offered by a web service. In short, <b>WSDL</b> provides a standardized way for clients to understand how to interact with a web service, including the operations it supports, the data types it uses, and the communication protocols it employs. It acts as a contract between the service provider and the consumer, outlining the structure and requirements of the web service.</p>
+                    <p>Weather Forecast Service:</p>
+                    <p>
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%">
+  &lt;<span style="color: blue;">definitions</span>&gt;
+    <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"WeatherForecastService"</span>
+    <span style="color: rgb(153, 10, 219);">targetNamespace</span>=<span style="color: rgb(13, 141, 11);">"http://example.com/weather"</span>
+    <span style="color: rgb(153, 10, 219);">xmlns</span>=<span style="color: rgb(13, 141, 11);">"http://schemas.xmlsoap.org/wsdl/"</span>
+    <span style="color: rgb(153, 10, 219);">xmlns</span>:<span style="color: rgb(153, 10, 219);">soap</span>=<span style="color: rgb(13, 141, 11);">"http://schemas.xmlsoap.org/wsdl/soap/"</span>
+    <span style="color: rgb(153, 10, 219);">xmlns</span>:<span style="color: rgb(153, 10, 219);">tns</span>=<span style="color: rgb(13, 141, 11);">"http://example.com/weather"</span>&gt;
+  
+    &lt;<span style="color: blue;">message</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"GetWeatherRequest"</span>&gt;
+      &lt;<span style="color: blue;">part</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"city" type="xsd:string"</span>/&gt;
+    &lt;/<span style="color: blue;">message</span>&gt;
+  
+    &lt;<span style="color: blue;">message</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"GetWeatherResponse"</span>&gt;
+      &lt;<span style="color: blue;">part</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"temperature"</span> <span style="color: rgb(153, 10, 219);">type</span>=<span style="color: rgb(13, 141, 11);">"xsd:int"</span>/&gt;
+      &lt;<span style="color: blue;">part</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"condition"</span> <span style="color: rgb(153, 10, 219);">type</span>=<span style="color: rgb(13, 141, 11);">"xsd:string"</span>/&gt;
+    &lt;/<span style="color: blue;">message</span>&gt;
+  
+    &lt;<span style="color: blue;">portType</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"WeatherPortType"</span>&gt;
+      &lt;<span style="color: blue;">operation</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"getWeather"</span>&gt;
+        &lt;<span style="color: blue;">input</span> <span style="color: rgb(153, 10, 219);">message</span>=<span style="color: rgb(13, 141, 11);">"tns:GetWeatherRequest"</span>/&gt;
+        &lt;<span style="color: blue;">output</span> <span style="color: rgb(153, 10, 219);">message</span>=<span style="color: rgb(13, 141, 11);">"tns:GetWeatherResponse"</span>/&gt;
+      &lt;/<span style="color: blue;">operation</span>&gt;
+    &lt;/<span style="color: blue;">portType</span>&gt;
+  
+    &lt;<span style="color: blue;">binding</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"WeatherBinding"</span> <span style="color: rgb(153, 10, 219);">type</span>=<span style="color: rgb(13, 141, 11);">"tns:WeatherPortType"</span>&gt;
+      &lt;<span style="color: blue;">soap</span>:<span style="color: blue;">binding</span> <span style="color: rgb(153, 10, 219);">style</span>=<span style="color: rgb(13, 141, 11);">"document"</span> <span style="color: rgb(153, 10, 219);">transport</span>=<span style="color: rgb(13, 141, 11);">"http://schemas.xmlsoap.org/soap/http"</span>/&gt;
+      &lt;<span style="color: blue;">operation</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"getWeather"</span>&gt;
+      &lt;<span style="color: blue;">soap</span>:<span style="color: blue;">operation</span> <span style="color: rgb(153, 10, 219);">soapAction</span>=<span style="color: rgb(13, 141, 11);">"http://example.com/weather/getWeather"</span>/&gt;
+        &lt;<span style="color: blue;">input</span>&gt;
+          &lt;<span style="color: blue;">soap</span>:<span style="color: blue;">body</span> <span style="color: rgb(153, 10, 219);">use</span>=<span style="color: rgb(13, 141, 11);">"literal"</span>/&gt;
+        &lt;/<span style="color: blue;">inрut</span>&gt;
+        &lt;<span style="color: blue;">output</span>&gt;
+          &lt;<span style="color: blue;">soap</span>:<span style="color: blue;">body</span> <span style="color: rgb(153, 10, 219);">use</span>=<span style="color: rgb(13, 141, 11);">"literal"</span>/&gt;
+        &lt;/<span style="color: blue;">output</span>&gt;
+      &lt;/<span style="color: blue;">operation</span>&gt;
+    &lt;/<span style="color: blue;">binding</span>&gt;
+  
+    &lt;<span style="color: blue;">service</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"WeatherService"</span>&gt;
+      &lt;<span style="color: blue;">port</span> <span style="color: rgb(153, 10, 219);">name</span>=<span style="color: rgb(13, 141, 11);">"WeatherPort"</span> <span style="color: rgb(153, 10, 219);">binding</span>=<span style="color: rgb(13, 141, 11);">"tns:WeatherBinding"</span>&gt;
+        &lt;<span style="color: blue;">soap</span>:<span style="color: blue;">address</span> <span style="color: rgb(153, 10, 219);">location</span>=<span style="color: rgb(13, 141, 11);">"http://example.com/weather"</span>/&gt;
+      &lt;/<span style="color: blue;">port</span>&gt;
+    &lt;/<span style="color: blue;">service</span>&gt;
+  &lt;/<span style="color: blue;">definitions</span>&gt;
+                        </pre>
+                      </div>
+                    </p>
+                    <p>
+                      Use the svcutil.exe tool to generate proxy classes from the WSDL file:
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+svcutil.exe /language:C# /out:WeatherService.cs http://example.com/weather?wsdl
+                      </pre></div>
+                    </p>
+                    <p>
+                      <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000FF">using</span> System;
+<span style="color: #0000FF">using</span> WeatherServiceProxy; <comment><span style="color: #008000">// Namespace containing the generated proxy classes
+</span></comment>
+<class><span style="color: #0000FF">class</span></class><typeObject><span style="color: #058BB9"> Program
+</span></typeObject>{
+    <span style="color: #0000FF">static </span><span style="color: #0000FF">void</span><methodName><span style="color: #7c3f00"> Main</span></methodName>(<span style="color: #0000FF">string</span>[] args)
+    {
+        <span style="color: #058BB9">WeatherPortTypeClient</span> client = <span style="color: #0000FF">new </span><methodName><span style="color: #058BB9">WeatherPortTypeClient</span></methodName>();
+        
+        <comment><span style="color: #008000">// Call the getWeather operation
+</span></comment>        <span style="color: #058BB9">GetWeatherResponse</span> response = client<beforeMethodName><span style="color: #0b856c"></span></beforeMethodName>.<span style="color: #7c3f00">getWeather</span></methodName>(<span style="color: #0000FF">new </span><span style="color: #058BB9">GetWeatherRequest</span> { city = <strValue><span style="color: #D6092D">"New York"</span></strValue> });
+        
+        <comment><span style="color: #008000">// Display the weather forecast
+</span></comment><beforeMethodName><span style="color: #0b856c">        Console</span></beforeMethodName><methodName><span style="color: #7c3f00">.WriteLine</span></methodName>(<strValueDollar><span style="color: #A0040A">$</span></strValueDollar><strValue><span style="color: #D6092D">"Temperature: {response.temperature}°C, Condition: {response.condition}"</span></strValue>);
+    }
+}
+
+
+</pre></div>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1527,18 +1674,85 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question47">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading47">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse47" aria-expanded="false" aria-controls="flush-collapse47">
-                    47. QuestionPlaholder is here?
+                    47. Explain the structure of HTTP request and response.
                   </button>
                 </h2>
                 <div id="flush-collapse47" class="accordion-collapse collapse" aria-labelledby="flush-heading47" data-bs-parent="#question47">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>
+                      <b>HTTP (Hypertext Transfer Protocol)</b> requests and responses follow a specific structure that facilitates communication between clients (such as web browsers) and servers.
+                    </p>
+                    <p>
+                      <b>HTTP Request Structure:</b>
+                      <p> <b>1. Request Line:</b> This line specifies the HTTP method, the requested resource (URI), and the HTTP version.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">GET /index.html HTTP/1.1</pre></div>
+                      </p>
+                      <p> <b>2. Headers:</b> Headers provide additional information about the request, such as the user agent, content type, and more.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Host: www.example.com</pre></div>
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150</pre></div>
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Content-Type: application/json</pre></div>
+                      </p>
+                      <p>
+                          <b>3. Body (Optional):</b> Some requests include a body, which contains additional data, such as form input or JSON data.
+                          The content type header (Content-Type) in the HTTP request headers specifies the type of content being sent in the body.
+                          This JSON data could be part of an HTTP request body when a client is sending user credentials to a server for authentication.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+{
+  "username": "example_user",
+  "password": "example_password"
+}</pre></div>
+                      </p>
+                      <p>
+                        This is an example of URL-encoded form data. It could be sent in the body of an HTTP request when submitting a form on a web page.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">username=example_user&password=example_password</pre></div>
+                      </p>
+                      <p>
+                        XML data like this could be included in the body of an HTTP request when exchanging structured data between client and server.  
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+  &lt;user&gt;
+    &lt;username&gt;example_user&lt;/username&gt;
+    &lt;password&gt;example_password&lt;/password&gt;
+  &lt;/user&gt;</pre></div>
+                      </p>
+                      <p>
+                        Binary data can be anything from images, files, to any other kind of binary payload. In this case, the body would contain raw binary data.
+                      </p>
+                    </p>
+                    <p>
+                      <b>HTTP Response Structure:</b>
+                      <p>
+                        <b>1. Status Line: </b>The status line contains the HTTP version, status code, and a textual description of the status code.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">HTTP/1.1 200 OK</pre></div>
+                      </p>
+                      <p>
+                        <b>2. Headers: </b>Similar to requests, responses include headers providing additional information, such as content type, content length, etc.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+  Content-Type: text/html
+  Content-Length: 1024</pre></div>
+                      </p>
+                      <p>
+                        <b>3. Body: </b>The body contains the actual content being sent back from the server to the client, such as HTML, JSON, or binary data.
+                        <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Welcome to Example.com&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+                        </pre></div>
+                      </p>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1546,18 +1760,28 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question48">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading48">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse48" aria-expanded="false" aria-controls="flush-collapse48">
-                    48. QuestionPlaholder is here?
+                    48. How do you provide security and authenticaiton in HTTP REST?
                   </button>
                 </h2>
                 <div id="flush-collapse48" class="accordion-collapse collapse" aria-labelledby="flush-heading48" data-bs-parent="#question48">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>
+                      <b>HTTP Response Structure:</b>
+                      <p>
+                        <b>1. Use HTTPS. </b>Encrypt data transmitted between the client and server.
+                      </p>
+                      <p>
+                        <b>2. Use Token-based Authentication.</b> Clients receive tokens (e.g., JSON Web Tokens - JWT) after successful authentication. These tokens are included in subsequent requests for authentication.
+                      </p>
+                      <p>
+                        <b>3. OAuth 2.0</b> is a widely used authorization framework that allows third-party applications to obtain limited access to an HTTP service on behalf of the resource owner.
+                      </p>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1571,12 +1795,34 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading49">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse49" aria-expanded="false" aria-controls="flush-collapse49">
-                    49. QuestionPlaholder is here?
+                    49. What is CORS?
                   </button>
                 </h2>
                 <div id="flush-collapse49" class="accordion-collapse collapse" aria-labelledby="flush-heading49" data-bs-parent="#question49">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>
+                      <b>CORS</b> stands for <b>Cross-Origin Resource Sharing</b>. It's a security feature implemented by web browsers that allows servers to specify which origins (domains) are permitted to access resources from the server via HTTP headers.
+                    </p>
+                    <p>
+                      Without <b>CORS</b>:</br>
+Suppose the API server doesn't implement CORS properly. When the web application on https://example.com tries to make a request to https://api.example.com, the browser blocks the request due to the same-origin policy, which prohibits requests from one origin to another for security reasons. In this case, the browser will throw a <b>CORS error</b>, and the request will fail.
+                    </p>
+                    <p>
+                      With <b>CORS</b>:</br>
+                      <semi-b>The web application</semi-b> hosted on <b>https://example.com</b> makes a <b>request</b> to <b>https://api.example.com</b>.</br>
+                      <semi-b>The API server</semi-b> <b>responds</b> with the following <b>CORS headers</b>:</br>
+                      <ul>
+                        <li><div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Access-Control-Allow-Origin: https://example.com</pre></div></li>
+                        <li><div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Access-Control-Allow-Methods: GET, POST, PUT, DELETE</pre></div></li>
+                        <li><div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Access-Control-Allow-Headers: Content-Type, Authorization</pre></div></li>
+                        <li><div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Access-Control-Allow-Credentials: true (if applicable)</pre></div></li>
+                      </ul>
+                    </p>
+                    <p>
+                      The browser <semi-b>checks the CORS headers</semi-b> in the <semi-b>response</semi-b> from <semi-b>https://api.example.com.</semi-b></br>
+                      Since the <semi-b>Access-Control-Allow-Origin header</semi-b> allows <semi-b>https://example.com</semi-b>, the browser allows the <semi-b>request</semi-b> to proceed.</br>
+                      The browser checks other CORS headers for additional constraints and permissions.</br>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1584,18 +1830,33 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
+          <div class="col-md-10">
             <div class="accordion accordion-flush" id="question50">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading50">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse50" aria-expanded="false" aria-controls="flush-collapse50">
-                    50. QuestionPlaholder is here?
+                    50. How do load balancers work?
                   </button>
                 </h2>
                 <div id="flush-collapse50" class="accordion-collapse collapse" aria-labelledby="flush-heading50" data-bs-parent="#question50">
                   <div class="accordion-body">
-                    <p></p>
+                    <p><b>1.</b> The request reaches the load balancer first, which acts as a reverse proxy. The client believes it's communicating directly with the server, but it's actually communicating with the load balancer.</p>
+                    <p><b>2.</b> The load balancer determines which backend server should handle the request based on predefined algorithms or rules.</p>
+                    <p><b>3.</b> Once the decision is made, the load balancer forwards the request to the chosen backend server.</p>
+                    <p><b>4.</b> The backend server processes the request and sends the response back to the load balancer.</p>
+                    <p><b>5.</b> Finally, the load balancer forwards the response from the backend server back to the client.</p>
+                    <p>
+                      <b>6.</b> Load balancers use various algorithms (e.g., <b>Round Robin</b>, <b>Least Connections</b>) to determine how to distribute traffic among backend servers.</br></br>
+                      <b>Round Robin : </b></br>Each new request is sent to the next server in the list, looping back to the first server once all servers have received a request.</br>
+                      Simple to implement, ensures even distribution of traffic among servers, suitable for environments with similar server capacities.</br>
+                      Doesn't consider server load or performance, may still send requests to overloaded servers.</br></br>
+                      <b>Least Connections : </b></br>Directs new requests to the server with the fewest active connections.</br>
+                      Keeps track of the number of active connections on each server and sends new requests to the server with the lowest connection count.</br>
+                      Optimizes server utilization by distributing load based on current connections, ensures efficient resource allocation.</br>
+                      Requires monitoring of active connections on each server, may not account for server capacity or performance differences.</br>
+                    </p>
+                    <p><b>7.</b> They can perform health checks on backend servers to ensure they are available and responsive before forwarding requests.</p>
+                    <p><b>8.</b> Some advanced load balancers offer features like session persistence, where subsequent requests from the same client are sent to the same backend server.</p>
                   </div>
                 </div>
               </div>
@@ -1603,938 +1864,6 @@
           </div>
           <div class="col-md-2">
           </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question51">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading51">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse51" aria-expanded="false" aria-controls="flush-collapse51">
-                    51. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse51" class="accordion-collapse collapse" aria-labelledby="flush-heading51" data-bs-parent="#question51">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question52">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading52">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse52" aria-expanded="false" aria-controls="flush-collapse52">
-                    52. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse52" class="accordion-collapse collapse" aria-labelledby="flush-heading52" data-bs-parent="#question52">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question53">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading53">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse53" aria-expanded="false" aria-controls="flush-collapse53">
-                    53. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse53" class="accordion-collapse collapse" aria-labelledby="flush-heading53" data-bs-parent="#question53">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question54">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading54">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse54" aria-expanded="false" aria-controls="flush-collapse54">
-                    54. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse54" class="accordion-collapse collapse" aria-labelledby="flush-heading54" data-bs-parent="#question54">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question55">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading55">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse55" aria-expanded="false" aria-controls="flush-collapse55">
-                    55. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse55" class="accordion-collapse collapse" aria-labelledby="flush-heading55" data-bs-parent="#question55">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question56">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading56">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse56" aria-expanded="false" aria-controls="flush-collapse56">
-                    56. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse56" class="accordion-collapse collapse" aria-labelledby="flush-heading56" data-bs-parent="#question56">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question57">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading57">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse57" aria-expanded="false" aria-controls="flush-collapse57">
-                    57. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse57" class="accordion-collapse collapse" aria-labelledby="flush-heading57" data-bs-parent="#question57">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question58">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading58">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse58" aria-expanded="false" aria-controls="flush-collapse58">
-                    58. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse58" class="accordion-collapse collapse" aria-labelledby="flush-heading58" data-bs-parent="#question58">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question59">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading59">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse59" aria-expanded="false" aria-controls="flush-collapse59">
-                    59. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse59" class="accordion-collapse collapse" aria-labelledby="flush-heading59" data-bs-parent="#question59">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question60">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading60">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse60" aria-expanded="false" aria-controls="flush-collapse60">
-                    60. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse60" class="accordion-collapse collapse" aria-labelledby="flush-heading60" data-bs-parent="#question60">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question61">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading61">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse61" aria-expanded="false" aria-controls="flush-collapse61">
-                    61. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse61" class="accordion-collapse collapse" aria-labelledby="flush-heading61" data-bs-parent="#question61">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question62">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading62">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse62" aria-expanded="false" aria-controls="flush-collapse62">
-                    62. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse62" class="accordion-collapse collapse" aria-labelledby="flush-heading62" data-bs-parent="#question62">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question63">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading63">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse63" aria-expanded="false" aria-controls="flush-collapse63">
-                    63. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse63" class="accordion-collapse collapse" aria-labelledby="flush-heading63" data-bs-parent="#question63">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question64">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading64">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse64" aria-expanded="false" aria-controls="flush-collapse64">
-                    64. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse64" class="accordion-collapse collapse" aria-labelledby="flush-heading64" data-bs-parent="#question64">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question65">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading65">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse65" aria-expanded="false" aria-controls="flush-collapse65">
-                    65. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse65" class="accordion-collapse collapse" aria-labelledby="flush-heading65" data-bs-parent="#question65">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question66">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading66">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse66" aria-expanded="false" aria-controls="flush-collapse66">
-                    66. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse66" class="accordion-collapse collapse" aria-labelledby="flush-heading66" data-bs-parent="#question66">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question67">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading67">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse67" aria-expanded="false" aria-controls="flush-collapse67">
-                    67. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse67" class="accordion-collapse collapse" aria-labelledby="flush-heading67" data-bs-parent="#question67">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question68">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading68">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse68" aria-expanded="false" aria-controls="flush-collapse68">
-                    68. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse68" class="accordion-collapse collapse" aria-labelledby="flush-heading68" data-bs-parent="#question68">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question69">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading69">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse69" aria-expanded="false" aria-controls="flush-collapse69">
-                    69. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse69" class="accordion-collapse collapse" aria-labelledby="flush-heading69" data-bs-parent="#question69">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question70">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading70">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse70" aria-expanded="false" aria-controls="flush-collapse70">
-                    70. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse70" class="accordion-collapse collapse" aria-labelledby="flush-heading70" data-bs-parent="#question70">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question71">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading71">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse71" aria-expanded="false" aria-controls="flush-collapse71">
-                    71. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse71" class="accordion-collapse collapse" aria-labelledby="flush-heading71" data-bs-parent="#question71">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question72">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading72">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse72" aria-expanded="false" aria-controls="flush-collapse72">
-                    72. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse72" class="accordion-collapse collapse" aria-labelledby="flush-heading72" data-bs-parent="#question72">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question73">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading73">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse73" aria-expanded="false" aria-controls="flush-collapse73">
-                    73. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse73" class="accordion-collapse collapse" aria-labelledby="flush-heading73" data-bs-parent="#question73">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question74">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading74">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse74" aria-expanded="false" aria-controls="flush-collapse74">
-                    74. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse74" class="accordion-collapse collapse" aria-labelledby="flush-heading74" data-bs-parent="#question74">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question75">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading75">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse75" aria-expanded="false" aria-controls="flush-collapse75">
-                    75. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse75" class="accordion-collapse collapse" aria-labelledby="flush-heading75" data-bs-parent="#question75">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question76">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading76">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse76" aria-expanded="false" aria-controls="flush-collapse76">
-                    76. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse76" class="accordion-collapse collapse" aria-labelledby="flush-heading76" data-bs-parent="#question76">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question77">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading77">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse77" aria-expanded="false" aria-controls="flush-collapse77">
-                    77. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse77" class="accordion-collapse collapse" aria-labelledby="flush-heading77" data-bs-parent="#question77">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question78">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading78">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse78" aria-expanded="false" aria-controls="flush-collapse78">
-                    78. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse78" class="accordion-collapse collapse" aria-labelledby="flush-heading78" data-bs-parent="#question78">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question79">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading79">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse79" aria-expanded="false" aria-controls="flush-collapse79">
-                    79. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse79" class="accordion-collapse collapse" aria-labelledby="flush-heading79" data-bs-parent="#question79">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question80">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading80">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse80" aria-expanded="false" aria-controls="flush-collapse80">
-                    80. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse80" class="accordion-collapse collapse" aria-labelledby="flush-heading80" data-bs-parent="#question80">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question81">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading81">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse81" aria-expanded="false" aria-controls="flush-collapse81">
-                    81. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse81" class="accordion-collapse collapse" aria-labelledby="flush-heading81" data-bs-parent="#question81">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question82">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading82">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse82" aria-expanded="false" aria-controls="flush-collapse82">
-                    82. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse82" class="accordion-collapse collapse" aria-labelledby="flush-heading82" data-bs-parent="#question82">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question83">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading83">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse83" aria-expanded="false" aria-controls="flush-collapse83">
-                    83. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse83" class="accordion-collapse collapse" aria-labelledby="flush-heading83" data-bs-parent="#question83">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question84">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading84">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse84" aria-expanded="false" aria-controls="flush-collapse84">
-                    84. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse84" class="accordion-collapse collapse" aria-labelledby="flush-heading84" data-bs-parent="#question84">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question85">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading85">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse85" aria-expanded="false" aria-controls="flush-collapse85">
-                    85. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse85" class="accordion-collapse collapse" aria-labelledby="flush-heading85" data-bs-parent="#question85">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question86">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading86">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse86" aria-expanded="false" aria-controls="flush-collapse86">
-                    86. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse86" class="accordion-collapse collapse" aria-labelledby="flush-heading86" data-bs-parent="#question86">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question87">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading87">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse87" aria-expanded="false" aria-controls="flush-collapse87">
-                    87. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse87" class="accordion-collapse collapse" aria-labelledby="flush-heading87" data-bs-parent="#question87">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question88">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading88">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse88" aria-expanded="false" aria-controls="flush-collapse88">
-                    88. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse88" class="accordion-collapse collapse" aria-labelledby="flush-heading88" data-bs-parent="#question88">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question89">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading89">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse89" aria-expanded="false" aria-controls="flush-collapse89">
-                    89. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse89" class="accordion-collapse collapse" aria-labelledby="flush-heading89" data-bs-parent="#question89">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question90">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading90">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse90" aria-expanded="false" aria-controls="flush-collapse90">
-                    90. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse90" class="accordion-collapse collapse" aria-labelledby="flush-heading90" data-bs-parent="#question90">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question91">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading91">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse91" aria-expanded="false" aria-controls="flush-collapse91">
-                    91. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse91" class="accordion-collapse collapse" aria-labelledby="flush-heading91" data-bs-parent="#question91">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question92">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading92">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse92" aria-expanded="false" aria-controls="flush-collapse92">
-                    92. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse92" class="accordion-collapse collapse" aria-labelledby="flush-heading92" data-bs-parent="#question92">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question93">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading93">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse93" aria-expanded="false" aria-controls="flush-collapse93">
-                    93. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse93" class="accordion-collapse collapse" aria-labelledby="flush-heading93" data-bs-parent="#question93">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question94">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading94">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse94" aria-expanded="false" aria-controls="flush-collapse94">
-                    94. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse94" class="accordion-collapse collapse" aria-labelledby="flush-heading94" data-bs-parent="#question94">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question95">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading95">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse95" aria-expanded="false" aria-controls="flush-collapse95">
-                    95. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse95" class="accordion-collapse collapse" aria-labelledby="flush-heading95" data-bs-parent="#question95">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question96">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading96">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse96" aria-expanded="false" aria-controls="flush-collapse96">
-                    96. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse96" class="accordion-collapse collapse" aria-labelledby="flush-heading96" data-bs-parent="#question96">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question97">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading97">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse97" aria-expanded="false" aria-controls="flush-collapse97">
-                    97. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse97" class="accordion-collapse collapse" aria-labelledby="flush-heading97" data-bs-parent="#question97">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question98">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading98">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse98" aria-expanded="false" aria-controls="flush-collapse98">
-                    98. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse98" class="accordion-collapse collapse" aria-labelledby="flush-heading98" data-bs-parent="#question98">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
-<div class="col-md-10">
-            <div class="accordion accordion-flush" id="question99">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-heading99">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse99" aria-expanded="false" aria-controls="flush-collapse99">
-                    99. QuestionPlaholder is here?
-                  </button>
-                </h2>
-                <div id="flush-collapse99" class="accordion-collapse collapse" aria-labelledby="flush-heading99" data-bs-parent="#question99">
-                  <div class="accordion-body">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="col-md-2">
-          </div>
-
         </div>
       </div>  
       <div class="bottom-end">
