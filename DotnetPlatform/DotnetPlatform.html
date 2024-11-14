@@ -854,14 +854,11 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading17">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapse17">
-                    17. What is the difference between Positive and Negative testing?
+                    17. What is Managed Code?
                   </button>
                 </h2>
                 <div id="flush-collapse17" class="accordion-collapse collapse" aria-labelledby="flush-heading17" data-bs-parent="#question17">
-                  <div class="accordion-body">
-                    <p>Positive testing is the process of testing a system or software application by providing valid and expected inputs.</p>
-                    <p>Negative testing, on the other hand, is the process of testing a system or software application by providing invalid and unexpected inputs to verify that the system can handle such inputs and respond appropriately without crashing or producing incorrect results.</p>
-                  </div>
+                  <div class="accordion-body">When the code is directly executed by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, memory allocation, and object disposal is managed by the Runtime.</div> 
                 </div>
               </div>
             </div> 
@@ -872,7 +869,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading18">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse18" aria-expanded="false" aria-controls="flush-collapse18">
-                    18. What is Smoke Testing?
+                    18. Covariance and contravariance. Tell about these concepts with examples.
                   </button>
                 </h2>
                 <div id="flush-collapse18" class="accordion-collapse collapse" aria-labelledby="flush-heading18" data-bs-parent="#question18">
@@ -889,7 +886,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading19">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse19" aria-expanded="false" aria-controls="flush-collapse19">
-                    19. What is Usability Testing?
+                    19. Partial methods, partial classses?
                   </button>
                 </h2>
                 <div id="flush-collapse19" class="accordion-collapse collapse" aria-labelledby="flush-heading19" data-bs-parent="#question19">
@@ -906,16 +903,11 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading20">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse20" aria-expanded="false" aria-controls="flush-collapse20">
-                    20. What is the importance of Test Coverage?
+                    20. What is Unmanaged Code?
                   </button>
                 </h2>
                 <div id="flush-collapse20" class="accordion-collapse collapse" aria-labelledby="flush-heading20" data-bs-parent="#question20">
-                  <div class="accordion-body">
-                    <p><b>1. Increased confidence:</b> A high degree of test coverage can give developers and testers greater confidence that the system is working as intended and that all critical areas have been tested.</p>
-                    <p><b>2. Reduced risk</b>: By testing all parts of the system, test coverage helps reduce the risk of errors and defects that could impact the overall performance and functionality of the system.</p>
-                    <p><b>3. Cost-effectiveness:</b> By identifying defects early in the development process, test coverage can help reduce the cost of fixing issues and retesting.</p>
-                    <p><b>4. Compliance:</b> In some industries, such as medical or financial, having high test coverage is often a requirement for regulatory compliance.</p>
-                  </div>
+                  <div class="accordion-body">The object creation, execution, and disposal of unmanaged code are directly managed by the programmers.</div>
                 </div>
               </div>
             </div> 
@@ -926,12 +918,12 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading21">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapse21">
-                    21. How do you determine Test Case Coverage?
+                    21. What is Boxing / Unboxing?
                   </button>
                 </h2>
                 <div id="flush-collapse21" class="accordion-collapse collapse" aria-labelledby="flush-heading21" data-bs-parent="#question21">
-                  <div class="accordion-body">
-                    <p>Test case coverage can be determined by identifying the requirements or specifications of the system under test and then creating test cases that verify that each requirement or specification is fulfilled. This can be done through techniques such as boundary value analysis, equivalence partitioning, and decision table testing. Test coverage can also be measured using tools such as code coverage analysis, which examines which portions of the code have been executed during testing, or requirements traceability matrix, which tracks the relationship between requirements and test cases. The level of test case coverage required will depend on the specific project and its goals.</p>
+                  <div class="accordion-body">The process of converting from a value type to a reference type is called boxing. Boxing is an implicit conversion.
+                    The process of converting from a reference type to a value type is called unboxing. 
                   </div>
                 </div>
               </div>
@@ -943,18 +935,48 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading22">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
-                    22. How do you ensure Test Case Quality?
+                    22. Struct vs. Class
                   </button>
                 </h2>
                 <div id="flush-collapse22" class="accordion-collapse collapse" aria-labelledby="flush-heading22" data-bs-parent="#question22">
                   <div class="accordion-body">
-                    <p><b>1. Clear and concise test objectives:</b> Test cases should have clear and concise objectives that define what is being tested, how it is being tested, and what the expected results are.</p>
-                    <p><b>2. Test case review:</b> Test cases should be reviewed by other members of the team to ensure that they are accurate, complete, and relevant.</p>
-                    <p><b>3. Traceability:</b> Test cases should be traceable to the requirements they are intended to test, ensuring that all requirements have been covered.</p>
-                    <p><b>4. Test data:</b> Test cases should use appropriate and valid test data to ensure that the test conditions are realistic and cover the intended scenarios.</p>
-                    <p><b>5. Maintainability:</b> Test cases should be designed to be easily maintainable, with clear and concise documentation and easy-to-understand steps.</p>
-                    <p><b>6. Automated testing:</b> Using automated testing tools can improve the quality and consistency of test cases, ensuring that they are executed accurately and efficiently.</p>
-                    <p><b>7. Continuous improvement:</b> Test cases should be continuously reviewed and updated based on feedback, results, and changes to the system, ensuring that they remain effective and relevant over time.</p>
+                    <p>
+                      <ul class="list-group structdiff">
+                        <li class="list-group-item"><h5>Struct:</h5></li>
+                        <li class="list-group-item">1. Of value type, derives from System.Value type.</li>
+                        <li class="list-group-item">2. Doesn't support inheritance.</li>
+                        <li class="list-group-item">3. Doesn't have a memory overhead per new instance.</li>
+                        <li class="list-group-item">4. Passed by value.</li>
+                        <li class="list-group-item">5. Usually used for small amount of data.</li>
+                        <li class="list-group-item">6. Can't be abstract.</li>
+                        <li class="list-group-item">8. Allocations and de-allocations of value types are in general cheaper than allocations and de-allocations of reference types.</li>
+                        <li class="list-group-item">9. In structs, each variable contains its own copy of the data (except in the case of the ref and out parameter variables), and an operation on one variable does not affect another variable.</li>
+                        <li class="list-group-item">10. Can't contain a default constructor.</li>
+                        <li class="list-group-item">11. Can't contain a default constructor.</li>
+                        <li class="list-group-item">12. Can't contain a default constructor.</li>
+                      </ul>
+                    </p>
+                    <p>
+                      <ul class="list-group classdiff">
+                        <li class="list-group-item"><h5>Class:</h5></li>
+                        <li class="list-group-item">1. Of reference type, derives from System.Object type.</li>
+                        <li class="list-group-item">2. Supports inheritance.</li>
+                        <li class="list-group-item">3. Has a memory overhead per new instance.</li>
+                        <li class="list-group-item">4. Passed by reference.</li>
+                        <li class="list-group-item">5. Usually used for large amount of data.</li>
+                        <li class="list-group-item">6. Can be an abstract type.</li>
+                        <li class="list-group-item">8. Assignments of large reference types are cheaper than assignments of large value types.</li>
+                        <li class="list-group-item">9. In classes, two variables can contain the reference of the same object and any operation on one variable can affect another variable.</li>
+                      </ul>
+                    </p>
+                    <p>
+                      <ul class="list-group classdiff">
+                        <li class="list-group-item"><h5>Both classes and structs:</h5></li>
+                        <li class="list-group-item">1. Are compound data types typically used to contain a few variables that have some logical relationship.</li>
+                        <li class="list-group-item">2. Contain methods and events, static fields.</li>
+                        <li class="list-group-item">3. Support interfaces.</li>
+                      </ul>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -966,12 +988,13 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading23">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse23" aria-expanded="false" aria-controls="flush-collapse23">
-                    23. What is the purpose of a Test Checklist?
+                    23. What is a record?
                   </button>
                 </h2>
                 <div id="flush-collapse23" class="accordion-collapse collapse" aria-labelledby="flush-heading23" data-bs-parent="#question23">
                   <div class="accordion-body">
-                    <p>A test checklist is a document that outlines a list of items to be tested or verified during the testing process. The purpose of a test checklist is to ensure that all important aspects of the software are tested thoroughly and consistently across different testing activities and across different team members. It helps to reduce the risk of missing important test scenarios and to ensure that testing is comprehensive and effective. Test checklists can also serve as a tool for knowledge transfer and to ensure consistency in testing activities.</p>
+                    <p>C# 9 introduces records, a new reference type that you can create instead of classes or structs. C# 10 adds record structs so that you can define records as value types. Records are distinct from classes in that record types use value-based equality. Two variables of a record type are equal if the record type definitions are identical, and if for every field, the values in both records are equal.</p>
+                    <p><img src="classes_vs_records.png" class="img-fluid rounded float-left" style="width: 400px; height: 550px;" alt="Responsive image"></p>
                   </div>
                 </div>
               </div>
@@ -983,13 +1006,17 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading24">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse24" aria-expanded="false" aria-controls="flush-collapse24">
-                    24. What is the importance of User Acceptance Testing?
+                    24. What is the difference between classes and interfaces?
                   </button>
                 </h2>
                 <div id="flush-collapse24" class="accordion-collapse collapse" aria-labelledby="flush-heading24" data-bs-parent="#question24">
                   <div class="accordion-body">
-                    <p>User acceptance testing (UAT) is a type of testing where the end-users or customers of a software application test the application to determine if it meets their requirements and can be used in the real-world. The purpose of UAT is to ensure that the application is usable and acceptable to the end-users and meets their needs.</p>
-                    <p>The main difference between UAT and other types of testing, such as functional testing and system testing, is that UAT is performed by end-users or customers of the software application, whereas other types of testing are typically performed by software developers or quality assurance professionals. UAT is usually one of the last stages of the software development life cycle and is performed after the application has passed other types of testing.</p>
+                    <p>Use an interface when you require a collection of functionalities and data that are independent of specific classes. Opt for an abstract class when you want objects of a particular type to possess shared attributes.</p>
+                    <p>An interface is a contract: it specifies what members (methods and properties) a class implementing the interface must have. But interfaces will contain only the declaration of the members. It is only a contract, it has no implementations. Only very simple implementations by default for simple methods. A class can implement zero, one or multiple interfaces.</p>
+                    <p>An interface can not specify the access level for methods or properties like protected or private, and they are public by default. An abstract class can limit the access level for methods and properties. The only exception is an abstract method that can not be private.</p>
+                    <p>An interface can not have the declaration of constructors. If attempted, it treats them as different methods making the script implement both. An abstract class can have the declaration of constructors.</p>
+                    <p>The interface can not have standard fields. They have to be properties with a get and set. The abstract class can have standard fields and properties.</p>
+                    <p>When making changes to an interface, all inheriting scripts have to be changed to implement the changes or throw an error. When making changes to an abstract class, unless the added change was an abstract method, there is no need to change any other code since you can add the base implementation.</p>
                   </div>
                 </div>
               </div>
@@ -1001,7 +1028,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading25">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse25" aria-expanded="false" aria-controls="flush-collapse25">
-                    25. What is Traceability Matrix?
+                    25. Static fields in non static classes. how they behave
                   </button>
                 </h2>
                 <div id="flush-collapse25" class="accordion-collapse collapse" aria-labelledby="flush-heading25" data-bs-parent="#question25">
@@ -1018,12 +1045,13 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading26">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse26" aria-expanded="false" aria-controls="flush-collapse26">
-                    26. What is the purpose of Data-Driven Testing?
+                    26. Constant vs. Readonly
                   </button>
                 </h2>
                 <div id="flush-collapse26" class="accordion-collapse collapse" aria-labelledby="flush-heading26" data-bs-parent="#question26">
                   <div class="accordion-body">
-                    <p>The purpose of data-driven testing is to use a set of test data to drive the execution of a test script. The test data is typically stored in a database, spreadsheet, or file, and the test script is designed to iterate through the data, performing the same set of actions on each data set. This allows for more efficient testing, as multiple test cases can be executed in a single test script, and variations in test data can be quickly and easily tested. Additionally, data-driven testing can help to identify defects that may not be found through manual testing, and can help to ensure consistent test results across multiple iterations of testing.</p>
+                    <p>For constant it's mandatory to assign a value to it. it's defined in compile-time. By default, a const is static, and we cannot change the value of a const variable throughout the entire program.</p>
+                    <p>Readonly is the keyword whose value we can change during runtime or assign it at run time but only through the non-static constructor.</p>
                   </div>
                 </div>
               </div>
@@ -1035,18 +1063,26 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading27">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse27" aria-expanded="false" aria-controls="flush-collapse27">
-                    27. What is the Testing Lifecycle?
+                    27. What is Inheritance and how do we use it in C#?
                   </button>
                 </h2>
                 <div id="flush-collapse27" class="accordion-collapse collapse" aria-labelledby="flush-heading27" data-bs-parent="#question27">
                   <div class="accordion-body">
-                    <p>The testing lifecycle refers to a series of steps or phases that are followed in order to carry out testing activities efficiently and effectively. The testing lifecycle typically includes the following phases:</p>
-                    <p><b>1. Test Planning:</b> In this phase, the overall testing strategy and approach are defined, and a detailed test plan is created.</p>
-                    <p><b>3. Test Design:</b> In this phase, test cases are designed based on requirements, specifications, and design documents.</p>
-                    <p><b>4. Test Execution:</b> In this phase, the actual testing is performed, and the test cases are executed to identify defects and issues.</p>
-                    <p><b>5. Test Reporting:</b> In this phase, test results are reported, and defects are logged and tracked.</p>
-                    <p><b>6. Test Closure:</b> In this phase, all testing activities are completed, and the testing team prepares a test summary report to provide an overview of the testing activities and results.</p>
-                    <p>The testing lifecycle is iterative in nature and may need to be repeated multiple times, especially during the software development lifecycle.</p>
+                    <p>Inheritance is a mechanism in object-oriented programming (OOP) that enables a class to derive properties and behavior from another class. The class that is being derived from is called the base class, and the class that is deriving from the base class is called the derived class. In C#, inheritance is implemented using the ":" symbol followed by the name of the base class.</p>
+                    <p>To use inheritance effectively in C#, you should follow these best practices:
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Use inheritance to model an "is-a" relationship: Inheritance should be used when the derived class "is a" type of the base class. For example, a Car "is a" Vehicle, so you can use inheritance to derive a Car class from a Vehicle class.</li>
+                        <li class="list-group-item">Avoid deep inheritance hierarchies: Deep inheritance hierarchies can make your code difficult to understand and maintain. You should try to keep the inheritance hierarchy as shallow as possible, ideally with no more than three levels of inheritance.</li>
+                        <li class="list-group-item">Favor composition over inheritance: In some cases, composition (using objects as member variables of a class) can be a better alternative to inheritance. This can help reduce the complexity of your code and make it easier to understand.</li>
+                        <li class="list-group-item">You should consider using composition over inheritance in C# in the following situations:</li>
+                        <li class="list-group-item">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">1. When you want to reuse behavior across multiple classes, but there is no "is-a" relationship: Inheritance is appropriate when you have a base class that defines behavior that is common to all derived classes. However, if you have behavior that is shared between classes that do not have an "is-a" relationship, composition may be a better choice. For example, if you have a ShoppingCart class and a Product class, you could use composition to give the ShoppingCart a list of Products, rather than creating a derived class for each type of shopping cart.</li>
+                            <li class="list-group-item">2. When you want to change behavior at runtime: With inheritance, the behavior of a derived class is determined at compile-time. If you need to change behavior at runtime, composition may be a better choice. For example, you could use composition to give a class a strategy object that can be changed at runtime to alter its behavior.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </p>  
                   </div>
                 </div>
               </div>
@@ -1058,14 +1094,11 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading28">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse28" aria-expanded="false" aria-controls="flush-collapse28">
-                    28. What is the difference between Functional and Non-Functional testing?
+                    28. Differences between Array, List, LinkedList?
                   </button>
                 </h2>
                 <div id="flush-collapse28" class="accordion-collapse collapse" aria-labelledby="flush-heading28" data-bs-parent="#question28">
                   <div class="accordion-body">
-                    <p>Functional testing and non-functional testing are two broad categories of software testing. The main difference between them is that functional testing is concerned with testing the functionality or behavior of the software, while non-functional testing is focused on testing the non-functional aspects of the software, such as performance, security, usability, and reliability.</p>
-                    <p>Functional testing is used to verify that the software meets the specified functional requirements and performs its intended functions correctly. This type of testing checks that the software behaves as expected in response to various inputs and under different conditions. Functional testing is typically performed using test cases that are based on the requirements or specifications of the software.</p>
-                    <p>Non-functional testing, on the other hand, is used to verify that the software meets the non-functional requirements, such as performance, security, usability, and reliability. This type of testing checks the quality attributes of the software, which are not related to the functionality. Non-functional testing is typically performed using various techniques, such as load testing, stress testing, security testing, and usability testing, among others.</p>
                   </div>
                 </div>
               </div>
@@ -1077,7 +1110,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading29">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse29" aria-expanded="false" aria-controls="flush-collapse29">
-                    29. What is Stress Testing?
+                    29. What data structures exist in C#?
                   </button>
                 </h2>
                 <div id="flush-collapse29" class="accordion-collapse collapse" aria-labelledby="flush-heading29" data-bs-parent="#question29">
@@ -1094,7 +1127,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading30">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse30" aria-expanded="false" aria-controls="flush-collapse30">
-                    30. What is Security Testing?
+                    30. Is and As keywords. Example and differences.
                   </button>
                 </h2>
                 <div id="flush-collapse30" class="accordion-collapse collapse" aria-labelledby="flush-heading30" data-bs-parent="#question30">
@@ -1111,7 +1144,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading31">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapse31">
-                    31. What is End-to-End Testing?
+                    31. Static classes and their traits and the difference compared with a regular
                   </button>
                 </h2>
                 <div id="flush-collapse31" class="accordion-collapse collapse" aria-labelledby="flush-heading31" data-bs-parent="#question31">
@@ -1128,7 +1161,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading32">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse32" aria-expanded="false" aria-controls="flush-collapse32">
-                    32. What is the difference between Severity and Priority?
+                    32. What is the String interpolation?
                   </button>
                 </h2>
                 <div id="flush-collapse32" class="accordion-collapse collapse" aria-labelledby="flush-heading32" data-bs-parent="#question32">
@@ -1148,7 +1181,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading33">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse33" aria-expanded="false" aria-controls="flush-collapse33">
-                    33. What is Ad-Hoc Testing?
+                    33. Break and continue keywords. If you have a for loop and if inside the loop, how do you break outside the if? What would happen if you put break? What if a loop is inside the loop and you put break.
                   </button>
                 </h2>
                 <div id="flush-collapse33" class="accordion-collapse collapse" aria-labelledby="flush-heading33" data-bs-parent="#question33">
@@ -1165,12 +1198,12 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading34">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse34" aria-expanded="false" aria-controls="flush-collapse34">
-                    34. What is Integration Testing?
+                    34. What would happen in this case if you do arrayName[3..^4] of an array of 20 values.
                   </button>
                 </h2>
                 <div id="flush-collapse34" class="accordion-collapse collapse" aria-labelledby="flush-heading34" data-bs-parent="#question34">
                   <div class="accordion-body">
-                    <p>Integration testing is a software testing technique that involves testing the interface between two or more software components or modules after they have been integrated. The purpose of integration testing is to verify that the individual components, when combined, work correctly and meet the requirements and expectations of the system. Integration testing can help identify errors and defects that may arise from the interaction between the components and ensure the overall functionality and performance of the system. It is typically performed after unit testing and before system testing.</p>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -1182,7 +1215,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading35">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
-                    35. What is the difference between Static and Dynamic testing?
+                    35. String vs. StringBuilder. Why do you need to use the StringBuilder?
                   </button>
                 </h2>
                 <div id="flush-collapse35" class="accordion-collapse collapse" aria-labelledby="flush-heading35" data-bs-parent="#question35">
@@ -1202,12 +1235,30 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading36">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse36" aria-expanded="false" aria-controls="flush-collapse36">
-                    36. What is Test-Driven Development (TDD)?
+                    36. Scopes and braces. What is a variable declared in one scope and you use it out of the scope. (Rewrite the question)
                   </button>
                 </h2>
                 <div id="flush-collapse36" class="accordion-collapse collapse" aria-labelledby="flush-heading36" data-bs-parent="#question36">
                   <div class="accordion-body">
-                    <p>Test-driven development (TDD) is a software development approach where test cases are created before the actual implementation code. In TDD, a developer first writes a failing test case, and then writes just enough code to make the test pass. This process is repeated for every feature or requirement, with new test cases being added along the way to ensure that previously implemented functionality remains intact. The goal of TDD is to create high-quality, reliable code that is thoroughly tested and easily maintainable.</p>
+                    <p>public void Method()
+                      {
+                          {
+                              int i = 1;
+
+                              Console.WriteLine(i);
+                              
+                              {
+                                int x = 10;
+
+                                Console.WriteLine(i);
+                              }
+                          }
+                      
+                          int j = 2;
+
+                          Console.WriteLine(i);
+                          Console.WriteLine(j);
+                      }</p>
                   </div>
                 </div>
               </div>
@@ -1219,7 +1270,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading37">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse37" aria-expanded="false" aria-controls="flush-collapse37">
-                    37. What is Behavior-Driven Development (BDD)?
+                    37. What is the main difference between languages C++ and C#?
                   </button>
                 </h2>
                 <div id="flush-collapse37" class="accordion-collapse collapse" aria-labelledby="flush-heading37" data-bs-parent="#question37">
@@ -1236,7 +1287,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading38">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse38" aria-expanded="false" aria-controls="flush-collapse38">
-                    38. What is the difference between Sanity Testing and Retesting?
+                    38. Nullable types
                   </button>
                 </h2>
                 <div id="flush-collapse38" class="accordion-collapse collapse" aria-labelledby="flush-heading38" data-bs-parent="#question38">
@@ -1256,7 +1307,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading39">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse39" aria-expanded="false" aria-controls="flush-collapse39">
-                    39. What is the difference between Load Testing and Stress Testing?
+                    39. Is it possible to add an interation ability to some class that does not support iteration in the first place, using foreach?
                   </button>
                 </h2>
                 <div id="flush-collapse39" class="accordion-collapse collapse" aria-labelledby="flush-heading39" data-bs-parent="#question39">
@@ -1277,7 +1328,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading40">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse40" aria-expanded="false" aria-controls="flush-collapse40">
-                    40. What is the difference between Usability Testing and User Acceptance Testing?
+                    40. What method is an entry point of your program and what would happen if you comment it out? 
                   </button>
                 </h2>
                 <div id="flush-collapse40" class="accordion-collapse collapse" aria-labelledby="flush-heading40" data-bs-parent="#question40">
@@ -1298,7 +1349,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading41">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse41" aria-expanded="false" aria-controls="flush-collapse41">
-                    41. How do you prioritize test cases for a complext enterprise app?
+                    41. Have you ever used AOP or FP?
                   </button>
                 </h2>
                 <div id="flush-collapse41" class="accordion-collapse collapse" aria-labelledby="flush-heading41" data-bs-parent="#question41">
@@ -1318,7 +1369,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading42">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse42" aria-expanded="false" aria-controls="flush-collapse42">
-                    42. What is the concept of equivalence partitioning?
+                    42. What is Clean Architecture?
                   </button>
                 </h2>
                 <div id="flush-collapse42" class="accordion-collapse collapse" aria-labelledby="flush-heading42" data-bs-parent="#question42">
@@ -1335,7 +1386,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading43">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse43" aria-expanded="false" aria-controls="flush-collapse43">
-                    43. Question!
+                    43. Explain the String.Intern method.
                   </button>
                 </h2>
                 <div id="flush-collapse43" class="accordion-collapse collapse" aria-labelledby="flush-heading43" data-bs-parent="#question43">
@@ -1354,7 +1405,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading44">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse44" aria-expanded="false" aria-controls="flush-collapse44">
-                    44. Question!
+                    44. Does C# have destructors?
                   </button>
                 </h2>
                 <div id="flush-collapse44" class="accordion-collapse collapse" aria-labelledby="flush-heading44" data-bs-parent="#question44">
@@ -1373,7 +1424,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading45">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse45" aria-expanded="false" aria-controls="flush-collapse45">
-                    45. Question!
+                    45. What is a delegate?
                   </button>
                 </h2>
                 <div id="flush-collapse45" class="accordion-collapse collapse" aria-labelledby="flush-heading45" data-bs-parent="#question45">
@@ -1392,7 +1443,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading46">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse46" aria-expanded="false" aria-controls="flush-collapse46">
-                    46. Question!
+                    46. What is an event?
                   </button>
                 </h2>
                 <div id="flush-collapse46" class="accordion-collapse collapse" aria-labelledby="flush-heading46" data-bs-parent="#question46">
@@ -1411,7 +1462,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading47">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse47" aria-expanded="false" aria-controls="flush-collapse47">
-                    47. Question!
+                    47. IAsyncDisposable vs. IDisposable
                   </button>
                 </h2>
                 <div id="flush-collapse47" class="accordion-collapse collapse" aria-labelledby="flush-heading47" data-bs-parent="#question47">
@@ -1430,7 +1481,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading48">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse48" aria-expanded="false" aria-controls="flush-collapse48">
-                    48. Question!
+                    48. What is a multilayered architecture?
                   </button>
                 </h2>
                 <div id="flush-collapse48" class="accordion-collapse collapse" aria-labelledby="flush-heading48" data-bs-parent="#question48">
@@ -1449,7 +1500,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading49">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse49" aria-expanded="false" aria-controls="flush-collapse49">
-                    49. Question!
+                    49. What happens when you call GC.Collect()
                   </button>
                 </h2>
                 <div id="flush-collapse49" class="accordion-collapse collapse" aria-labelledby="flush-heading49" data-bs-parent="#question49">
@@ -1468,7 +1519,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading50">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse50" aria-expanded="false" aria-controls="flush-collapse50">
-                    50. Question!
+                    50. Can a tuple be changed?
                   </button>
                 </h2>
                 <div id="flush-collapse50" class="accordion-collapse collapse" aria-labelledby="flush-heading50" data-bs-parent="#question50">
@@ -1487,7 +1538,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading51">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse51" aria-expanded="false" aria-controls="flush-collapse51">
-                    51. Question!
+                    51. What access modifiers do you know and what does each of them mean?
                   </button>
                 </h2>
                 <div id="flush-collapse51" class="accordion-collapse collapse" aria-labelledby="flush-heading51" data-bs-parent="#question51">
@@ -1506,7 +1557,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading52">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse52" aria-expanded="false" aria-controls="flush-collapse52">
-                    52. Question!
+                    52. What is AOT compilation?
                   </button>
                 </h2>
                 <div id="flush-collapse52" class="accordion-collapse collapse" aria-labelledby="flush-heading52" data-bs-parent="#question52">
@@ -1525,7 +1576,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading53">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse53" aria-expanded="false" aria-controls="flush-collapse53">
-                    53. Question!
+                    53. Enumerate the main principles of OOP and what is it for?
                   </button>
                 </h2>
                 <div id="flush-collapse53" class="accordion-collapse collapse" aria-labelledby="flush-heading53" data-bs-parent="#question53">
@@ -1544,7 +1595,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading54">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse54" aria-expanded="false" aria-controls="flush-collapse54">
-                    54. Question!
+                    54. What is Lazy?
                   </button>
                 </h2>
                 <div id="flush-collapse54" class="accordion-collapse collapse" aria-labelledby="flush-heading54" data-bs-parent="#question54">
@@ -1563,7 +1614,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading55">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse55" aria-expanded="false" aria-controls="flush-collapse55">
-                    55. Question!
+                    55. Events vs. Delegates.
                   </button>
                 </h2>
                 <div id="flush-collapse55" class="accordion-collapse collapse" aria-labelledby="flush-heading55" data-bs-parent="#question55">
@@ -1582,7 +1633,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading56">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse56" aria-expanded="false" aria-controls="flush-collapse56">
-                    56. Question!
+                    56. What is Duck typing?
                   </button>
                 </h2>
                 <div id="flush-collapse56" class="accordion-collapse collapse" aria-labelledby="flush-heading56" data-bs-parent="#question56">
@@ -1601,7 +1652,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading57">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse57" aria-expanded="false" aria-controls="flush-collapse57">
-                    57. Question!
+                    57. What is Roslyn?
                   </button>
                 </h2>
                 <div id="flush-collapse57" class="accordion-collapse collapse" aria-labelledby="flush-heading57" data-bs-parent="#question57">
@@ -1620,7 +1671,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading58">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse58" aria-expanded="false" aria-controls="flush-collapse58">
-                    58. Question!
+                    58. What is virtual address space?
                   </button>
                 </h2>
                 <div id="flush-collapse58" class="accordion-collapse collapse" aria-labelledby="flush-heading58" data-bs-parent="#question58">
@@ -1639,7 +1690,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading59">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse59" aria-expanded="false" aria-controls="flush-collapse59">
-                    59. Question!
+                    59. What is a clojure?
                   </button>
                 </h2>
                 <div id="flush-collapse59" class="accordion-collapse collapse" aria-labelledby="flush-heading59" data-bs-parent="#question59">
@@ -1658,7 +1709,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading60">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse60" aria-expanded="false" aria-controls="flush-collapse60">
-                    60. Question!
+                    60. What is yield and what does it do? Give an example.
                   </button>
                 </h2>
                 <div id="flush-collapse60" class="accordion-collapse collapse" aria-labelledby="flush-heading60" data-bs-parent="#question60">
@@ -1677,7 +1728,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading61">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse61" aria-expanded="false" aria-controls="flush-collapse61">
-                    61. Question!
+                    61. A Domain vs a Process.
                   </button>
                 </h2>
                 <div id="flush-collapse61" class="accordion-collapse collapse" aria-labelledby="flush-heading61" data-bs-parent="#question61">
@@ -1734,7 +1785,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading64">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse64" aria-expanded="false" aria-controls="flush-collapse64">
-                    64. Question!
+                    64. Calling a virtual method or a property inside a constructor. What's going to happen?
                   </button>
                 </h2>
                 <div id="flush-collapse64" class="accordion-collapse collapse" aria-labelledby="flush-heading64" data-bs-parent="#question64">
@@ -1886,12 +1937,50 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading72">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse72" aria-expanded="false" aria-controls="flush-collapse72">
-                    72. Question!
+                    72. Enumerate most used methods in LINQ. What's LINQ at all.
                   </button>
                 </h2>
                 <div id="flush-collapse72" class="accordion-collapse collapse" aria-labelledby="flush-heading72" data-bs-parent="#question72">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>LINQ (Language Integrated Query) is a powerful feature in C# that provides a set of standard query operators for working with collections, arrays, XML, and databases. Here are some of the most commonly used LINQ methods:
+
+                      Where: Filters a collection based on a specified condition.
+                      Select: Projects each element of a collection into a new form.
+                      OrderBy/OrderByDescending: Sorts the elements of a collection in ascending or descending order based on a specified key.
+                      GroupBy: Groups the elements of a collection based on a specified key.
+                      Join: Correlates the elements of two collections based on matching keys.
+                      First/FirstOrDefault: Returns the first element of a collection or a default value if the collection is empty.
+                      Last/LastOrDefault: Returns the last element of a collection or a default value if the collection is empty.
+                      Single/SingleOrDefault: Returns the only element of a collection or a default value if the collection is empty or has more than one element.
+                      Count/LongCount: Returns the number of elements in a collection.
+                      Sum/Max/Min/Average: Performs mathematical operations like sum, maximum, minimum, and average on a collection of numeric values.
+                      Any/All: Determines whether any or all elements in a collection satisfy a given condition.
+                      Take/Skip: Returns a new collection with a specified number of elements taken or skipped from the beginning of the original collection.
+                      Distinct: Removes duplicate elements from a collection.
+                      Union/Intersect/Except: Performs set operations like union, intersection, and set difference on collections.
+                      Concat: Concatenates two collections into a single collection.
+                      ToList/ToArray/ToDictionary: Converts a collection to a list, array, or dictionary.</p>
+                    <p>var result = customers
+                      .Where(c => c.Country == "USA" && c.RegisteredDate >= DateTime.Today.AddYears(-5))
+                      .Select(c => new
+                      {
+                          c.CustomerName,
+                          TotalOrders = c.Orders.Count(),
+                          TotalOrderValue = c.Orders.Sum(o => o.Total),
+                          LatestOrderDate = c.Orders.Max(o => o.OrderDate),
+                          Products = c.Orders.SelectMany(o => o.OrderLines)
+                                              .GroupBy(ol => ol.Product)
+                                              .Select(g => new
+                                              {
+                                                  ProductName = g.Key.Name,
+                                                  TotalQuantity = g.Sum(ol => ol.Quantity),
+                                                  TotalValue = g.Sum(ol => ol.Total)
+                                              })
+                      })
+                      .OrderByDescending(c => c.TotalOrderValue)
+                      .ThenBy(c => c.LatestOrderDate)
+                      .Take(10)
+                      .ToList();</p>
                   </div>
                 </div>
               </div>
@@ -1943,7 +2032,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading75">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse75" aria-expanded="false" aria-controls="flush-collapse75">
-                    75. Question!
+                    75. Explain the difference between x == y and x.Equals(y)
                   </button>
                 </h2>
                 <div id="flush-collapse75" class="accordion-collapse collapse" aria-labelledby="flush-heading75" data-bs-parent="#question75">
@@ -1981,7 +2070,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading77">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse77" aria-expanded="false" aria-controls="flush-collapse77">
-                    77. Question!
+                    77. why can't you create an instance of an abstract class?
                   </button>
                 </h2>
                 <div id="flush-collapse77" class="accordion-collapse collapse" aria-labelledby="flush-heading77" data-bs-parent="#question77">
@@ -2038,7 +2127,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading80">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse80" aria-expanded="false" aria-controls="flush-collapse80">
-                    80. Question!
+                    80. What are websockets? Can several of them listen the same port address or on of them listen several addresses and ports?
                   </button>
                 </h2>
                 <div id="flush-collapse80" class="accordion-collapse collapse" aria-labelledby="flush-heading80" data-bs-parent="#question80">
@@ -2076,7 +2165,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading82">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse82" aria-expanded="false" aria-controls="flush-collapse82">
-                    82. Question!
+                    82. Describe a case when you need to create an additional app domain.
                   </button>
                 </h2>
                 <div id="flush-collapse82" class="accordion-collapse collapse" aria-labelledby="flush-heading82" data-bs-parent="#question82">
@@ -2152,7 +2241,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading86">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse86" aria-expanded="false" aria-controls="flush-collapse86">
-                    86. Question!
+                    86. What is Marshalling, how does it related to unsafe in C# lang as an example?
                   </button>
                 </h2>
                 <div id="flush-collapse86" class="accordion-collapse collapse" aria-labelledby="flush-heading86" data-bs-parent="#question86">
@@ -2171,7 +2260,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading87">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse87" aria-expanded="false" aria-controls="flush-collapse87">
-                    87. Question!
+                    87. Pointers in .NET, if you defer a pointer is it addree os a memory or some domain of app?
                   </button>
                 </h2>
                 <div id="flush-collapse87" class="accordion-collapse collapse" aria-labelledby="flush-heading87" data-bs-parent="#question87">
@@ -2190,7 +2279,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading88">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse88" aria-expanded="false" aria-controls="flush-collapse88">
-                    88. Question!
+                    88. What is P/Invoke. When do you need to use it?
                   </button>
                 </h2>
                 <div id="flush-collapse88" class="accordion-collapse collapse" aria-labelledby="flush-heading88" data-bs-parent="#question88">
@@ -2227,7 +2316,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading90">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse90" aria-expanded="false" aria-controls="flush-collapse90">
-                    90. Question!
+                    90. Difference between Big-O and Little-o Notations. Give a couple of examples.
                   </button>
                 </h2>
                 <div id="flush-collapse90" class="accordion-collapse collapse" aria-labelledby="flush-heading90" data-bs-parent="#question90">
@@ -2265,7 +2354,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading92">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse92" aria-expanded="false" aria-controls="flush-collapse92">
-                    92. Question!
+                    92. Enumerate ways to intentionally crash CoreCLR.
                   </button>
                 </h2>
                 <div id="flush-collapse92" class="accordion-collapse collapse" aria-labelledby="flush-heading92" data-bs-parent="#question92">
@@ -2322,7 +2411,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading95">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse95" aria-expanded="false" aria-controls="flush-collapse95">
-                    95. Question!
+                    95. What is atomicity of operations?
                   </button>
                 </h2>
                 <div id="flush-collapse95" class="accordion-collapse collapse" aria-labelledby="flush-heading95" data-bs-parent="#question95">
@@ -2341,7 +2430,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading96">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse96" aria-expanded="false" aria-controls="flush-collapse96">
-                    96. Question!
+                    96.  double dispatching in C#, give an example using C#
                   </button>
                 </h2>
                 <div id="flush-collapse96" class="accordion-collapse collapse" aria-labelledby="flush-heading96" data-bs-parent="#question96">
@@ -2474,12 +2563,12 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading103">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse103" aria-expanded="false" aria-controls="flush-collapse103">
-                    103. Question!
+                    103. how to declare a multiline string and how to insert values into the string
                   </button>
                 </h2>
                 <div id="flush-collapse103" class="accordion-collapse collapse" aria-labelledby="flush-heading103" data-bs-parent="#question103">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>string multiline string @ how to inset values into the str $@ </p>
                   </div>
                 </div>
               </div>
@@ -2493,7 +2582,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading104">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse104" aria-expanded="false" aria-controls="flush-collapse104">
-                    104. Question!
+                    104. Difference between gRPC and WCF?
                   </button>
                 </h2>
                 <div id="flush-collapse104" class="accordion-collapse collapse" aria-labelledby="flush-heading104" data-bs-parent="#question104">
@@ -2512,7 +2601,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading105">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse105" aria-expanded="false" aria-controls="flush-collapse105">
-                    105. Question!
+                    105. Give an example of LINQ Aggregation method. 
                   </button>
                 </h2>
                 <div id="flush-collapse105" class="accordion-collapse collapse" aria-labelledby="flush-heading105" data-bs-parent="#question105">
@@ -2531,7 +2620,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading106">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse106" aria-expanded="false" aria-controls="flush-collapse106">
-                    106. Question!
+                    106. Transient vs scoped vs Singletone lifetimes in DI.
                   </button>
                 </h2>
                 <div id="flush-collapse106" class="accordion-collapse collapse" aria-labelledby="flush-heading106" data-bs-parent="#question106">
@@ -2550,7 +2639,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading107">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse107" aria-expanded="false" aria-controls="flush-collapse107">
-                    107. Question!
+                    107. Memory leaks. How do you find them?
                   </button>
                 </h2>
                 <div id="flush-collapse107" class="accordion-collapse collapse" aria-labelledby="flush-heading107" data-bs-parent="#question107">
@@ -2569,7 +2658,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading108">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse108" aria-expanded="false" aria-controls="flush-collapse108">
-                    108. Question!
+                    108. C#'s 'fixed' keyword
                   </button>
                 </h2>
                 <div id="flush-collapse108" class="accordion-collapse collapse" aria-labelledby="flush-heading108" data-bs-parent="#question108">
@@ -2588,7 +2677,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading109">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse109" aria-expanded="false" aria-controls="flush-collapse109">
-                    109. Question!
+                    109. What would happen if you put default in the beginning of a switch statement?
                   </button>
                 </h2>
                 <div id="flush-collapse109" class="accordion-collapse collapse" aria-labelledby="flush-heading109" data-bs-parent="#question109">
@@ -2607,7 +2696,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading110">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse110" aria-expanded="false" aria-controls="flush-collapse110">
-                    110. Question!
+                    110. Static and private method of Object class. If any.
                   </button>
                 </h2>
                 <div id="flush-collapse110" class="accordion-collapse collapse" aria-labelledby="flush-heading110" data-bs-parent="#question110">
@@ -2664,7 +2753,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading113">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse113" aria-expanded="false" aria-controls="flush-collapse113">
-                    113. Question!
+                    113. Preprocessor in C#. what is it for
                   </button>
                 </h2>
                 <div id="flush-collapse113" class="accordion-collapse collapse" aria-labelledby="flush-heading113" data-bs-parent="#question113">
@@ -2683,7 +2772,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading114">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse114" aria-expanded="false" aria-controls="flush-collapse114">
-                    114. Question!
+                    114. Why string is immutable ???? - recheck this again , in general Mutable type vs Immutable type
                   </button>
                 </h2>
                 <div id="flush-collapse114" class="accordion-collapse collapse" aria-labelledby="flush-heading114" data-bs-parent="#question114">
@@ -2721,7 +2810,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading116">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse116" aria-expanded="false" aria-controls="flush-collapse116">
-                    116. Question!
+                    116. How assembly metadata relates to Reflection?
                   </button>
                 </h2>
                 <div id="flush-collapse116" class="accordion-collapse collapse" aria-labelledby="flush-heading116" data-bs-parent="#question116">
@@ -2740,7 +2829,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading117">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse117" aria-expanded="false" aria-controls="flush-collapse117">
-                    117. Question!
+                    117. Is Lazy T threadsafe?
                   </button>
                 </h2>
                 <div id="flush-collapse117" class="accordion-collapse collapse" aria-labelledby="flush-heading117" data-bs-parent="#question117">
@@ -2759,7 +2848,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading118">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse118" aria-expanded="false" aria-controls="flush-collapse118">
-                    118. Question!
+                    118. Is a structure able to implement an interface?
                   </button>
                 </h2>
                 <div id="flush-collapse118" class="accordion-collapse collapse" aria-labelledby="flush-heading118" data-bs-parent="#question118">
@@ -2778,7 +2867,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading119">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse119" aria-expanded="false" aria-controls="flush-collapse119">
-                    119. Question!
+                    119. How Equals is related to GetHashCode. 
                   </button>
                 </h2>
                 <div id="flush-collapse119" class="accordion-collapse collapse" aria-labelledby="flush-heading119" data-bs-parent="#question119">
@@ -2873,7 +2962,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading124">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse124" aria-expanded="false" aria-controls="flush-collapse124">
-                    124. Question!
+                    124. What kind of hash functions do you know?
                   </button>
                 </h2>
                 <div id="flush-collapse124" class="accordion-collapse collapse" aria-labelledby="flush-heading124" data-bs-parent="#question124">
@@ -2892,7 +2981,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading125">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse125" aria-expanded="false" aria-controls="flush-collapse125">
-                    125. Question!
+                    125. what's incapsulation, give examples
                   </button>
                 </h2>
                 <div id="flush-collapse125" class="accordion-collapse collapse" aria-labelledby="flush-heading125" data-bs-parent="#question125">
@@ -2911,7 +3000,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading126">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse126" aria-expanded="false" aria-controls="flush-collapse126">
-                    126. Question!
+                    126. diff between throw and throw ex
                   </button>
                 </h2>
                 <div id="flush-collapse126" class="accordion-collapse collapse" aria-labelledby="flush-heading126" data-bs-parent="#question126">
@@ -2930,7 +3019,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading127">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse127" aria-expanded="false" aria-controls="flush-collapse127">
-                    127. Question!
+                    127. how to do a shallow copy and a deep copy of an object? What if a class contains another class and other types as a composition
                   </button>
                 </h2>
                 <div id="flush-collapse127" class="accordion-collapse collapse" aria-labelledby="flush-heading127" data-bs-parent="#question127">
@@ -2949,7 +3038,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading128">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse128" aria-expanded="false" aria-controls="flush-collapse128">
-                    128. Question!
+                    128. what operators can not be overloaded
                   </button>
                 </h2>
                 <div id="flush-collapse128" class="accordion-collapse collapse" aria-labelledby="flush-heading128" data-bs-parent="#question128">
@@ -2968,7 +3057,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading129">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse129" aria-expanded="false" aria-controls="flush-collapse129">
-                    129. Question!
+                    129. what is indexer in C#?
                   </button>
                 </h2>
                 <div id="flush-collapse129" class="accordion-collapse collapse" aria-labelledby="flush-heading129" data-bs-parent="#question129">
@@ -2987,7 +3076,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading130">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse130" aria-expanded="false" aria-controls="flush-collapse130">
-                    130. Question!
+                    130. Short circuit evaluation in C#
                   </button>
                 </h2>
                 <div id="flush-collapse130" class="accordion-collapse collapse" aria-labelledby="flush-heading130" data-bs-parent="#question130">
@@ -3006,7 +3095,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading131">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse131" aria-expanded="false" aria-controls="flush-collapse131">
-                    131. Question!
+                    131. Nested class in a nested class. What class has access to fields of nested or outer, what and what doens't have acces to what?
                   </button>
                 </h2>
                 <div id="flush-collapse131" class="accordion-collapse collapse" aria-labelledby="flush-heading131" data-bs-parent="#question131">
@@ -3025,7 +3114,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading132">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse132" aria-expanded="false" aria-controls="flush-collapse132">
-                    132. Question!
+                    132. Expressions in C# lang. Give some example. 
                   </button>
                 </h2>
                 <div id="flush-collapse132" class="accordion-collapse collapse" aria-labelledby="flush-heading132" data-bs-parent="#question132">
@@ -3044,7 +3133,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading133">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse133" aria-expanded="false" aria-controls="flush-collapse133">
-                    133. Question!
+                    133. What is MVC pattern and what does it comprise?
                   </button>
                 </h2>
                 <div id="flush-collapse133" class="accordion-collapse collapse" aria-labelledby="flush-heading133" data-bs-parent="#question133">
@@ -3063,7 +3152,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading134">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse134" aria-expanded="false" aria-controls="flush-collapse134">
-                    134. Question!
+                    134. How do you resolve collisions?
                   </button>
                 </h2>
                 <div id="flush-collapse134" class="accordion-collapse collapse" aria-labelledby="flush-heading134" data-bs-parent="#question134">
@@ -3082,7 +3171,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading135">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse135" aria-expanded="false" aria-controls="flush-collapse135">
-                    135. Question!
+                    135. Did you hear about ThreadStatic attribute? What does it do?
                   </button>
                 </h2>
                 <div id="flush-collapse135" class="accordion-collapse collapse" aria-labelledby="flush-heading135" data-bs-parent="#question135">
@@ -3101,7 +3190,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading136">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse136" aria-expanded="false" aria-controls="flush-collapse136">
-                    136. Question!
+                    136. the lock keyword, what if you do lock(this), what if lock(someObj)?
                   </button>
                 </h2>
                 <div id="flush-collapse136" class="accordion-collapse collapse" aria-labelledby="flush-heading136" data-bs-parent="#question136">
@@ -3120,7 +3209,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading137">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse137" aria-expanded="false" aria-controls="flush-collapse137">
-                    137. Question!
+                    137. Mutex and Semaphor.
                   </button>
                 </h2>
                 <div id="flush-collapse137" class="accordion-collapse collapse" aria-labelledby="flush-heading137" data-bs-parent="#question137">
@@ -3139,7 +3228,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading138">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse138" aria-expanded="false" aria-controls="flush-collapse138">
-                    138. Question!
+                    138. DI vs IoC
                   </button>
                 </h2>
                 <div id="flush-collapse138" class="accordion-collapse collapse" aria-labelledby="flush-heading138" data-bs-parent="#question138">
@@ -3157,7 +3246,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading139">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse139" aria-expanded="false" aria-controls="flush-collapse139">
-                    139. Question!
+                    139. When do you need to use finalizers explicitly?
                   </button>
                 </h2>
                 <div id="flush-collapse139" class="accordion-collapse collapse" aria-labelledby="flush-heading139" data-bs-parent="#question139">
@@ -3176,7 +3265,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading140">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse140" aria-expanded="false" aria-controls="flush-collapse140">
-                    140. Question!
+                    140. inifite loop with yield
                   </button>
                 </h2>
                 <div id="flush-collapse140" class="accordion-collapse collapse" aria-labelledby="flush-heading140" data-bs-parent="#question140">
@@ -3195,7 +3284,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading141">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse141" aria-expanded="false" aria-controls="flush-collapse141">
-                    141. Question!
+                    141. what's low and tight coupled code, give few examples in C#
                   </button>
                 </h2>
                 <div id="flush-collapse141" class="accordion-collapse collapse" aria-labelledby="flush-heading141" data-bs-parent="#question141">
@@ -3214,7 +3303,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading142">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse142" aria-expanded="false" aria-controls="flush-collapse142">
-                    142. Question!
+                    142. what is JSON
                   </button>
                 </h2>
                 <div id="flush-collapse142" class="accordion-collapse collapse" aria-labelledby="flush-heading142" data-bs-parent="#question142">
@@ -3252,7 +3341,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading144">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse144" aria-expanded="false" aria-controls="flush-collapse144">
-                    144. Question!
+                    144. When and where do you prefer to use a static method over a regular one
                   </button>
                 </h2>
                 <div id="flush-collapse144" class="accordion-collapse collapse" aria-labelledby="flush-heading144" data-bs-parent="#question144">
@@ -3290,7 +3379,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading146">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse146" aria-expanded="false" aria-controls="flush-collapse146">
-                    146. Question!
+                    146. difference between ref and out
                   </button>
                 </h2>
                 <div id="flush-collapse146" class="accordion-collapse collapse" aria-labelledby="flush-heading146" data-bs-parent="#question146">
@@ -3385,7 +3474,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading151">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse151" aria-expanded="false" aria-controls="flush-collapse151">
-                    151. Question!
+                    151. what's monad? Maybe. Eighter
                   </button>
                 </h2>
                 <div id="flush-collapse151" class="accordion-collapse collapse" aria-labelledby="flush-heading151" data-bs-parent="#question151">
@@ -3442,7 +3531,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading154">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse154" aria-expanded="false" aria-controls="flush-collapse154">
-                    154. Question!
+                    154. Base constructor and this constructor, parent fields and derived fields. Initilization order with exampel. 
                   </button>
                 </h2>
                 <div id="flush-collapse154" class="accordion-collapse collapse" aria-labelledby="flush-heading154" data-bs-parent="#question154">
@@ -3461,7 +3550,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading155">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse155" aria-expanded="false" aria-controls="flush-collapse155">
-                    155. Question!
+                    155. Give an example of an anonymous type.
                   </button>
                 </h2>
                 <div id="flush-collapse155" class="accordion-collapse collapse" aria-labelledby="flush-heading155" data-bs-parent="#question155">
@@ -3480,7 +3569,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading156">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse156" aria-expanded="false" aria-controls="flush-collapse156">
-                    156. Question!
+                    156. What is abstract data type
                   </button>
                 </h2>
                 <div id="flush-collapse156" class="accordion-collapse collapse" aria-labelledby="flush-heading156" data-bs-parent="#question156">
@@ -3499,7 +3588,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading157">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse157" aria-expanded="false" aria-controls="flush-collapse157">
-                    157. Question!
+                    157. Describe synchronization primitives.
                   </button>
                 </h2>
                 <div id="flush-collapse157" class="accordion-collapse collapse" aria-labelledby="flush-heading157" data-bs-parent="#question157">
@@ -3518,7 +3607,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading158">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse158" aria-expanded="false" aria-controls="flush-collapse158">
-                    158. Question!
+                    158. What is Task asynchronous programming model? What other models do you know?
                   </button>
                 </h2>
                 <div id="flush-collapse158" class="accordion-collapse collapse" aria-labelledby="flush-heading158" data-bs-parent="#question158">
@@ -3556,7 +3645,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading160">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse160" aria-expanded="false" aria-controls="flush-collapse160">
-                    160. Question!
+                    160. Whatis is carrying in methods, caching , memoization
                   </button>
                 </h2>
                 <div id="flush-collapse160" class="accordion-collapse collapse" aria-labelledby="flush-heading160" data-bs-parent="#question160">
@@ -3575,12 +3664,13 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading161">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse161" aria-expanded="false" aria-controls="flush-collapse161">
-                    161. Question!
+                    161. IEnumerable vs. IQueryable?
                   </button>
                 </h2>
                 <div id="flush-collapse161" class="accordion-collapse collapse" aria-labelledby="flush-heading161" data-bs-parent="#question161">
                   <div class="accordion-body">
-                    <p></p>
+                    <p><b>IEnumerable:</b> When you perform LINQ operations on an IEnumerable, such as a List or an array, the entire dataset is loaded into memory first. This means that if you use IEnumerable to query a database, all records matching the query will be loaded into memory before any filtering or projection is performed.</p>
+                    <p><b>IQueryable:</b> IQueryable supports deferred execution, meaning that the query is not executed until it is enumerated or iterated over. This allows the query to be translated into the appropriate query language (e.g., SQL for databases) and executed on the server side, minimizing the amount of data transferred over the network.</p>
                   </div>
                 </div>
               </div>
@@ -3594,7 +3684,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading162">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse162" aria-expanded="false" aria-controls="flush-collapse162">
-                    162. Question!
+                    162. Bit flags. tell about them.
                   </button>
                 </h2>
                 <div id="flush-collapse162" class="accordion-collapse collapse" aria-labelledby="flush-heading162" data-bs-parent="#question162">
@@ -3632,12 +3722,13 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading164">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse164" aria-expanded="false" aria-controls="flush-collapse164">
-                    164. Question!
+                    164. What is a Uri?
                   </button>
                 </h2>
                 <div id="flush-collapse164" class="accordion-collapse collapse" aria-labelledby="flush-heading164" data-bs-parent="#question164">
                   <div class="accordion-body">
-                    <p></p>
+                    <p>A Uri in C# is a class that represents a Uniform Resource Identifier (URI). A URI is a compact string of characters that identifies a resource on the internet or an intranet. URIs can be used to link to web pages, images, files, and other resources.
+                      In short, a Uri is a way to represent a web address in C#.</p>
                   </div>
                 </div>
               </div>
@@ -3651,7 +3742,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading165">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse165" aria-expanded="false" aria-controls="flush-collapse165">
-                    165. Question!
+                    165.  The word volatile.
                   </button>
                 </h2>
                 <div id="flush-collapse165" class="accordion-collapse collapse" aria-labelledby="flush-heading165" data-bs-parent="#question165">
@@ -3670,7 +3761,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading166">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse166" aria-expanded="false" aria-controls="flush-collapse166">
-                    166. Question!
+                    166. A table of virtual override and new and nothing A B C D E F
                   </button>
                 </h2>
                 <div id="flush-collapse166" class="accordion-collapse collapse" aria-labelledby="flush-heading166" data-bs-parent="#question166">
@@ -3689,7 +3780,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading167">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse167" aria-expanded="false" aria-controls="flush-collapse167">
-                    167. Question!
+                    167.All classes in .NET are derived from a what single class? Do value types and structs inherit the class?
                   </button>
                 </h2>
                 <div id="flush-collapse167" class="accordion-collapse collapse" aria-labelledby="flush-heading167" data-bs-parent="#question167">
@@ -3708,7 +3799,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading168">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse168" aria-expanded="false" aria-controls="flush-collapse168">
-                    168. Question!
+                    168. What's the point of CQRS?
                   </button>
                 </h2>
                 <div id="flush-collapse168" class="accordion-collapse collapse" aria-labelledby="flush-heading168" data-bs-parent="#question168">
@@ -3727,7 +3818,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading169">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse169" aria-expanded="false" aria-controls="flush-collapse169">
-                    169. Question!
+                    169. what is callstack 
                   </button>
                 </h2>
                 <div id="flush-collapse169" class="accordion-collapse collapse" aria-labelledby="flush-heading169" data-bs-parent="#question169">
@@ -3746,7 +3837,7 @@ list2.Add(4);
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading170">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse170" aria-expanded="false" aria-controls="flush-collapse170">
-                    170. Question!
+                    170. how to avoid race conditions?
                   </button>
                 </h2>
                 <div id="flush-collapse170" class="accordion-collapse collapse" aria-labelledby="flush-heading170" data-bs-parent="#question170">
@@ -3758,7 +3849,1526 @@ list2.Add(4);
             </div>
           </div>
           <div class="col-md-2">
-          </div>  
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question171">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading171">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse171" aria-expanded="false" aria-controls="flush-collapse171">
+                    171. How do you find out that a certain class has an attribute (in runtime)?
+                  </button>
+                </h2>
+                <div id="flush-collapse171" class="accordion-collapse collapse" aria-labelledby="flush-heading171" data-bs-parent="#question171">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question172">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading172">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse172" aria-expanded="false" aria-controls="flush-collapse172">
+                    172. High cohesion vs low coupling
+                  </button>
+                </h2>
+                <div id="flush-collapse172" class="accordion-collapse collapse" aria-labelledby="flush-heading172" data-bs-parent="#question172">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question173">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading173">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse173" aria-expanded="false" aria-controls="flush-collapse173">
+                    173. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse173" class="accordion-collapse collapse" aria-labelledby="flush-heading173" data-bs-parent="#question173">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question174">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading174">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse174" aria-expanded="false" aria-controls="flush-collapse174">
+                    174. Composition vs aggregation
+                  </button>
+                </h2>
+                <div id="flush-collapse174" class="accordion-collapse collapse" aria-labelledby="flush-heading174" data-bs-parent="#question174">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question175">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading175">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse175" aria-expanded="false" aria-controls="flush-collapse175">
+                    175. When exactly there is a need to apply DDD?
+                  </button>
+                </h2>
+                <div id="flush-collapse175" class="accordion-collapse collapse" aria-labelledby="flush-heading175" data-bs-parent="#question175">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question176">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading176">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse176" aria-expanded="false" aria-controls="flush-collapse176">
+                    176. Using C#. Give an example of a potential deadlock. 
+                  </button>
+                </h2>
+                <div id="flush-collapse176" class="accordion-collapse collapse" aria-labelledby="flush-heading176" data-bs-parent="#question176">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question177">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading177">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse177" aria-expanded="false" aria-controls="flush-collapse177">
+                    177. Tell about GC modes.
+                  </button>
+                </h2>
+                <div id="flush-collapse177" class="accordion-collapse collapse" aria-labelledby="flush-heading177" data-bs-parent="#question177">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question178">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading178">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse178" aria-expanded="false" aria-controls="flush-collapse178">
+                    178. Implement a way to be able to put an instance of your class into a foreach loop and iterate over your type
+                  </button>
+                </h2>
+                <div id="flush-collapse178" class="accordion-collapse collapse" aria-labelledby="flush-heading178" data-bs-parent="#question178">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question179">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading179">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse179" aria-expanded="false" aria-controls="flush-collapse179">
+                    179. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse179" class="accordion-collapse collapse" aria-labelledby="flush-heading179" data-bs-parent="#question179">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question180">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading180">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse180" aria-expanded="false" aria-controls="flush-collapse180">
+                    180. What's the best way to store Money data type in C# and why. 
+                  </button>
+                </h2>
+                <div id="flush-collapse180" class="accordion-collapse collapse" aria-labelledby="flush-heading180" data-bs-parent="#question180">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question181">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading181">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse181" aria-expanded="false" aria-controls="flush-collapse181">
+                    181. Drawbacks of Inheritance
+                  </button>
+                </h2>
+                <div id="flush-collapse181" class="accordion-collapse collapse" aria-labelledby="flush-heading181" data-bs-parent="#question181">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question182">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading182">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse182" aria-expanded="false" aria-controls="flush-collapse182">
+                    182. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse182" class="accordion-collapse collapse" aria-labelledby="flush-heading182" data-bs-parent="#question182">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question183">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading183">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse183" aria-expanded="false" aria-controls="flush-collapse183">
+                    183. Thread.Sleep() vs. Task.Delay()
+                  </button>
+                </h2>
+                <div id="flush-collapse183" class="accordion-collapse collapse" aria-labelledby="flush-heading183" data-bs-parent="#question183">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question184">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading184">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse184" aria-expanded="false" aria-controls="flush-collapse184">
+                    184. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse184" class="accordion-collapse collapse" aria-labelledby="flush-heading184" data-bs-parent="#question184">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question185">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading185">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse185" aria-expanded="false" aria-controls="flush-collapse185">
+                    185. If you have several possible exceptions (exception class) in what order will you place them in the catch block?
+                  </button>
+                </h2>
+                <div id="flush-collapse185" class="accordion-collapse collapse" aria-labelledby="flush-heading185" data-bs-parent="#question185">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question186">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading186">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse186" aria-expanded="false" aria-controls="flush-collapse186">
+                    186. Have you used class Parallel?
+                  </button>
+                </h2>
+                <div id="flush-collapse186" class="accordion-collapse collapse" aria-labelledby="flush-heading186" data-bs-parent="#question186">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question187">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading187">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse187" aria-expanded="false" aria-controls="flush-collapse187">
+                    187. Give an example of using IEnumerableAsync interface.
+                  </button>
+                </h2>
+                <div id="flush-collapse187" class="accordion-collapse collapse" aria-labelledby="flush-heading187" data-bs-parent="#question187">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question188">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading188">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse188" aria-expanded="false" aria-controls="flush-collapse188">
+                    188. What is class Type in C#?
+                  </button>
+                </h2>
+                <div id="flush-collapse188" class="accordion-collapse collapse" aria-labelledby="flush-heading188" data-bs-parent="#question188">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question189">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading189">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse189" aria-expanded="false" aria-controls="flush-collapse189">
+                    189. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse189" class="accordion-collapse collapse" aria-labelledby="flush-heading189" data-bs-parent="#question189">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question190">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading190">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse190" aria-expanded="false" aria-controls="flush-collapse190">
+                    190. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse190" class="accordion-collapse collapse" aria-labelledby="flush-heading190" data-bs-parent="#question190">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question191">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading191">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse191" aria-expanded="false" aria-controls="flush-collapse191">
+                    191. Give a couple of examples related to Recursion.
+                  </button>
+                </h2>
+                <div id="flush-collapse191" class="accordion-collapse collapse" aria-labelledby="flush-heading191" data-bs-parent="#question191">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question192">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading192">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse192" aria-expanded="false" aria-controls="flush-collapse192">
+                    192. the diff between multithereading and asyncronosity
+                  </button>
+                </h2>
+                <div id="flush-collapse192" class="accordion-collapse collapse" aria-labelledby="flush-heading192" data-bs-parent="#question192">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question193">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading193">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse193" aria-expanded="false" aria-controls="flush-collapse193">
+                    193. Is there a difference betweeen calling a delegate directly and doing .invoke
+                  </button>
+                </h2>
+                <div id="flush-collapse193" class="accordion-collapse collapse" aria-labelledby="flush-heading193" data-bs-parent="#question193">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question194">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading194">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse194" aria-expanded="false" aria-controls="flush-collapse194">
+                    194. What is asymptotic complexity?
+                  </button>
+                </h2>
+                <div id="flush-collapse194" class="accordion-collapse collapse" aria-labelledby="flush-heading194" data-bs-parent="#question194">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question195">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading195">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse195" aria-expanded="false" aria-controls="flush-collapse195">
+                    195. Give some examples of useful extension methods that you used.
+                  </button>
+                </h2>
+                <div id="flush-collapse195" class="accordion-collapse collapse" aria-labelledby="flush-heading195" data-bs-parent="#question195">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question196">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading196">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse196" aria-expanded="false" aria-controls="flush-collapse196">
+                    196. what is T4 template. System.Emit
+                  </button>
+                </h2>
+                <div id="flush-collapse196" class="accordion-collapse collapse" aria-labelledby="flush-heading196" data-bs-parent="#question196">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question197">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading197">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse197" aria-expanded="false" aria-controls="flush-collapse197">
+                    197. Is it possible to compare two floating point numbers using == and !=? What consequences could this lead to and why?
+                  </button>
+                </h2>
+                <div id="flush-collapse197" class="accordion-collapse collapse" aria-labelledby="flush-heading197" data-bs-parent="#question197">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question198">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading198">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse198" aria-expanded="false" aria-controls="flush-collapse198">
+                    198. will catch intercept all the expections? what type of exceptions it will not intercept?
+                  </button>
+                </h2>
+                <div id="flush-collapse198" class="accordion-collapse collapse" aria-labelledby="flush-heading198" data-bs-parent="#question198">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question199">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading199">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse199" aria-expanded="false" aria-controls="flush-collapse199">
+                    199. Difference between Greedy and Lazy quantifiers
+                  </button>
+                </h2>
+                <div id="flush-collapse199" class="accordion-collapse collapse" aria-labelledby="flush-heading199" data-bs-parent="#question199">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question200">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading200">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse200" aria-expanded="false" aria-controls="flush-collapse200">
+                    200. How does LINQ methods inmplemented in the .NET? (extension methods)?
+                  </button>
+                </h2>
+                <div id="flush-collapse200" class="accordion-collapse collapse" aria-labelledby="flush-heading200" data-bs-parent="#question200">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question201">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading201">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse201" aria-expanded="false" aria-controls="flush-collapse201">
+                    201. Implicit and explicit keywords - explain them
+                  </button>
+                </h2>
+                <div id="flush-collapse201" class="accordion-collapse collapse" aria-labelledby="flush-heading201" data-bs-parent="#question201">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question202">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading202">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse202" aria-expanded="false" aria-controls="flush-collapse202">
+                    202. Why is a character array better than a string for storing a password?
+                  </button>
+                </h2>
+                <div id="flush-collapse202" class="accordion-collapse collapse" aria-labelledby="flush-heading202" data-bs-parent="#question202">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question203">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading203">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse203" aria-expanded="false" aria-controls="flush-collapse203">
+                    203. Thread vs Process
+                  </button>
+                </h2>
+                <div id="flush-collapse203" class="accordion-collapse collapse" aria-labelledby="flush-heading203" data-bs-parent="#question203">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question204">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading204">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse204" aria-expanded="false" aria-controls="flush-collapse204">
+                    204. Multicast delegate
+                  </button>
+                </h2>
+                <div id="flush-collapse204" class="accordion-collapse collapse" aria-labelledby="flush-heading204" data-bs-parent="#question204">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question205">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading205">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse205" aria-expanded="false" aria-controls="flush-collapse205">
+                    205. Where the fields of a value type struct are stored in memory? what if you have a class and a struct inside it - where the fields of this struct are stored?
+                  </button>
+                </h2>
+                <div id="flush-collapse205" class="accordion-collapse collapse" aria-labelledby="flush-heading205" data-bs-parent="#question205">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question206">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading206">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse206" aria-expanded="false" aria-controls="flush-collapse206">
+                    206. Array vs List. Differences.
+                  </button>
+                </h2>
+                <div id="flush-collapse206" class="accordion-collapse collapse" aria-labelledby="flush-heading206" data-bs-parent="#question206">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question207">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading207">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse207" aria-expanded="false" aria-controls="flush-collapse207">
+                    207. When generic class is generated? When compiling or in runntime? is it just syntax sugar?
+                  </button>
+                </h2>
+                <div id="flush-collapse207" class="accordion-collapse collapse" aria-labelledby="flush-heading207" data-bs-parent="#question207">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question208">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading208">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse208" aria-expanded="false" aria-controls="flush-collapse208">
+                    208. Dynamic keyword
+                  </button>
+                </h2>
+                <div id="flush-collapse208" class="accordion-collapse collapse" aria-labelledby="flush-heading208" data-bs-parent="#question208">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question209">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading209">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse209" aria-expanded="false" aria-controls="flush-collapse209">
+                    209. Give some examples with async await keywords and exmplain the order in which the code executes, several nested async methods
+                  </button>
+                </h2>
+                <div id="flush-collapse209" class="accordion-collapse collapse" aria-labelledby="flush-heading209" data-bs-parent="#question209">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question210">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading210">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse210" aria-expanded="false" aria-controls="flush-collapse210">
+                    210.What is pattern matching?
+                  </button>
+                </h2>
+                <div id="flush-collapse210" class="accordion-collapse collapse" aria-labelledby="flush-heading210" data-bs-parent="#question210">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question211">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading211">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse211" aria-expanded="false" aria-controls="flush-collapse211">
+                    211. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse211" class="accordion-collapse collapse" aria-labelledby="flush-heading211" data-bs-parent="#question211">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question212">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading212">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse212" aria-expanded="false" aria-controls="flush-collapse212">
+                    212. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse212" class="accordion-collapse collapse" aria-labelledby="flush-heading212" data-bs-parent="#question212">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question213">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading213">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse213" aria-expanded="false" aria-controls="flush-collapse213">
+                    213. reflection, metadata, how does it work, activator
+                  </button>
+                </h2>
+                <div id="flush-collapse213" class="accordion-collapse collapse" aria-labelledby="flush-heading213" data-bs-parent="#question213">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question214">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading214">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse214" aria-expanded="false" aria-controls="flush-collapse214">
+                    214. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse214" class="accordion-collapse collapse" aria-labelledby="flush-heading214" data-bs-parent="#question214">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question215">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading215">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse215" aria-expanded="false" aria-controls="flush-collapse215">
+                    215. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse215" class="accordion-collapse collapse" aria-labelledby="flush-heading215" data-bs-parent="#question215">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question216">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading216">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse216" aria-expanded="false" aria-controls="flush-collapse216">
+                    216. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse216" class="accordion-collapse collapse" aria-labelledby="flush-heading216" data-bs-parent="#question216">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question217">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading217">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse217" aria-expanded="false" aria-controls="flush-collapse217">
+                    217. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse217" class="accordion-collapse collapse" aria-labelledby="flush-heading217" data-bs-parent="#question217">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question218">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading218">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse218" aria-expanded="false" aria-controls="flush-collapse218">
+                    218. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse218" class="accordion-collapse collapse" aria-labelledby="flush-heading218" data-bs-parent="#question218">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question219">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading219">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse219" aria-expanded="false" aria-controls="flush-collapse219">
+                    219. how do you work with reg exp in .net and some tricky cases
+                  </button>
+                </h2>
+                <div id="flush-collapse219" class="accordion-collapse collapse" aria-labelledby="flush-heading219" data-bs-parent="#question219">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question220">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading220">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse220" aria-expanded="false" aria-controls="flush-collapse220">
+                    220. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse220" class="accordion-collapse collapse" aria-labelledby="flush-heading220" data-bs-parent="#question220">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question221">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading221">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse221" aria-expanded="false" aria-controls="flush-collapse221">
+                    221. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse221" class="accordion-collapse collapse" aria-labelledby="flush-heading221" data-bs-parent="#question221">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question222">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading222">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse222" aria-expanded="false" aria-controls="flush-collapse222">
+                    222. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse222" class="accordion-collapse collapse" aria-labelledby="flush-heading222" data-bs-parent="#question222">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question223">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading223">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse223" aria-expanded="false" aria-controls="flush-collapse223">
+                    223. GetType methods, what this method does? Can you override it? Is there a diff if I type GetType of typeof()?
+                  </button>
+                </h2>
+                <div id="flush-collapse223" class="accordion-collapse collapse" aria-labelledby="flush-heading223" data-bs-parent="#question223">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question224">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading224">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse224" aria-expanded="false" aria-controls="flush-collapse224">
+                    224. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse224" class="accordion-collapse collapse" aria-labelledby="flush-heading224" data-bs-parent="#question224">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question225">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading225">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse225" aria-expanded="false" aria-controls="flush-collapse225">
+                    225. Why is it better to not get into Large Object Heap? How do you avoid getting into LOH?
+                  </button>
+                </h2>
+                <div id="flush-collapse225" class="accordion-collapse collapse" aria-labelledby="flush-heading225" data-bs-parent="#question225">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question226">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading226">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse226" aria-expanded="false" aria-controls="flush-collapse226">
+                    226. Give an example of a weak referene and a case when do you need it.
+                  </button>
+                </h2>
+                <div id="flush-collapse226" class="accordion-collapse collapse" aria-labelledby="flush-heading226" data-bs-parent="#question226">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question227">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading227">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse227" aria-expanded="false" aria-controls="flush-collapse227">
+                    227. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse227" class="accordion-collapse collapse" aria-labelledby="flush-heading227" data-bs-parent="#question227">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question228">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading228">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse228" aria-expanded="false" aria-controls="flush-collapse228">
+                    228. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse228" class="accordion-collapse collapse" aria-labelledby="flush-heading228" data-bs-parent="#question228">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question229">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading229">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse229" aria-expanded="false" aria-controls="flush-collapse229">
+                    229. how do you return several values from a method?
+                  </button>
+                </h2>
+                <div id="flush-collapse229" class="accordion-collapse collapse" aria-labelledby="flush-heading229" data-bs-parent="#question229">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question230">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading230">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse230" aria-expanded="false" aria-controls="flush-collapse230">
+                    230. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse230" class="accordion-collapse collapse" aria-labelledby="flush-heading230" data-bs-parent="#question230">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question231">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading231">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse231" aria-expanded="false" aria-controls="flush-collapse231">
+                    231. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse231" class="accordion-collapse collapse" aria-labelledby="flush-heading231" data-bs-parent="#question231">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question232">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading232">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse232" aria-expanded="false" aria-controls="flush-collapse232">
+                    232. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse232" class="accordion-collapse collapse" aria-labelledby="flush-heading232" data-bs-parent="#question232">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question233">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading233">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse233" aria-expanded="false" aria-controls="flush-collapse233">
+                    233. what are quantificators give examples
+                  </button>
+                </h2>
+                <div id="flush-collapse233" class="accordion-collapse collapse" aria-labelledby="flush-heading233" data-bs-parent="#question233">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question234">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading234">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse234" aria-expanded="false" aria-controls="flush-collapse234">
+                    234. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse234" class="accordion-collapse collapse" aria-labelledby="flush-heading234" data-bs-parent="#question234">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question235">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading235">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse235" aria-expanded="false" aria-controls="flush-collapse235">
+                    235. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse235" class="accordion-collapse collapse" aria-labelledby="flush-heading235" data-bs-parent="#question235">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question236">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading236">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse236" aria-expanded="false" aria-controls="flush-collapse236">
+                    236. Static constructors. In what point of execution they are called and order of initialization compared with non static and their limitations.
+                  </button>
+                </h2>
+                <div id="flush-collapse236" class="accordion-collapse collapse" aria-labelledby="flush-heading236" data-bs-parent="#question236">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question237">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading237">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse237" aria-expanded="false" aria-controls="flush-collapse237">
+                    237. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse237" class="accordion-collapse collapse" aria-labelledby="flush-heading237" data-bs-parent="#question237">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question238">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading238">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse238" aria-expanded="false" aria-controls="flush-collapse238">
+                    238. What is Span class and Span&lt;T&gt; and what they are used for?
+                  </button>
+                </h2>
+                <div id="flush-collapse238" class="accordion-collapse collapse" aria-labelledby="flush-heading238" data-bs-parent="#question238">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question239">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading239">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse239" aria-expanded="false" aria-controls="flush-collapse239">
+                    239. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse239" class="accordion-collapse collapse" aria-labelledby="flush-heading239" data-bs-parent="#question239">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question240">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading240">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse240" aria-expanded="false" aria-controls="flush-collapse240">
+                    240. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse240" class="accordion-collapse collapse" aria-labelledby="flush-heading240" data-bs-parent="#question240">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question241">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading241">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse241" aria-expanded="false" aria-controls="flush-collapse241">
+                    241. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse241" class="accordion-collapse collapse" aria-labelledby="flush-heading241" data-bs-parent="#question241">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question242">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading242">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse242" aria-expanded="false" aria-controls="flush-collapse242">
+                    242. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse242" class="accordion-collapse collapse" aria-labelledby="flush-heading242" data-bs-parent="#question242">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question243">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading243">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse243" aria-expanded="false" aria-controls="flush-collapse243">
+                    243. Question!
+                  </button>
+                </h2>
+                <div id="flush-collapse243" class="accordion-collapse collapse" aria-labelledby="flush-heading243" data-bs-parent="#question243">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question244">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading244">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse244" aria-expanded="false" aria-controls="flush-collapse244">
+                    244. Let's cast a structure to an object, because you can't put it as is into lock. What would happen?
+                  </button>
+                </h2>
+                <div id="flush-collapse244" class="accordion-collapse collapse" aria-labelledby="flush-heading244" data-bs-parent="#question244">
+                  <div class="accordion-body">
+                    <p>??? check if this is true - Synchronization will not work, because everytime you will get a new object.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question245">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading245">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse245" aria-expanded="false" aria-controls="flush-collapse245">
+                    245. If you have SomeClassGeneric&lt;T&gt; where T is class. Some static field or property - is it shared amongst all possible variations of T?
+                  </button>
+                </h2>
+                <div id="flush-collapse245" class="accordion-collapse collapse" aria-labelledby="flush-heading245" data-bs-parent="#question245">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question246">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading246">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse246" aria-expanded="false" aria-controls="flush-collapse246">
+                    246. Dictionary vs Hashtable, Hashtable vs HashSet, Dictionary vs Lookup
+                  </button>
+                </h2>
+                <div id="flush-collapse246" class="accordion-collapse collapse" aria-labelledby="flush-heading246" data-bs-parent="#question246">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question247">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading247">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse247" aria-expanded="false" aria-controls="flush-collapse247">
+                    247. Serealization Deserializtion. System text vs newtonsoft json!
+                  </button>
+                </h2>
+                <div id="flush-collapse247" class="accordion-collapse collapse" aria-labelledby="flush-heading247" data-bs-parent="#question247">
+                  <div class="accordion-body">
+                    <p> Why system text - because it's built in and you dont need to isntall anything in addition</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question248">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading248">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse248" aria-expanded="false" aria-controls="flush-collapse248">
+                    248. Sealed keyword!
+                  </button>
+                </h2>
+                <div id="flush-collapse248" class="accordion-collapse collapse" aria-labelledby="flush-heading248" data-bs-parent="#question248">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question249">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading249">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse249" aria-expanded="false" aria-controls="flush-collapse249">
+                    249. Different signatues of delegates -example should return error
+                  </button>
+                </h2>
+                <div id="flush-collapse249" class="accordion-collapse collapse" aria-labelledby="flush-heading249" data-bs-parent="#question249">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-10">
+            <div class="accordion accordion-flush" id="question250">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading250">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse250" aria-expanded="false" aria-controls="flush-collapse250">
+                    250. Static constructor and non static constructor. Order of invokation
+                  </button>
+                </h2>
+                <div id="flush-collapse250" class="accordion-collapse collapse" aria-labelledby="flush-heading250" data-bs-parent="#question250">
+                  <div class="accordion-body">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div> 
+
         </div>
       </div>
       <div class="bottom-end">
